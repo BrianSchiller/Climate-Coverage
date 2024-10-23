@@ -1,0 +1,7 @@
+__pycache__
+articles/
+clean_articles/
+data/
+scraped_articles/
+submissions/
+to_scrape/
