@@ -1,0 +1,55 @@
+{
+    "labels": {
+        "causes": [
+            "Fossil Fuels", 
+            "Transportation", 
+            "Industrial Activity", 
+            "Deforestation", 
+            "Agriculture", 
+            "Waste", 
+            "Energy Use", 
+            "Land Use Changes", 
+            "Population Growth", 
+            "Natural Factors",
+            "Governance and Policy Failures"
+        ],
+        "consequences" : [
+            "Global Warming and Extreme Weather", 
+            "Ocean Changes and Rising Sea Levels", 
+            "Ecosystem Disruption and Biodiversity Loss", 
+            "Food and Water Scarcity", 
+            "Economic and Health Impacts", 
+            "Migration and Displacement", 
+            "Environmental Degradation and Air Quality Issues"
+        ],
+        "solutions": [
+            "Renewable Energy and Efficiency",  
+            "Sustainable Agriculture and Land Use", 
+            "Waste Management and Reduction",
+            "Transportation Solutions",
+            "Resilient Infrastructure", 
+            "Climate Governance and Policy", 
+            "International Cooperation and Awareness",
+            "Green Jobs Creation",
+            "Climate Investments"
+        ]
+    },
+    "articles": {
+        "Al Jazeera English_2024-09-23T13-32-13Z": ["Governance and Policy Failures", "Global Warming and Extreme Weather", "Economic and Health Impacts", "Migration and Displacement", "Climate Governance and Policy", "International Cooperation and Awareness"],
+        "BBC News_2024-09-23T05-43-47Z": ["Governance and Policy Failures", "Environmental Degradation and Air Quality Issues", "Economic and Health Impacts", "Climate Governance and Policy", "International Cooperation and Awareness"],
+        "Business Insider_2024-09-23T10-37-45Z": ["Economic and Health Impacts", "Climate Governance and Policy", "International Cooperation and Awareness", "Energy Solutions"],
+        "Forbes_2024-09-23T00-08-45Z": ["Climate Governance and Policy", "International Cooperation and Awareness", "Economic and Health Impacts", "Sustainable Solutions"],
+        "mindbodygreen.com_2024-09-23T13-55-00Z": ["Environmental Degradation and Air Quality Issues", "Economic and Health Impacts", "Sustainable Solutions", "Climate Governance and Policy"],
+        "MIT Technology Review_2024-09-23T13-30-00Z": ["Governance and Policy Failures", "Economic and Health Impacts", "Migration and Displacement", "Global Warming and Extreme Weather", "Climate Governance and Policy", "Resilient Infrastructure", "Climate Investments"],
+        "NPR_2024-09-23T09-00-00Z": ["Fossil Fuels", "Transportation", "Industrial Activity", "Energy Use", "Economic and Health Impacts", "Environmental Degradation and Air Quality Issues", "Transportation Solutions", "Renewable Energy and Efficiency", "Climate Governance and Policy"],
+        "Phys.Org_2024-09-23T13-56-51Z": ["Transportation", "Agriculture", "Climate Governance and Policy", "Global Warming and Extreme Weather", "Ecosystem Disruption and Biodiversity Loss", "Environmental Degradation and Air Quality Issues", "Renewable Energy and Efficiency"],
+        "Phys.Org_2024-09-23T14-03-47Z": ["Agriculture", "Waste", "Fossil Fuels", "Energy Use", "Global Warming and Extreme Weather", "Economic and Health Impacts", "Environmental Degradation and Air Quality Issues", "Climate Governance and Policy", "International Cooperation and Awareness"],
+        "Phys.Org_2024-09-23T15-59-14Z": ["Agriculture", "Land Use Changes", "Economic and Health Impacts", "Climate Governance and Policy", "Renewable Energy and Efficiency", "Global Warming and Extreme Weather", "Environmental Degradation and Air Quality Issues"],
+        "Phys.Org_2024-09-23T18-10-04Z": ["Fossil Fuels", "Governance and Policy Failures", "Global Warming and Extreme Weather", "Environmental Degradation and Air Quality Issues", "Climate Governance and Policy", "International Cooperation and Awareness", "Economic and Health Impacts"],
+        "Phys.Org_2024-09-23T19-00-01Z": ["Natural Factors", "Governance and Policy Failures", "Ecosystem Disruption and Biodiversity Loss", "Migration and Displacement", "Climate Governance and Policy", "International Cooperation and Awareness", "Climate Investments"],
+        "The Verge_2024-09-23T18-05-30Z": ["Energy Use", "Governance and Policy Failures", "Global Warming and Extreme Weather", "Environmental Degradation and Air Quality Issues", "Renewable Energy and Efficiency", "Climate Governance and Policy", "Green Jobs Creation", "International Cooperation and Awareness"],
+        "The Verge_2024-09-23T21-30-56Z": ["Fossil Fuels", "Industrial Activity", "Governance and Policy Failures", "Environmental Degradation and Air Quality Issues", "Global Warming and Extreme Weather", "Ecosystem Disruption and Biodiversity Loss", "Waste Management and Reduction", "Climate Governance and Policy", "International Cooperation and Awareness"],
+        "Time_2024-09-23T13-10-00Z": ["Governance and Policy Failures", "Global Warming and Extreme Weather", "Ecosystem Disruption and Biodiversity Loss", "Climate Governance and Policy", "International Cooperation and Awareness", "Renewable Energy and Efficiency", "Climate Investments", "Green Jobs Creation"],
+        "ArchDaily_2024-09-24T06-30-00Z": ["Governance and Policy Failures", "Natural Factors", "Global Warming and Extreme Weather", "Ecosystem Disruption and Biodiversity Loss", "Sustainable Agriculture and Land Use", "Climate Governance and Policy", "Green Jobs Creation", "International Cooperation and Awareness", "Renewable Energy and Efficiency"]
+    }
+}

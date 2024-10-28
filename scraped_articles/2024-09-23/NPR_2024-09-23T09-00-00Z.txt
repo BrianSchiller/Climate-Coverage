@@ -1,0 +1,46 @@
+Tesla Superchargers stand in a parking lot in Austin, Texas, on Sept. 16. Electric vehicles have significant environmental advantages over similar gas-powered vehicles, but the percentage of Americans who believe so has gone down slightly over the last two years. hide caption
+Everyone knows that electric vehicles are supposed to be better for the planet than gas cars. That's the driving reason behind a global effort to transition toward batteries.
+But what about the harms caused by mining for battery minerals ? And coal-fired power plants for the electricity to charge the cars? And battery waste ? Is it really true that EVs are better?
+The answer is yes. But Americans are growing less convinced.
+The net benefits of EVs have been frequently fact-checked, including by NPR . "No technology is perfect, but the electric vehicles are going to offer a significant benefit as compared to the internal combustion engine vehicles," Jessika Trancik, a professor at the Massachusetts Institute of Technology, told NPR this spring .
+It's important to ask these questions about EVs' hidden costs, Trancik says. But they have been answered "exhaustively" — her word — and a wide range of organizations have confirmed that EVs still beat gas .
+But the share of car-buying Americans who believe that has gone down by 5 percentage points in the last two years, from 63% to 58%, according to data that the market research firm Ipsos shared exclusively with NPR.
+Loading...
+The decrease is small, but statistically significant. It's also not evenly distributed.
+People who say they are interested in buying an EV, known in the auto industry as "EV considerers," remain solidly convinced that EVs have an environmental benefit. (And it's important to note that the size of this pool — people considering EVs — has been holding pretty steady over this time frame.)
+It's people who are not open to getting an EV who are increasingly skeptical of those vehicles' green credentials.
+"The true story to me is that rise of skepticism among the non-considerers specifically," Ipsos researcher Graham Gordon says. "They are becoming more and more unified in their idea that it is not better for the environment."
+Where is this skepticism coming from?
+Partly, it could be a misinterpretation of accurate reporting. Electric vehicles have no tailpipe emissions, which is why they are called "zero-emission vehicles." But they are not entirely zero-emission: Pollution and other environmental costs are associated with building them and charging their batteries.
+Journalists have done a lot of work explaining those environmental harms, and the public has noticed. That's good news: Trancik, of MIT, says people should ask questions about the true environmental costs of all technology. But the mountain of research determining that EVs are still cleaner than gasoline-powered cars doesn't seem to have gotten as much traction.
+The complexity itself can be frustrating. EV fans and skeptics alike say it's difficult to figure out for themselves how the harms compare.
+"I don't have the expertise to evaluate this," one non-EV driver told NPR.
+"It's hard to really know," another said.
+Meanwhile, EVs have gotten caught up in the culture wars , where complexity and nuance go to die. EVs are associated with coastal, urban progressive elites. Plans to phase out gas cars in California and other regions have sparked fierce and sometimes misleading resistance from the fossil fuel industry.
+Memes that exaggerate or distort the real harms of EVs — or that simply fail to compare them with the damage caused by gas cars — frequently circulate online .
+This spring, a game of telephone took place. The Wall Street Journal ran an op-ed criticizing California's EV mandate that included a statistic from a company called Emissions Analytics. That caused other outlets to discover Emissions Analytics' work, including the New York Post, which ran this headline : "Electric vehicles release more toxic emissions, are worse for the environment than gas-powered cars: study."
+That headline, in turn, spread far and wide.
+"I just saw this thing that said that the environmental impact of electric cars is actually worse overall than the environmental impact of a traditional combustion engine," Joe Rogan said on his popular podcast. "Is that true? Because that sounds crazy."
+What was lost, in this game of telephone, was the narrow focus of the original data.
+The researcher behind the original study, Nick Molden, explains that he looked at tire and brake emissions — particulate matter, tiny particles that wear off tires and brake pads — and did not consider other emissions, including greenhouse gas emissions, at all.
+Put differently: The idea that his work shows EVs are worse for the environment would make sense only if you ignore the existence of climate change.
+Molden says the climate benefits of EVs are important. His work is about a specific trade-off.
+"Those people misusing it don't bring out that tension," he says. "They conflate and blur and obfuscate and play fast and loose with the definitions. And that's completely wrong."
+Tire and brake emissions are a real problem. (And a complicated one: EVs are heavy, which is bad for these emissions, but regenerative braking could counter that effect, Molden says.)
+There's a similar nugget of truth behind lots of the arguments that EVs aren't green. Lots of electricity does come from fossil fuels. Batteries do require mining and, eventually, recycling.
+Analysts say these are good arguments for smaller cars, cleaner grids, better mining , more recycling, more transit and walkable cities. They may support a case for plug-in hybrid vehicles; it depends how people use them.
+But they're not an environmental case for traditional gas cars. EVs still beat gas.
+EV sales growth in the U.S. has slowed — in fact, the automotive data giant J.D. Power predicts that EVs as a share of new-car sales just peaked for the year at 9.2%. That's well below the rate in Europe and China, and it falls short of what most analysts and automakers had expected.
+Could doubts and distortions about EVs' environmental impact play a role in that? Maybe. J.D. Power's data also shows that helping the environment is one of the top three reasons that people go electric today, at least for mass-market buyers.
+On the other hand, Ipsos' data suggests that the people losing faith in EVs' green credentials weren't likely to consider buying EVs anyway.
+There's other data to suggest a potentially muted impact on sales: According to Gallup researcher Jeff Jones, who ran a new analysis on 2023 data for NPR, the Americans who are most skeptical about EVs' environmental benefits also tend to be the people who worry the least about the climate.
+Meanwhile, issues aside from the environment — namely cost and convenience — are key to winning over any would-be EV buyer.
+Elizabeth Krear of J.D. Power has been closely tracking why people who are thinking of buying an EV choose not to take the plunge. This pool includes plenty of people who are fully convinced of EVs' green virtues.
+"Those top reasons for rejection consistently, month over month, all have to do with charging," she says. "Having the ability to charge in public, having enough stations readily available and visible, speed of charging."
+And over time, these non-environmental factors will get only more important, many analysts say.
+"That first wave of [EV] ownership, they did believe in those environmental benefits, and that was one thing that pushed them towards ownership," says Gordon, of Ipsos. "This next wave … that's not what's going to push them to ownership. Instead, what's pushing them into ownership is going to be longer ranges, faster charging times, lower costs, better charging infrastructure."
+All those things remain hurdles for many drivers, including Austin Kampen, who lives in Missouri.
+He thinks EVs probably are better for the planet. His mom is convinced they have no benefits — they've talked about it (he even played her an NPR podcast about it).
+But does that change whether either of them is likely to buy an EV? Well, no.
+"It wouldn't really matter to us if it was green or not," Kampen says, "because it seems kind of out of reach for us."
+And making EVs feel within reach is going to be key to winning over all car shoppers — whatever they believe about the environment.
