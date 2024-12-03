@@ -27,10 +27,17 @@ def fetch_articles(date):
         sort_by="relevancy",
         from_param=date_str,
         to=to_time,
-        exclude_domains="""bringatrailer.com, removed.com, abcnews, abcnews.go, 
-                        subscriber.politicopro.com, biztoc.com, japantoday.com,
-                        www.cbsnews.com/video, qz.com, skepticalscience.com,
-                        www.autocar.co.uk, thehindubusinessline.com"""
+        domains="""phys.org, theconversation.com,
+                    cbc.ca, cbsnews.com,
+                    project-syndicate.org, bbc.com, sciencedaily.com,
+                    ibtimes.com, npr.org, time.com, 
+                    businessinsider.com, scientificamerican.com,
+                    cleantechnica.com, vox.com, globalsecurity.org,
+                    punchng.com, aljazeera.com"""
+        # exclude_domains="""bringatrailer.com, removed.com, abcnews, abcnews.go, 
+        #                 subscriber.politicopro.com, biztoc.com, japantoday.com,
+        #                 cbsnews.com/video, qz.com, skepticalscience.com,
+        #                 autocar.co.uk, thehindubusinessline.com"""
     )
     
     with open(file_name, 'w') as json_file:
@@ -39,58 +46,58 @@ def fetch_articles(date):
     print(f"Data successfully written to articles_{date_str}.json")
 
 
-def clean_data():
+# def clean_data():
     # valid_sources = sources that appear at least 3 times
-    with open('data/current_article_count.json', 'r', encoding='utf-8') as count_file:
-        source_counts = json.load(count_file)
-    valid_sources = {source for source, count in source_counts.items() if count >= 3}
+    # with open('data/current_article_count.json', 'r', encoding='utf-8') as count_file:
+    #     source_counts = json.load(count_file)
+    # valid_sources = {source for source, count in source_counts.items() if count >= 3}
 
-    for filename in os.listdir(directory):
-        if filename.endswith('.json'):
-            file_path = os.path.join(directory, filename)
-            with open(file_path, 'r') as json_file:
-                data = json.load(json_file)
+    # for filename in os.listdir(directory):
+    #     if filename.endswith('.json'):
+    #         file_path = os.path.join(directory, filename)
+    #         with open(file_path, 'r') as json_file:
+    #             data = json.load(json_file)
             
-            filtered_articles = [article for article in data['articles'] 
-                                    if article['source']['name'] not in remove_domains
-                                        and article['source']['name'] in valid_sources]
+    #         filtered_articles = [article for article in data['articles'] 
+    #                                 if article['source']['name'] not in remove_domains
+    #                                     and article['source']['name'] in valid_sources]
 
-            # Create a new dictionary to store the filtered results
-            filtered_data = {
-                "status": data['status'],
-                "totalResults": data['totalResults'],
-                "fetchedResults": len(data['articles']),
-                "cleanedResults": len(filtered_articles),
-                "articles": filtered_articles
-            }
+    #         # Create a new dictionary to store the filtered results
+    #         filtered_data = {
+    #             "status": data['status'],
+    #             "totalResults": data['totalResults'],
+    #             "fetchedResults": len(data['articles']),
+    #             "cleanedResults": len(filtered_articles),
+    #             "articles": filtered_articles
+    #         }
 
-            clean_file_path = os.path.join(clean_directory, filename)
-            # Save the filtered data to a new JSON file
-            with open(clean_file_path, 'w', encoding='utf-8') as file:
-                json.dump(filtered_data, file, indent=4)
+    #         clean_file_path = os.path.join(clean_directory, filename)
+    #         # Save the filtered data to a new JSON file
+    #         with open(clean_file_path, 'w', encoding='utf-8') as file:
+    #             json.dump(filtered_data, file, indent=4)
 
 # Set the start and end dates
-end_date = datetime(2024, 10, 23)
-start_date = end_date - timedelta(days=30)
+end_date = datetime(2024, 11, 27)
+start_date = end_date - timedelta(days=31)
 
 directory = "articles"
 clean_directory = "clean_articles"
 os.makedirs(directory, exist_ok=True)
 
 # Loop through each day
-for i in range(30):
+for i in range(31):
     current_date = start_date + timedelta(days=i)
     fetch_articles(current_date)
 
 print("Data fetching completed for the last 30 days.")
 
+count_article_sources(directory)
 
-response = input("Clean data?")
+# response = input("Clean data?")
 
-if response == "y":
-    os.makedirs(clean_directory, exist_ok=True)
-    count_article_sources(directory)
-    remove_domains = ["[Removed]", "ABC News"]
-    clean_data()
-    print("Finished Data Cleaning")
+# if response == "y":
+#     os.makedirs(clean_directory, exist_ok=True)
+    # remove_domains = ["[Removed]"]
+    # clean_data()
+#     print("Finished Data Cleaning")
 

@@ -8,16 +8,23 @@ import concurrent.futures
 element_removals = {
     "NPR": ["div#story-meta", "div#primaryaudio", "b.credit", "p.hide-caption", "b.toggle-caption"],
     "Phys.Org": ["div.article__info", "p.article-byline", "div.article-main__more", "p.article-main__note", "div.article__info-fc", "div.d-none"],
-    "Forbes": ["div.openWeb-wrapper"],
-    "Grist": ["div.membership-ad"]
+    "CBS News": ["div.content__meta-wrapper", "div.content-author", "footer.content__footer"],
+    "CleanTechnica": ["div.afterpost"],
+    "International Business Times": ["div.source"],
+    "The Conversation Africa": ["div.content-sidebar"],
+    "The Punch": ["div.share-article"],
+    "Project Syndicate": ["div.listing", "div.inlay", "section.article__sidebar", "div.end-of-article"],
+    "Scientific American": ["p.article_authors-s5nSV", "div.breakoutContainer-8fsaw", "div.newsletterSignup-lj6hJ"],
+    "Vox": ["div._135mano3"],
+    # "Forbes": ["div.openWeb-wrapper"],
+    # "Grist": ["div.membership-ad"],
 }
 
 # Source: [tag, class?, id?]
 non_article_sites = {
     "Al Jazeera English": ["main"],
-    "Wattsupwiththat.com": ["div", "entry-content"],
     "CBC News": ["div", "detailMainCol"],
-    "CounterPunch": ["div", "post_content"],
+    "The Punch": ["div", "post-content"],
     "Hurriyet Daily News": ["div", "content"],
     "VOA News": ["div", "", "article-content"],
     "Investing.com": ["div", "article_container"],
@@ -97,6 +104,10 @@ def scrape_article_content(url):
         for aside in article_tag.find_all('aside'):
             aside.decompose() 
 
+        # Remove all <footer> tags within the article
+        for footer in article_tag.find_all('footer'):
+            footer.decompose() 
+
         # Remove all <button> tags within the article
         for button in article_tag.find_all('button'):
             button.decompose()
@@ -138,6 +149,22 @@ def save_article_content(url, content, output_directory):
         file.write(content)
 
 
+def article_already_saved(url, output_directory):
+    """Check if an article has already been saved based on its expected file path"""
+    source_name = sanitize_filename(url['source'])
+    time = url['time']
+    
+    # Extract date in 'YYYY-MM-DD' format from the time string
+    date = time.split("T")[0]
+
+    # Construct the expected file path
+    date_folder = os.path.join(output_directory, date)
+    file_name = f"{source_name}_{time.replace(':', '-')}.txt"
+    file_path = os.path.join(date_folder, file_name)
+
+    return os.path.exists(file_path)
+
+
 def scrape_article_content_with_timeout(url, timeout=5):
     with concurrent.futures.ThreadPoolExecutor() as executor:
         future = executor.submit(scrape_article_content, url)
@@ -155,6 +182,13 @@ def scrape_articles(directory, output_directory):
     
     # Loop through the URLs and scrape each article
     for url in urls:
+        if article_already_saved(url, output_directory):
+            print(f"Skipping already saved article: {url['url']}")
+            continue
+
+        if url["source"] == "Wattsupwiththat.com" or url["source"] == "MIT Technology Review":
+            continue
+
         print(f"Scraping {url['url']}...")
         content = scrape_article_content_with_timeout(url, timeout=5)
 
