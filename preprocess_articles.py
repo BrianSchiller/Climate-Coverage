@@ -30,11 +30,11 @@ def preprocess_articles(articles_path = 'scraped_articles' , data_label_path = '
                     
         return articles_found
 
-    # Step 1: Load the JSON data
+    # Load the JSON data
     with open(data_label_path, 'r') as file:
         data = json.load(file)
 
-    # Step 3: Find articles and create DataFrame
+    # Create DataFrame
     articles_data = data.get("articles", {})
     article_texts = find_article_texts(articles_path, list(articles_data.keys()))
 
@@ -60,6 +60,8 @@ def preprocess_articles(articles_path = 'scraped_articles' , data_label_path = '
     # Initialize preprocessing tools
     stop_words = set(stopwords.words('english'))
     lemmatizer = WordNetLemmatizer()
+
+    print(stop_words)
 
     def preprocess_text(text):
         text = text.lower()
