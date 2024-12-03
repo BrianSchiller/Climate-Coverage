@@ -5,6 +5,27 @@ import os
 import re
 import concurrent.futures
 
+RELEVANT_KEYWORDS = [
+    "climate change", "global warming", "carbon emissions", "greenhouse gases",
+    "carbon footprint", "Paris Agreement", "climate action", "renewable energy",
+    "carbon neutrality", "sustainability", "climate crisis", "greenhouse effect",
+    "climate policy", "clean energy", "environmental impact", "extreme weather",
+    "carbon taxes", "climate adaptation", "climate mitigation", "fossil fuel",
+    "clean technology", "green tech", "electric vehicles", "solar power", "wind power",
+    "energy transition", "carbon pricing", "climate finance",
+    "carbon credits", "carbon trading", "sustainable development", "climate justice",
+    "climate activism", "climate legislation", "climate models",
+    "climate science" "oceans and climate change",
+    "melting ice", "sea level rise", "biodiversity loss",
+    "geoengineering", "natural disasters", "heatwave", "wildfires", "drought", "flooding",
+    "hurricane", "sustainable agriculture", "water scarcity",
+    "deforestation", "forest conservation",
+    "UN climate summit", "COP27", "climate pact", "Net Zero", "Fridays for Future",
+    "warming climate", "global temperatures", "changing temperatures", "Warmer temperatures",
+    "climate denial"
+]
+
+
 element_removals = {
     "NPR": ["div#story-meta", "div#primaryaudio", "b.credit", "p.hide-caption", "b.toggle-caption"],
     "Phys.Org": ["div.article__info", "p.article-byline", "div.article-main__more", "p.article-main__note", "div.article__info-fc", "div.d-none"],
@@ -174,6 +195,14 @@ def scrape_article_content_with_timeout(url, timeout=5):
         except concurrent.futures.TimeoutError:
             print(f"Scraping {url['url']} took too long, skipping...")
             return None
+        
+
+def is_climate_change_article(article, min_keywords = 2):
+    # Count how many relevant keywords are mentioned in the article
+    keyword_count = sum(1 for keyword in RELEVANT_KEYWORDS if keyword.lower() in article.lower())
+
+    # Check if at least the required number of keywords appear
+    return keyword_count >= min_keywords
 
 
 def scrape_articles(directory, output_directory):
@@ -193,8 +222,11 @@ def scrape_articles(directory, output_directory):
         content = scrape_article_content_with_timeout(url, timeout=5)
 
         if content:
-            save_article_content(url, content, output_directory)
-            print(f"Saved content from {url['url']}")
+            if is_climate_change_article(content):
+                save_article_content(url, content, output_directory)
+                print(f"Saved content")
+            else:
+                print("Article is not relevant to climate change")
         else:
             print(f"Failed to scrape content from {url}")
 
