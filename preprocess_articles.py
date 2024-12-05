@@ -61,8 +61,6 @@ def preprocess_articles(articles_path = 'scraped_articles' , data_label_path = '
     stop_words = set(stopwords.words('english'))
     lemmatizer = WordNetLemmatizer()
 
-    print(stop_words)
-
     def preprocess_text(text):
         text = text.lower()
         text = text.translate(str.maketrans('', '', string.punctuation))

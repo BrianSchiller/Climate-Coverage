@@ -197,7 +197,7 @@ def scrape_article_content_with_timeout(url, timeout=5):
             return None
         
 
-def is_climate_change_article(article, min_keywords = 2):
+def is_climate_change_article(article, min_keywords = 3):
     # Count how many relevant keywords are mentioned in the article
     keyword_count = sum(1 for keyword in RELEVANT_KEYWORDS if keyword.lower() in article.lower())
 

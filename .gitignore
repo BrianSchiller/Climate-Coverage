@@ -1,7 +1,6 @@
 __pycache__
 articles/
 articles_old/
-scraped_articles/
 scraped_articles_old/
 submissions/
 to_scrape/

@@ -30,15 +30,32 @@ label_keywords = {
         ]
     },
     "consequences": {
-        "Environmental Effects": [
-            "Warming", "Climate Change", "Weather", "Flooding", 
-            "Drought", "Sea Level", "Ecosystem", "Biodiversity", 
-            "Pollution", "Wildfires", "Storms", "Heatwaves"
+        "Ecosystem Disruption": [
+            "Biodiversity", "Ecosystem", "Habitat Loss", "Coral Bleaching", 
+            "Species Extinction", "Pollution", "Deforestation", "Wetlands", 
+            "Marine Life", "Forest Degradation", "Ecosystem Collapse", 
+            "Soil Erosion", "Invasive Species"
         ],
-        "Human and Health Effects": [
-            "Health", "Food Scarcity", "Water Scarcity", 
-            "Malnutrition", "Economic Impact", "Migration", 
-            "Displacement", "Diseases", "Vulnerable Populations"
+        "Extreme Weather Events": [
+            "Heatwaves", "Flooding", "Drought", "Wildfires", "Hurricanes", 
+            "Tornadoes", "Storms", "Cyclones", "Typhoons", "Extreme Temperatures", 
+            "Floods", "Weather Patterns", "Disaster", "Climate Events"
+        ],
+        "Health Risks": [
+            "Health", "Diseases", "Air Pollution", "Water Pollution", "Heat Stroke", 
+            "Malnutrition", "Vector-Borne Diseases", "Respiratory Illness", "Heart Disease", 
+            "Cancer", "Water Scarcity", "Mental Health", "Vulnerable Populations", 
+            "Nutrition", "Infectious Disease", "Illness"
+        ],
+        "Economic Impact": [
+            "Economic Impact", "Cost", "Losses", "Agriculture", "Food Security", 
+            "Infrastructure Damage", "Economic Growth", "Insurance", "Investment", 
+            "GDP", "Job Loss", "Poverty",
+        ],
+        "Displacement and Migration": [
+            "Migration", "Displacement", "Climate Refugees"
+            "Sea Level Rise", "Natural Disasters", "Conflict",
+            "Loss of Livelihood", "Environmental Refugees", "Relocation"
         ]
     },
     "solutions": {
@@ -80,7 +97,7 @@ X_tfidf = tfidf_vectorizer.fit_transform(article_df['Text'])
 X_combined = hstack([X_tfidf, article_df[[col for col in article_df.columns if '_keywords' in col]].values])
 
 # Split the data into training and test sets
-X_train, X_test, y_train, y_test = train_test_split(X_combined, labels_df, test_size=0.3, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X_combined, labels_df, test_size=0.2, random_state=42)
 
 # Initialize a multi-output classifier
 model = MultiOutputClassifier(LGBMClassifier(n_estimators=200, max_depth=10, class_weight='balanced'))

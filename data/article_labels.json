@@ -7,8 +7,11 @@
             "Personal Consumption"
         ],
         "consequences": [
-            "Environmental Effects",
-            "Human and Health Effects"
+            "Ecosystem Disruption",
+            "Extreme Weather Events",
+            "Health Risks",
+            "Economic Impact",
+            "Displacement and Migration"
         ],
         "solutions": [
             "Technological Solutions",
@@ -17,5 +20,34 @@
             "Nature-Based Solutions"
         ]
     },
-    "articles": {}
+    "articles": {
+        "Phys.Org_2024-10-27T10-00-01Z": ["Ecosystem Disruption", "Extreme Weather Events", "Health Risks", "Economic Impact", "Displacement and Migration"],
+        "The Conversation Africa_2024-10-27T10-03-06Z": ["Governance and Policy Failures", "Technological Solutions", "Governance and Policy", "Energy and Industry", "Adaptation and Resilience"],
+        "The Punch_2024-10-27T00-01-47Z": ["Land Use and Agriculture", "Governance and Policy Failures", "Ecosystem Disruption", "Economic Impact", "Adaptation and Resilience"],
+        "Time_2024-10-27T11-00-00Z": ["Governance and Policy Failures", "Economic Impact", "Technological Solutions", "Governance and Policy", "Adaptation and Resilience"],
+        "Al Jazeera English_2024-10-28T11-26-34Z": ["Governance and Policy Failures", "Economic Impact", "Governance and Policy", "Health Risks"],
+        "Al Jazeera English_2024-10-28T21-37-39Z": ["Land Use and Agriculture", "Ecosystem Disruption", "Economic Impact", "Nature-Based Solutions"],
+        "BBC News_2024-10-28T09-00-46Z": ["Governance and Policy Failures", "Energy and Industry", "Ecosystem Disruption", "Extreme Weather Events", "Governance and Policy"],
+        "CBS News_2024-10-28T11-44-20Z": ["Energy and Industry", "Governance and Policy Failures", "Ecosystem Disruption", "Extreme Weather Events", "Governance and Policy"],
+        "CBS News_2024-10-28T16-50-41Z": ["Energy and Industry", "Land Use and Agriculture", "Technological Solutions", "Economic Impact", "Displacement and Migration"],
+        "CBS News_2024-10-28T20-12-08Z": ["Land Use and Agriculture", "Ecosystem Disruption", "Economic Impact", "Technological Solutions", "Governance and Policy"],
+        "CBS News_2024-10-28T23-23-28Z": ["Health Risks", "Extreme Weather Events", "Energy and Industry", "Governance and Policy Failures"],
+        "International Business Times_2024-10-28T07-06-19Z": ["Extreme Weather Events", "Ecosystem Disruption", "Economic Impact", "Displacement and Migration", "Governance and Policy Failures"],
+        "International Business Times_2024-10-28T10-21-08Z": ["Energy and Industry", "Governance and Policy Failures", "Ecosystem Disruption", "Extreme Weather Events"],
+        "International Business Times_2024-10-28T15-12-19Z": ["Land Use and Agriculture", "Ecosystem Disruption", "Health Risks", "Technological Solutions"],
+        "Phys.Org_2024-10-28T15-50-01Z": ["Energy and Industry", "Extreme Weather Events", "Ecosystem Disruption", "Health Risks", "Governance and Policy Failures"],
+        "Project Syndicate_2024-10-28T14-50-35Z": ["Ecosystem Disruption", "Extreme Weather Events", "Displacement and Migration", "Technological Solutions", "Nature-Based Solutions"],
+        "Science Daily_2024-10-28T00-58-50Z": ["Energy and Industry", "Ecosystem Disruption", "Extreme Weather Events", "Technological Solutions", "Governance and Policy"],
+        "Science Daily_2024-10-28T20-43-03Z": ["Land Use and Agriculture", "Ecosystem Disruption", "Extreme Weather Events", "Technological Solutions", "Governance and Policy"],
+        "Science Daily_2024-10-28T20-44-33Z": ["Extreme Weather Events", "Health Risks", "Economic Impact", "Technological Solutions", "Governance and Policy"],
+        "Scientific American_2024-10-28T10-00-00Z": ["Extreme Weather Events", "Economic Impact", "Ecosystem Disruption", "Technological Solutions"],
+        "The Conversation Africa_2024-10-28T03-14-41Z": ["Technological Solutions", "Nature-Based Solutions", "Governance and Policy", "Economic Impact"],
+        "The Conversation Africa_2024-10-28T17-36-51Z": ["Nature-Based Solutions", "Adaptation and Resilience", "Ecosystem Disruption", "Governance and Policy"],
+        "The Conversation Africa_2024-10-28T21-01-22Z": ["Governance and Policy Failures", "Economic Impact", "Governance and Policy", "Technological Solutions"],
+        "The Punch_2024-10-28T00-36-05Z": ["Energy and Industry", "Governance and Policy", "Technological Solutions", "Economic Impact"],
+        "The Punch_2024-10-28T08-34-11Z": ["Energy and Industry", "Governance and Policy Failures", "Ecosystem Disruption", "Extreme Weather Events", "Health Risks"],
+        "The Punch_2024-10-28T15-19-44Z": ["Governance and Policy Failures", "Adaptation and Resilience", "Nature-Based Solutions", "Economic Impact"],
+        "The Punch_2024-10-28T19-30-04Z": ["Governance and Policy Failures", "Energy and Industry", "Ecosystem Disruption", "Health Risks", "Technological Solutions"],
+        "Vox_2024-10-28T20-22-09Z": ["Governance and Policy Failures", "Energy and Industry", "Technological Solutions", "Ecosystem Disruption", "Health Risks"]
+    }
 }
