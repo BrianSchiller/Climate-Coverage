@@ -1,0 +1,36 @@
+Both major parties in Australia see a significant role for gas as the world shifts to clean energy in a bid to avert dangerous climate change.
+The Albanese government says new sources of gas are needed to meet demand during the energy transition. And the Coalition, if elected, would expand gas use as it prepares for nuclear power.
+Of course, some people argue that the grave threat of climate change means we should not burn any gas. Others say the strong growth in renewable energy generation and storage means Australia won’t need gas into the future.
+So who is right? As I explain below, renewable energy is a huge part of the solution but doesn’t solve every problem. So keeping some gas-fired generators in the electricity mix, and using them only when necessary, is a sensible compromise.
+There are almost 40 large natural gas-fired generators in Australia, and they are an important part of the National Electricity Market.
+According to Open Electricity — a platform for tracking Australia’s electricity transition – the gas facilities generate around 4% of the electricity we consume and comprise about 17% of overall generation capacity.
+The data also shows gas plants in Australia run at just 9% of their overall capacity, meaning they are idle much of the time. Some gas plants get used quite a lot, others only rarely. But when the plants are called on – during times of peak electricity use –  their services are vital.
+Overnight, our demand for electricity dips. But when we wake in the morning and start toasting bread and boiling kettles and the like, electricity demand picks up .
+Demand eases off in the middle of the day as the sun rises high in the sky and Australia’s booming rooftop solar reaches its peak electricity output. But when the sun sets and rooftop solar is no longer producing, electricity use peaks. This early-evening demand creates a big challenge to the system.
+That’s why we need technologies that can produce electricity at any time of day or night – and do it quickly. That’s where gas-fired generation – and other “dispatchable” forms of electricity – come in.
+Gas generators come in two main types.
+An “ open cycle generator ”, also known as a Brayton cycle turbine, is essentially a jet engine. It combusts gas in a chamber to create enormous pressure that spins large fans. This drives a shaft that spins in the generator to produce electricity.
+This technology is relatively cheap to build and can start up very quickly – but it’s also quite inefficient to operate. It uses a lot of expensive fuel, and creates a lot of waste heat.
+The second type is known as a “combined cycle generator”. It also uses a Brayton cycle gas turbine. But it captures exhaust heat from the turbine and uses it to create steam, which in turn powers a second turbine (known as a Rankine cycle). This significantly increases the amount of electricity produced for the same amount of gas burned.
+So while this technology is relatively efficient, it’s also more expensive to build and takes longer to ramp up and down.
+Other types of gas generators exist, but they’re a relatively small part of Australia’s fleet.
+Gas plants are not the only facilities capable of firming up Australia’s electricity grid as the share of renewables increases.
+Hydro power can also quickly ramp up to meet the evening peak. However the potential for building new conventional hydro in Australia is very limited due to the lack of large river systems and the significant environmental impact on rivers and surrounding areas.
+Coal-fired generators have potential to ramp up production, but are generally not designed to do this every evening. Plus, Australia’s fleet of old coal plants is on a fast path to retirement.
+To maintain the delicate balance of supply and demand, more will be required of gas and hydro, to produce electricity, and batteries and pumped hydro, to store it.
+Pumped hydro works by using excess renewable energy to pump water up a hill. When electricity demand is high, the water is released and passes through a turbine, producing power.
+The potential for pumped hydro energy storage in Australia is large , and some projects are likely to be economically viable. But the projects can face challenges, as demonstrated by delays and cost blowouts facing Snowy 2.0 in New South Wales.
+Large-scale lithium-ion batteries are relatively easy to install. Many projects have been built or are in the pipeline . But batteries are not great for long-duration energy storage.
+All this means gas-fired power generation is likely to have a future in Australia in coming decades.
+Methane is the main component of natural gas. It’s also a potent contributor to global warming.
+During natural gas production and transport, gas leaks inevitably occur . This is a problem for climate change.
+So too is the carbon dioxide produced when the gas is burned to produce electricity.
+To tackle climate change, we must dramatically reduce the amount of gas we use in our electricity system. Gas use should also be eliminated for heating and cooking in our homes and, where possible, in industry.
+Unfortunately, no perfect solution exists to Australia’s electricity supply-demand conundrum.
+The most likely, most economic and most environmentally acceptable approach is to use a “portfolio” of technologies: lots of batteries and pumped hydro but also some gas.
+Because to keep the system stable and reliable, we need some capacity that will mostly sit idle, getting used on only a few occasions. For that reason, the technologies should be relatively cheap to build and able to run for extended periods when wind and solar generation are abnormally low.
+Gas-fired power – especially open cycle generators – meets that requirement. Pumped hydro and batteries do not.
+The gas plants we keep in the grid will not often be used, and so will produce relatively low amounts of carbon dioxide.
+Nuanced questions remain. What will it cost to keep a gas network operating to serve a fleet of gas generators that run only for a few days a year? Gas pipelines have to be kept pressurised, and the cost of running a gas extraction network for small demand may also be uneconomical.
+Non-fossil options such as biogas, hydrogen or synthetically produced methane are possible longer term options. But they are also expensive. And new technologies – such as flow batteries, thermal energy storage and cryogenic energy storage – are on the horizon.
+So, keeping some gas-fired generators on standby, and using them sparingly as needed, is a reasonable approach. It allows us to reduce emissions as much as possible, and keep our electricity system secure and affordable.
