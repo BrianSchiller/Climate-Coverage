@@ -1,7 +1,6 @@
 import os
 import json
 import pandas as pd
-import pandas as pd
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -59,6 +58,7 @@ def preprocess_articles(articles_path = 'scraped_articles' , data_label_path = '
 
     # Initialize preprocessing tools
     stop_words = set(stopwords.words('english'))
+    stop_words.update(["-", "’", "“", "”", "‘", "’", "—", "–"])
     lemmatizer = WordNetLemmatizer()
 
     def preprocess_text(text):
