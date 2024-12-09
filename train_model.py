@@ -93,7 +93,6 @@ def get_synthetic_sentences():
         for label, keywords in label_keywords[group].items():
             for keyword in keywords:
                 for sentences in synthetic_sentences[keyword]:
-                    print(sentences)
                     synthetic_texts.append(sentences)
                     synthetic_targets.append(label)
 
@@ -108,55 +107,50 @@ def get_synthetic_sentences():
                 for text in synthetic_df['Text']
             ]
 
-    print(synthetic_df)
+    mlb = MultiLabelBinarizer()
+    synthetic_labels_df = pd.DataFrame(
+        mlb.fit_transform([[target] for target in synthetic_targets]),
+        columns=mlb.classes_
+    )
     
-    return synthetic_df, synthetic_targets
+    return synthetic_df, synthetic_labels_df
 
 # Function to count keyword occurrences
 def keyword_features(text, keywords):
     return sum(text.count(keyword) for keyword in keywords)
 
 
-# Step 1: Prepare synthetic data
-synthetic_df, synthetic_targets = get_synthetic_sentences()
-
-mlb = MultiLabelBinarizer()
-synthetic_labels_df = pd.DataFrame(
-    mlb.fit_transform([[target] for target in synthetic_targets]),
-    columns=mlb.classes_
-)
-
-# Step 2: Preprocess original articles (real data)
+# Preprocess original articles & Prepare synthetic data
 article_df, labels_df = preprocess_articles()
+synthetic_df, synthetic_labels_df = get_synthetic_sentences()
 
-# Step 3: Convert text to TF-IDF features for original dataset
+# Add keyword-based features
+for _, labels in label_keywords.items():
+    for label, features in labels.items():
+        article_df[label + "_keywords"] = article_df['Text'].apply(lambda x: keyword_features(x.lower(), [f.lower() for f in features]))
+        synthetic_df[label + "_keywords"] = synthetic_df['Text'].apply(lambda x: keyword_features(x.lower(), [f.lower() for f in features]))
+
+# Convert text to TF-IDF features
 tfidf_vectorizer = TfidfVectorizer(max_features=5000, ngram_range=(1, 2))
 X_tfidf_real = tfidf_vectorizer.fit_transform(article_df['Text'])
+X_tfidf_synthetic = tfidf_vectorizer.transform(synthetic_df['Text'])
 
-# Get the exact same keyword columns for both datasets
+# Get the keyword columns
 keyword_columns = [col for col in article_df.columns if '_keywords' in col]
-
-# Add keyword-based features for the real data
 real_keyword_features = article_df[keyword_columns].values
+synthetic_keyword_features = synthetic_df[keyword_columns].values
 
 # Combine TF-IDF features with keyword-based features for real data
 X_real = hstack([X_tfidf_real, real_keyword_features])
+X_synthetic = hstack([X_tfidf_synthetic, synthetic_keyword_features])
 
-# Step 4: Split real data into train and test sets
+# Split real data into train and test sets
 X_train_real, X_test_real, y_train_real, y_test_real, train_idx, test_idx = train_test_split(
-    X_real, labels_df, article_df.index, test_size=0.4, random_state=12
+    X_real, labels_df, article_df.index, test_size=0.4, random_state=42
 )
 
-# Step 5: Process synthetic data
-X_tfidf_synthetic = tfidf_vectorizer.transform(synthetic_df['Text'])
-
-# Make sure to use the exact same keyword columns
-synthetic_keyword_features = synthetic_df[keyword_columns].values
-X_synthetic = hstack([X_tfidf_synthetic, synthetic_keyword_features])
+# Combine train data with synthetic data
 X_train_combined = vstack([X_train_real, X_synthetic])
-
-# Make sure synthetic_labels_df has the same columns as y_train_real
-synthetic_labels_df = synthetic_labels_df[y_train_real.columns]
 
 # Fill any NaN values with 0
 y_train_real = y_train_real.fillna(0)
