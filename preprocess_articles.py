@@ -58,7 +58,7 @@ def preprocess_articles(articles_path = 'scraped_articles' , data_label_path = '
 
     # Initialize preprocessing tools
     stop_words = set(stopwords.words('english'))
-    stop_words.update(["-", "’", "“", "”", "‘", "’", "—", "–"])
+    stop_words.update(["-", "’", "“", "”", "‘", "’", "—", "–", "climate", "change"])
     lemmatizer = WordNetLemmatizer()
 
     def preprocess_text(text):

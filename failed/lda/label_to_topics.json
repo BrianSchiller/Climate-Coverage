@@ -1,0 +1,438 @@
+{
+    "Original": [
+        2,
+        4
+    ],
+    "Fossil Fuels": [
+        7
+    ],
+    "Energy": [
+        3
+    ],
+    "Industry": [
+        3
+    ],
+    "Transportation": [
+        3
+    ],
+    "Emissions": [
+        7,
+        2
+    ],
+    "Oil": [
+        3,
+        5
+    ],
+    "Gas": [
+        3
+    ],
+    "Coal": [
+        3
+    ],
+    "Pollution": [
+        0,
+        5
+    ],
+    "Electricity": [
+        3
+    ],
+    "Power Plants": [
+        3
+    ],
+    "Deforestation": [
+        5,
+        7
+    ],
+    "Agriculture": [
+        7,
+        8
+    ],
+    "Farming": [
+        5
+    ],
+    "Land Use": [
+        5
+    ],
+    "Soil Degradation": [
+        5,
+        0
+    ],
+    "Crops": [
+        5,
+        7
+    ],
+    "Land Clearing": [
+        8,
+        5
+    ],
+    "Land Management": [
+        5
+    ],
+    "Governance": [
+        2,
+        6
+    ],
+    "Government": [
+        5,
+        6
+    ],
+    "Inaction": [
+        2,
+        1
+    ],
+    "Policy Gaps": [
+        2
+    ],
+    "Legislation": [
+        8,
+        2
+    ],
+    "Consumption": [
+        5
+    ],
+    "Overconsumption": [
+        5
+    ],
+    "Waste": [
+        5
+    ],
+    "Footprint": [
+        3
+    ],
+    "Lifestyle": [
+        3,
+        8
+    ],
+    "Carbon Footprint": [
+        8
+    ],
+    "Resource Use": [
+        5,
+        3
+    ],
+    "Biodiversity": [
+        0,
+        8
+    ],
+    "Ecosystem": [
+        7,
+        0
+    ],
+    "Habitat Loss": [
+        1,
+        0
+    ],
+    "Coral Bleaching": [
+        9,
+        0
+    ],
+    "Species Extinction": [
+        9,
+        0
+    ],
+    "Wetlands": [
+        9,
+        8
+    ],
+    "Marine Life": [
+        0,
+        7
+    ],
+    "Forest Degradation": [
+        5
+    ],
+    "Ecosystem Collapse": [
+        8,
+        9
+    ],
+    "Soil Erosion": [
+        1,
+        5
+    ],
+    "Invasive Species": [
+        0,
+        6
+    ],
+    "Heatwaves": [
+        9,
+        1
+    ],
+    "Flooding": [
+        4,
+        9
+    ],
+    "Drought": [
+        5
+    ],
+    "Wildfires": [
+        1,
+        9
+    ],
+    "Hurricanes": [
+        1,
+        9
+    ],
+    "Tornadoes": [
+        9,
+        1
+    ],
+    "Storms": [
+        4,
+        9
+    ],
+    "Cyclones": [
+        9
+    ],
+    "Typhoons": [
+        1,
+        9
+    ],
+    "Extreme Temperatures": [
+        1,
+        4
+    ],
+    "Floods": [
+        1
+    ],
+    "Weather Patterns": [
+        4,
+        1
+    ],
+    "Disaster": [
+        9,
+        4
+    ],
+    "Climate Events": [
+        9,
+        4
+    ],
+    "Health": [
+        1,
+        2
+    ],
+    "Diseases": [
+        1,
+        2
+    ],
+    "Air Pollution": [
+        9,
+        0
+    ],
+    "Water Pollution": [
+        9,
+        1
+    ],
+    "Heat Stroke": [
+        7,
+        4
+    ],
+    "Malnutrition": [
+        0,
+        5
+    ],
+    "Vector-Borne Diseases": [
+        2
+    ],
+    "Respiratory Illness": [
+        0
+    ],
+    "Heart Disease": [
+        1
+    ],
+    "Cancer": [
+        1,
+        7
+    ],
+    "Water Scarcity": [
+        5,
+        0
+    ],
+    "Mental Health": [
+        4
+    ],
+    "Vulnerable Populations": [
+        4,
+        1
+    ],
+    "Nutrition": [
+        0,
+        1
+    ],
+    "Infectious Disease": [
+        1
+    ],
+    "Illness": [
+        0,
+        4
+    ],
+    "Economic Impact": [
+        6
+    ],
+    "Cost": [
+        1,
+        6
+    ],
+    "Losses": [
+        6,
+        2
+    ],
+    "Food Security": [
+        5,
+        4
+    ],
+    "Infrastructure Damage": [
+        9,
+        1
+    ],
+    "Economic Growth": [
+        6
+    ],
+    "Insurance": [
+        1,
+        5
+    ],
+    "Investment": [
+        6,
+        3
+    ],
+    "GDP": [
+        6,
+        5
+    ],
+    "Job Loss": [
+        0
+    ],
+    "Poverty": [
+        1,
+        6
+    ],
+    "Migration": [
+        1,
+        4
+    ],
+    "Displacement": [
+        4,
+        5
+    ],
+    "Climate Refugees": [
+        1,
+        4
+    ],
+    "Sea Level Rise": [
+        7,
+        1
+    ],
+    "Natural Disasters": [
+        4
+    ],
+    "Conflict": [
+        5,
+        1
+    ],
+    "Loss of Livelihood": [
+        4,
+        9
+    ],
+    "Environmental Refugees": [
+        5,
+        2
+    ],
+    "Relocation": [
+        4,
+        9
+    ],
+    "Renewable Energy": [
+        3
+    ],
+    "Solar": [
+        3
+    ],
+    "Wind": [
+        3
+    ],
+    "Electric Vehicles": [
+        3
+    ],
+    "Efficiency": [
+        5
+    ],
+    "Green Tech": [
+        5,
+        6
+    ],
+    "Storage": [
+        3
+    ],
+    "Hydrogen": [
+        3,
+        6
+    ],
+    "Policy": [
+        2,
+        6
+    ],
+    "Climate Action": [
+        3,
+        2
+    ],
+    "Agreements": [
+        2,
+        6
+    ],
+    "Net Zero": [
+        2,
+        7
+    ],
+    "Carbon Pricing": [
+        8,
+        5
+    ],
+    "Regulation": [
+        5
+    ],
+    "Adaptation": [
+        1,
+        2
+    ],
+    "Resilience": [
+        9,
+        4
+    ],
+    "Infrastructure": [
+        1,
+        6
+    ],
+    "Disaster Management": [
+        4,
+        9
+    ],
+    "Urban Planning": [
+        0,
+        5
+    ],
+    "Water Management": [
+        5
+    ],
+    "Reforestation": [
+        5
+    ],
+    "Ecosystems": [
+        0
+    ],
+    "Conservation": [
+        0,
+        8
+    ],
+    "Forests": [
+        7,
+        5
+    ],
+    "Coastal Protection": [
+        9,
+        8
+    ],
+    "Sustainability": [
+        8,
+        5
+    ]
+}

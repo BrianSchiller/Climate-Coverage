@@ -4,27 +4,7 @@ import json
 import os
 import re
 import concurrent.futures
-
-RELEVANT_KEYWORDS = [
-    "climate change", "global warming", "carbon emissions", "greenhouse gases",
-    "carbon footprint", "Paris Agreement", "climate action", "renewable energy",
-    "carbon neutrality", "sustainability", "climate crisis", "greenhouse effect",
-    "climate policy", "clean energy", "environmental impact", "extreme weather",
-    "carbon taxes", "climate adaptation", "climate mitigation", "fossil fuel",
-    "clean technology", "green tech", "electric vehicles", "solar power", "wind power",
-    "energy transition", "carbon pricing", "climate finance",
-    "carbon credits", "carbon trading", "sustainable development", "climate justice",
-    "climate activism", "climate legislation", "climate models",
-    "climate science" "oceans and climate change",
-    "melting ice", "sea level rise", "biodiversity loss",
-    "geoengineering", "natural disasters", "heatwave", "wildfires", "drought", "flooding",
-    "hurricane", "sustainable agriculture", "water scarcity",
-    "deforestation", "forest conservation",
-    "UN climate summit", "COP27", "climate pact", "Net Zero", "Fridays for Future",
-    "warming climate", "global temperatures", "changing temperatures", "Warmer temperatures",
-    "climate denial"
-]
-
+from settings import RELEVANT_KEYWORDS
 
 element_removals = {
     "NPR": ["div#story-meta", "div#primaryaudio", "b.credit", "p.hide-caption", "b.toggle-caption"],

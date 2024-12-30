@@ -8,77 +8,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import MultiLabelBinarizer
 import pandas as pd
 import json
+from settings import label_keywords
 
-
-# Define label-specific keywords
-label_keywords = {
-    "causes": {
-        "Energy and Industry": [
-            "Fossil Fuels", "Energy", "Industry", "Transportation", 
-            "Emissions", "Oil", "Gas", "Coal", "Pollution", 
-            "Electricity", "Power Plants"
-        ],
-        "Land Use and Agriculture": [
-            "Deforestation", "Agriculture", "Farming", "Land Use", 
-            "Soil Degradation", "Crops", "Land Clearing", "Land Management"
-        ],
-        "Governance and Policy Failures": [
-            "Policy", "Governance", "Government", 
-            "Inaction", "Policy Gaps", "Legislation"
-        ],
-        "Personal Consumption": [
-            "Consumption", "Overconsumption", "Waste", 
-            "Footprint", "Lifestyle", "Carbon Footprint", "Resource Use"
-        ]
-    },
-    "consequences": {
-        "Ecosystem Disruption": [
-            "Biodiversity", "Ecosystem", "Habitat Loss", "Coral Bleaching", 
-            "Species Extinction", "Deforestation", "Wetlands", 
-            "Marine Life", "Forest Degradation", "Ecosystem Collapse", 
-            "Soil Erosion", "Invasive Species"
-        ],
-        "Extreme Weather Events": [
-            "Heatwaves", "Flooding", "Drought", "Wildfires", "Hurricanes", 
-            "Tornadoes", "Storms", "Cyclones", "Typhoons", "Extreme Temperatures", 
-            "Floods", "Weather Patterns", "Disaster", "Climate Events"
-        ],
-        "Health Risks": [
-            "Health", "Diseases", "Air Pollution", "Water Pollution", "Heat Stroke", 
-            "Malnutrition", "Vector-Borne Diseases", "Respiratory Illness", "Heart Disease", 
-            "Cancer", "Water Scarcity", "Mental Health", "Vulnerable Populations", 
-            "Nutrition", "Infectious Disease", "Illness"
-        ],
-        "Economic Impact": [
-            "Economic Impact", "Cost", "Losses", "Food Security", 
-            "Infrastructure Damage", "Economic Growth", "Insurance", "Investment", 
-            "GDP", "Job Loss", "Poverty",
-        ],
-        "Displacement and Migration": [
-            "Migration", "Displacement", "Climate Refugees",
-            "Sea Level Rise", "Natural Disasters", "Conflict",
-            "Loss of Livelihood", "Environmental Refugees", "Relocation"
-        ]
-    },
-    "solutions": {
-        "Technological Solutions": [
-            "Renewable Energy", "Solar", "Wind", "Electric Vehicles", 
-            "Efficiency", "Green Tech", "Storage", "Hydrogen"
-        ],
-        "Governance and Policy": [
-            "Policy", "Climate Action", "Agreements", "Net Zero", 
-            "Carbon Pricing", "Regulation"
-        ],
-        "Adaptation and Resilience": [
-            "Adaptation", "Resilience", "Infrastructure", 
-            "Disaster Management", "Urban Planning", "Water Management"
-        ],
-        "Nature-Based Solutions": [
-            "Reforestation", "Ecosystems", "Conservation", "Wetlands", 
-            "Forests", "Coastal Protection", "Sustainability"
-        ]
-    }
-}
 
 def get_synthetic_sentences():
     # Load synthetic sentences from the JSON file
@@ -160,7 +91,7 @@ synthetic_labels_df = synthetic_labels_df.fillna(0)
 y_train_combined = pd.concat([y_train_real, synthetic_labels_df], ignore_index=True)
 
 # Now fit the model
-model = MultiOutputClassifier(LGBMClassifier(n_estimators=200, max_depth=10, class_weight='balanced'))
+model = MultiOutputClassifier(LGBMClassifier(n_estimators=250, max_depth=5, class_weight='balanced'))
 model.fit(X_train_combined, y_train_combined)
 
 # Step 7: Test the model on the real test set (excluding synthetic data from test)
