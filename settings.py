@@ -21,68 +21,79 @@ RELEVANT_KEYWORDS = [
 label_keywords = {
     "causes": {
         "Energy and Industry": [
-            "Fossil Fuels", "Energy", "Industry", "Transportation", 
-            "Emissions", "Oil", "Gas", "Coal", "Pollution", 
-            "Electricity", "Power Plants"
+            "Fossil Fuels", "Energy", "Transportation", "Emissions", "Oil", "Gas", "Coal", "Pollution", "Electricity", 
+            "Power Plants", "Renewable Energy", "Carbon Emissions", "Natural Gas", "Hydraulic Fracturing", "Greenhouse Gases",
+            "Carbon Intensity", "Wind Power", "Solar Energy", "Nuclear Power", "Energy Efficiency", "Fossil Fuel Subsidies", 
+            "Oil Sands", "Carbon Capture", "Oil Refining", "Gasoline", "Methane Emissions", "Coal Mining"
         ],
         "Land Use and Agriculture": [
-            "Deforestation", "Agriculture", "Farming", "Land Use", 
-            "Soil Degradation", "Crops", "Land Clearing", "Land Management"
+            "Deforestation", "Agriculture", "Farming", "Soil Degradation", "Crops", "Land Clearing", "Monoculture", 
+            "Pesticides", "Livestock", "Agroforestry", "Irrigation", "Desertification", "Overgrazing", "Crop Monoculture", 
+            "Soil Erosion", "Forest Fires", "Drought", "Wetlands", "Organic Farming", "Soil Fertility", "Food Security", 
+            "Crop Diversity", "Greenhouse Gas Emissions", "Water Usage", "Fertilizers"
         ],
-        "Governance and Policy Failures": [
-            "Policy", "Governance", "Government", 
-            "Inaction", "Policy Gaps", "Legislation"
+        "Governance and Policy (causes)": [
+            "Policy", "Government", "Inaction", "Policy Gaps", "Legislation", "Subsidies", "Lobbying", "Bureaucracy", 
+            "Fossil Fuel Subsidies", "Carbon Pricing", "Environmental Regulations", "Political Will", "Policy Makers", 
+            "Government Inaction", "Lobbying Influence", "Energy Policy", "Climate Denial", "Corporate Interests", 
+            "Weak Regulations", "Policy Failures", "Climate Change Skepticism"
         ],
         "Personal Consumption": [
-            "Consumption", "Overconsumption", "Waste", 
-            "Footprint", "Lifestyle", "Carbon Footprint", "Resource Use"
+            "Consumption", "Waste", "Footprint", "Lifestyle", "Carbon Footprint", "Materialism", "Affluence", "Diet", 
+            "Overconsumption", "Sustainable Living", "Eco-friendly Products", "Upcycling", "Carbon Offset", "Minimalism", 
+            "Ethical Consumption", "Recycle", "Greenwashing", "Eco-conscious", "Plant-based Diet", "Green Energy", 
+            "Energy Star Products", "Veganism", "Packaging Waste", "Circular Economy", "Green Technology"
         ]
     },
     "consequences": {
         "Ecosystem Disruption": [
-            "Biodiversity", "Ecosystem", "Habitat Loss", "Coral Bleaching", 
-            "Species Extinction", "Deforestation", "Wetlands", 
-            "Marine Life", "Forest Degradation", "Ecosystem Collapse", 
-            "Soil Erosion", "Invasive Species"
+            "Biodiversity", "Ecosystem", "Habitat Loss", "Coral Bleaching", "Species Extinction", "Marine Life", 
+            "Forest Loss", "Soil Erosion", "Invasive Species", "Ocean Acidification", "Species Decline", "Coastal Erosion", 
+            "Marine Ecosystem", "Loss of Biodiversity", "Ecological Imbalance"
         ],
         "Extreme Weather Events": [
-            "Heatwaves", "Flooding", "Drought", "Wildfires", "Hurricanes", 
-            "Tornadoes", "Storms", "Cyclones", "Typhoons", "Extreme Temperatures", 
-            "Floods", "Weather Patterns", "Disaster", "Climate Events"
+            "Heatwaves", "Flooding", "Drought", "Wildfires", "Hurricanes", "Storms", "Cyclones", "Typhoons", "Floods", 
+            "Weather Events", "Severe Weather", "Tornadoes", "Intense Storms", "Extreme Temperatures", "Torrential Rain", 
+            "Tidal Waves", "Blizzards", "Ice Storms", "Weather Disasters", "ocean circulation", "melting"
         ],
         "Health Risks": [
-            "Health", "Diseases", "Air Pollution", "Water Pollution", "Heat Stroke", 
-            "Malnutrition", "Vector-Borne Diseases", "Respiratory Illness", "Heart Disease", 
-            "Cancer", "Water Scarcity", "Mental Health", "Vulnerable Populations", 
-            "Nutrition", "Infectious Disease", "Illness"
+            "Health", "Diseases", "Pollution", "Heat Stroke", "Malnutrition", "Vector-Borne Diseases", "Respiratory Illness", 
+            "Cancer", "Water Scarcity", "Mental Health", "Infectious Disease", "Nutrition", "Illness", "Air Pollution", 
+            "Food Insecurity", "Waterborne Diseases", "Cholera", "Diarrheal Diseases", "Vector-Borne Infections", 
+            "Temperature-related Illnesses"
         ],
         "Economic Impact": [
-            "Economic Impact", "Cost", "Losses", "Food Security", 
-            "Infrastructure Damage", "Economic Growth", "Insurance", "Investment", 
-            "GDP", "Job Loss", "Poverty",
+            "Economic Loss", "Cost", "Food Security", "Job Loss", "Poverty", "Infrastructure Damage", "Insurance", "GDP", 
+            "Investment", "Market Disruption", "Economic Growth", "Financial Crisis", "Agricultural Losses", "Supply Chain Disruptions", 
+            "Energy Costs", "Insurance Claims", "Property Damage", "Economic Strain", "Business Loss", "Trade Impact"
         ],
         "Displacement and Migration": [
-            "Migration", "Displacement", "Climate Refugees",
-            "Sea Level Rise", "Natural Disasters", "Conflict",
-            "Loss of Livelihood", "Environmental Refugees", "Relocation"
+            "Migration", "Displacement", "Refugees", "Sea Level Rise", "Climate Refugees", "Natural Disasters", "Conflict", 
+            "Relocation", "Livelihood Loss", "Environmental Migration", "Climate Migration", "Forced Migration", "Land Loss", 
+            "Desertification", "Coastal Flooding", "Displaced Communities", "Temporary Shelters", "Climate-induced Displacement", 
+            "Rural Depopulation"
         ]
     },
     "solutions": {
         "Technological Solutions": [
-            "Renewable Energy", "Solar", "Wind", "Electric Vehicles", 
-            "Efficiency", "Green Tech", "Storage", "Hydrogen"
+            "Solar", "Wind", "Electric Vehicles", "Energy Efficiency", "Storage", "Hydrogen", "Green Tech", "Carbon Capture", 
+            "Energy Storage", "Smart Grid", "Battery Technology", "Electric Mobility", "Geothermal", "Nuclear Fusion", 
+            "Energy Innovation", "Clean Tech", "Carbon Neutral Technology"
         ],
         "Governance and Policy": [
-            "Policy", "Climate Action", "Agreements", "Net Zero", 
-            "Carbon Pricing", "Regulation"
+            "Climate Action", "Net Zero", "Carbon Pricing", "Regulation", "International Agreements", "Carbon Tax", 
+            "Climate Legislation", "Paris Agreement", "Sustainable Development Goals", "Carbon Neutrality", "Environmental Standards", 
+            "Climate Policy", "Emissions Trading", "Policy Reform", "Green New Deal", "Green Taxation"
         ],
         "Adaptation and Resilience": [
-            "Adaptation", "Resilience", "Infrastructure", 
-            "Disaster Management", "Urban Planning", "Water Management"
+            "Adaptation", "Resilience", "Infrastructure", "Urban Planning", "Water Management", "Disaster Management", 
+            "Early Warning", "Flood Protection", "Climate Resilience", "Drought Management", "Coastal Defense", 
+            "Risk Management", "Building Resilience", "Resilient Infrastructure", "Climate Proofing"
         ],
         "Nature-Based Solutions": [
-            "Reforestation", "Ecosystems", "Conservation", "Wetlands", 
-            "Forests", "Coastal Protection", "Sustainability"
+            "Reforestation", "Conservation", "Wetlands", "Forests", "Coastal Protection", "Sustainability", "Ecosystems", 
+            "Agroforestry", "Biodiversity", "Soil Conservation", "Wetland Restoration", "Green Infrastructure", 
+            "Urban Green Spaces", "Habitat Restoration", "Mangroves", "Nature Conservation"
         ]
     }
 }
