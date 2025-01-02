@@ -1,7 +1,7 @@
 from sklearn.decomposition import LatentDirichletAllocation
 from sklearn.feature_extraction.text import CountVectorizer
 import pandas as pd
-from preprocess_articles import preprocess_articles
+from failed.preprocess_articles import preprocess_articles
 import json
 import nltk
 from nltk.corpus import stopwords

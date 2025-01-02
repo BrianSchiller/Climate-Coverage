@@ -13,7 +13,7 @@ import pandas as pd
 from scipy.sparse import hstack, vstack
 from tqdm import tqdm
 
-from preprocess_articles import preprocess_articles
+from failed.preprocess_articles import preprocess_articles
 from settings import label_keywords
 
 

@@ -1,6 +1,6 @@
 from scipy.sparse import hstack, vstack
 from lightgbm import LGBMClassifier
-from preprocess_articles import preprocess_articles
+from failed.preprocess_articles import preprocess_articles
 from sklearn.model_selection import train_test_split
 from sklearn.multioutput import MultiOutputClassifier
 from sklearn.metrics import classification_report
