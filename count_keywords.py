@@ -48,7 +48,7 @@ def load_articles(folder_path):
                     results[newspaper_name] = {}
 
                 results[newspaper_name][timestamp] = content
-    # print(results["Phys.Org"])
+    print(results["Business Insider"])
     return results
 
 def count_keywords(articles):
@@ -60,10 +60,8 @@ def count_keywords(articles):
 
             for category, labels in label_keywords.items():
                 for label, keywords in labels.items():
-                    print(counter[newspaper]["labels"].keys())
                     if label not in counter[newspaper]["labels"].keys():
                         counter[newspaper]["labels"][label] = 0
-                    print(counter[newspaper]["labels"])
 
                     for keyword in keywords:
                         count = len(re.findall(r'\b' + re.escape(keyword.lower()) + r'\b', content))

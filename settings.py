@@ -52,9 +52,9 @@ label_keywords = {
             "Marine Ecosystem", "Loss of Biodiversity", "Ecological Imbalance"
         ],
         "Extreme Weather Events": [
-            "Heatwaves", "Flooding", "Drought", "Wildfires", "Hurricanes", "Storms", "Cyclones", "Typhoons", "Floods", 
-            "Weather Events", "Severe Weather", "Tornadoes", "Intense Storms", "Extreme Temperatures", "Torrential Rain", 
-            "Tidal Waves", "Blizzards", "Ice Storms", "Weather Disasters", "ocean circulation", "melting"
+            "Heatwave", "Flooding", "Drought", "Wildfire", "Hurricane", "Storm", "Cyclone", "Typhoon", "Flood", 
+            "Weather Event", "Severe Weather", "Tornado", "Intense Storm", "Extreme Temperature", "Torrential Rain", 
+            "Tidal Wave", "Blizzard", "Ice Storm", "Weather Disaster", "ocean circulation", "melting"
         ],
         "Health Risks": [
             "Health", "Diseases", "Pollution", "Heat Stroke", "Malnutrition", "Vector-Borne Diseases", "Respiratory Illness", 
@@ -63,20 +63,20 @@ label_keywords = {
             "Temperature-related Illnesses"
         ],
         "Economic Impact": [
-            "Economic Loss", "Cost", "Food Security", "Job Loss", "Poverty", "Infrastructure Damage", "Insurance", "GDP", 
+            "Economic Loss", "Food Security", "Job Loss", "Poverty", "Infrastructure Damage", "Insurance", "GDP", 
             "Investment", "Market Disruption", "Economic Growth", "Financial Crisis", "Agricultural Losses", "Supply Chain Disruptions", 
-            "Energy Costs", "Insurance Claims", "Property Damage", "Economic Strain", "Business Loss", "Trade Impact"
+            "Energy Cost", "Insurance Claim", "Property Damage", "Economic Strain", "Business Loss", "Trade Impact"
         ],
         "Displacement and Migration": [
-            "Migration", "Displacement", "Refugees", "Sea Level Rise", "Climate Refugees", "Natural Disasters", "Conflict", 
+            "Migration", "Displacement", "Refugee", "Sea Level Rise", "Climate Refugee", "Natural Disaster", "Conflict", 
             "Relocation", "Livelihood Loss", "Environmental Migration", "Climate Migration", "Forced Migration", "Land Loss", 
-            "Desertification", "Coastal Flooding", "Displaced Communities", "Temporary Shelters", "Climate-induced Displacement", 
+            "Desertification", "Coastal Flooding", "Displaced Community", "Temporary Shelter", "Climate-induced Displacement", 
             "Rural Depopulation"
         ]
     },
     "solutions": {
         "Technological Solutions": [
-            "Solar", "Wind", "Electric Vehicles", "Energy Efficiency", "Storage", "Hydrogen", "Green Tech", "Carbon Capture", 
+            "Solar", "Wind", "Electric Vehicle", "Energy Efficiency", "Storage", "Hydrogen", "Green Tech", "Carbon Capture", 
             "Energy Storage", "Smart Grid", "Battery Technology", "Electric Mobility", "Geothermal", "Nuclear Fusion", 
             "Energy Innovation", "Clean Tech", "Carbon Neutral Technology"
         ],
