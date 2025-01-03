@@ -48,7 +48,6 @@ def load_articles(folder_path):
                     results[newspaper_name] = {}
 
                 results[newspaper_name][timestamp] = content
-    print(results["Business Insider"])
     return results
 
 def count_keywords(articles):
@@ -67,15 +66,59 @@ def count_keywords(articles):
                         count = len(re.findall(r'\b' + re.escape(keyword.lower()) + r'\b', content))
                         counter[newspaper]["labels"][label] += count
 
+    with open("data/article_keyword_count.json", "w") as outfile: 
+        json.dump(counter, outfile)
+
     return counter
+
+def count_keywords_per_article(articles):
+    counter = {}
+
+    for newspaper, dates in articles.items():
+        counter[newspaper] = {}
+        for date, content in dates.items():
+            counter[newspaper][date] = {}
+
+            for category, labels in label_keywords.items():
+                for label, keywords in labels.items():
+                    counter[newspaper][date][label] = 0
+
+                    for keyword in keywords:
+                        count = len(re.findall(r'\b' + re.escape(keyword.lower()) + r'\b', content))
+                        counter[newspaper][date][label] += count
+
+    return counter
+
+def identify_topics_per_article(counter):
+    scores = {}
+
+    for newspaper, timestamps in counter.items():
+        # Construct scores dictionary
+        scores[newspaper] = {"scores": {}}
+        for category, labels in label_keywords.items():
+            for label, keywords in labels.items():
+                scores[newspaper]["scores"][label] = 0
+
+        for timestamp, topics in timestamps.items():
+            max_value = max(topics.values())
+            most_referenced = [topic for topic, value in topics.items() if value == max_value]
+            scores[newspaper][timestamp] = most_referenced
+            # Count overall occurence
+            for label in most_referenced:
+                scores[newspaper]["scores"][label] += 1
+
+    with open('data/article_topic_count.json', 'w', encoding='utf-8') as count_file:
+        json.dump(scores, count_file, indent=4)
+
+    return scores
 
 # Specify the folder path containing the articles
 folder_path = "scraped_articles" 
 articles = load_articles(folder_path)
+
 counter = count_keywords(articles)
 plots.plot_article_keyword_count(counter)
-with open("data/article_keyword_count.json", "w") as outfile: 
-    json.dump(counter, outfile)
 
-# Print the results
-# print_results(results)
+counter = count_keywords_per_article(articles)
+scores = identify_topics_per_article(counter)
+plots.plot_article_topic_count(scores)

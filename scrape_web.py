@@ -66,7 +66,7 @@ def scrape_article_content(url):
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
         }
         # Fetch the web page
-        response = requests.get(url["url"], headers=headers)
+        response = requests.get(url["url"], headers=headers, timeout=5)
         response.raise_for_status()  # Check for HTTP errors
         
         # Parse the page with BeautifulSoup
@@ -75,7 +75,7 @@ def scrape_article_content(url):
         # Find the relevant content
         if not url["source"] in non_article_sites:
             # Use <article>
-            article_tag = soup.find('article')
+            article_tag = soup.find('article') or soup.find('main')
         else:
             # Check if there is an alternative to <article>
             alt_tag = non_article_sites[url["source"]]
@@ -165,17 +165,17 @@ def article_already_saved(url, output_directory):
 
     return os.path.exists(file_path)
 
-
 def scrape_article_content_with_timeout(url, timeout=5):
-    with concurrent.futures.ThreadPoolExecutor() as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
         future = executor.submit(scrape_article_content, url)
         try:
             # Try to get the result within the specified timeout
             return future.result(timeout=timeout)
         except concurrent.futures.TimeoutError:
             print(f"Scraping {url['url']} took too long, skipping...")
-            return None
-        
+        except Exception as e:
+            print(f"An error occurred while scraping {url['url']}: {e}")
+        return None
 
 def is_climate_change_article(article, min_keywords = 3):
     # Count how many relevant keywords are mentioned in the article

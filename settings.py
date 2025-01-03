@@ -32,7 +32,7 @@ label_keywords = {
             "Soil Erosion", "Forest Fires", "Drought", "Wetlands", "Organic Farming", "Soil Fertility", "Food Security", 
             "Crop Diversity", "Greenhouse Gas Emissions", "Water Usage", "Fertilizers"
         ],
-        "Governance and Policy (causes)": [
+        "Governance and Policy (Causes)": [
             "Policy", "Government", "Inaction", "Policy Gaps", "Legislation", "Subsidies", "Lobbying", "Bureaucracy", 
             "Fossil Fuel Subsidies", "Carbon Pricing", "Environmental Regulations", "Political Will", "Policy Makers", 
             "Government Inaction", "Lobbying Influence", "Energy Policy", "Climate Denial", "Corporate Interests", 
@@ -41,7 +41,7 @@ label_keywords = {
         "Personal Consumption": [
             "Consumption", "Waste", "Footprint", "Lifestyle", "Carbon Footprint", "Materialism", "Affluence", "Diet", 
             "Overconsumption", "Sustainable Living", "Eco-friendly Products", "Upcycling", "Carbon Offset", "Minimalism", 
-            "Ethical Consumption", "Recycle", "Greenwashing", "Eco-conscious", "Plant-based Diet", "Green Energy", 
+            "Ethical Consumption", "Recycle", "Greenwashing", "Eco-conscious", "Green Energy", 
             "Energy Star Products", "Veganism", "Packaging Waste", "Circular Economy", "Green Technology"
         ]
     },
@@ -80,7 +80,7 @@ label_keywords = {
             "Energy Storage", "Smart Grid", "Battery Technology", "Electric Mobility", "Geothermal", "Nuclear Fusion", 
             "Energy Innovation", "Clean Tech", "Carbon Neutral Technology"
         ],
-        "Governance and Policy": [
+        "Governance and Policy (Solutions)": [
             "Climate Action", "Net Zero", "Carbon Pricing", "Regulation", "International Agreements", "Carbon Tax", 
             "Climate Legislation", "Paris Agreement", "Sustainable Development Goals", "Carbon Neutrality", "Environmental Standards", 
             "Climate Policy", "Emissions Trading", "Policy Reform", "Green New Deal", "Green Taxation"
@@ -88,7 +88,7 @@ label_keywords = {
         "Adaptation and Resilience": [
             "Adaptation", "Resilience", "Infrastructure", "Urban Planning", "Water Management", "Disaster Management", 
             "Early Warning", "Flood Protection", "Climate Resilience", "Drought Management", "Coastal Defense", 
-            "Risk Management", "Building Resilience", "Resilient Infrastructure", "Climate Proofing"
+            "Risk Management", "Building Resilience", "Resilient Infrastructure", "Climate Proofing", "vegan", "vegetarian", "Plant-based"
         ],
         "Nature-Based Solutions": [
             "Reforestation", "Conservation", "Wetlands", "Forests", "Coastal Protection", "Sustainability", "Ecosystems", 

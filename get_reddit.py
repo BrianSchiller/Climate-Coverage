@@ -1,5 +1,6 @@
 import praw
 import json
+from datetime import datetime
 from praw.models import Submission
 
 # Set up the Reddit instance with your app credentials
@@ -13,7 +14,7 @@ posts = []
 
 # Example: Get 5 posts from a subreddit (e.g., Python subreddit)
 subreddit = reddit.subreddit('climate')
-for submission in subreddit.hot(limit=5):
+for submission in subreddit.controversial(time_filter="year"):
     submission: Submission
 
     post = {
@@ -21,8 +22,10 @@ for submission in subreddit.hot(limit=5):
         "Title": submission.title,
         "Author": submission.author.name if submission.author is not None else "Unknown",
         "Upvotes": submission.score,
-        "Created": submission.created_utc,
+        "Created": datetime.fromtimestamp(submission.created_utc).strftime('%Y-%m-%d %H:%M:%S'),
         "Content": submission.selftext,
+        "Processed_Content": "",
+        "Selfpost": submission.is_self,
         "URL": submission.url,
         "CommCount": submission.num_comments,
         "Comments": []
@@ -48,7 +51,7 @@ for submission in subreddit.hot(limit=5):
 
     posts.append(post)
 
-file_name = f'submissions/climate.json'
+file_name = f'reddit/climate.json'
 
 with open(file_name, 'w') as json_file:
         json.dump(posts, json_file, indent=4)
