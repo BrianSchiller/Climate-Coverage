@@ -1,0 +1,18 @@
+Artificial Intelligence workloads are set to significantly increase data centre energy consumption, reaching 146.2 terawatt hours by 2027, according to a recent report by the International Data Corporation.
+This surge, driven by the rising adoption of AI and other energy-intensive processes, is expected to increase operational costs and challenge sustainability efforts for data centre operators globally.
+The IDC report, titled “The Financial Impact of Increased Consumption and Rising Electricity Rates in Data Centre Facilities Spending,” highlighted that electricity is the largest ongoing expense for data centre operators.
+It accounted for 46 per cent of total spending for enterprise data centres and 60 per cent for service provider data centres.
+“Electricity consumption is growing rapidly as data centres take on more workloads, particularly energy-intensive ones such as AI,” the report stated.
+IDC predicts that AI data centre capacity will experience a compound annual growth rate of 40.5 per cent through 2027.
+Energy consumption for AI workloads is projected to grow at a CAGR of 44.7 per cent, reaching 146.2 TWh by 2027. This means AI workloads will consume a larger portion of the total electricity used by data centres.
+According to the report, global demand for data centre energy is expected to more than double between 2023 and 2028, with a five-year CAGR of 19.5 per cent, reaching 857 TWh by 2028.
+However, it also identified a growing challenge: rising electricity prices. This trend is driven by supply and demand dynamics, environmental regulations, and climate change-induced extreme weather events.
+IDC anticipated that these factors will continue to impact energy prices over the coming years.
+In a scenario analysis of data centres with a 1 megawatt IT load running at 50 per cent capacity and a power usage effectiveness of 1.5, the report found that electricity spending could increase by more than 20 per cent annually in most cases.
+The 1 megawatt IT load refers to the amount of electrical power used by IT equipment in a data centre.
+The research firm noted that improving energy efficiency by just 10 per cent could lead to significant cost savings for data centre operators.
+IDC’s Research Director for Cloud to Edge Data Centre Trends, Sean Graham, emphasised the importance of adopting energy-efficient solutions.
+“There are numerous ways to improve data centre efficiency, ranging from advanced chip technology and liquid cooling to rethinking data centre design and power distribution methods,” he said.
+Graham urged data centre operators, including cloud and colocation service providers, to continue prioritising investments in renewable energy.
+He explained that such investments not only increase the overall energy supply but also support customers in achieving sustainability goals.
+“Solar and wind power offer significant environmental benefits while also providing the lowest levelized cost of electricity,” Graham noted.
