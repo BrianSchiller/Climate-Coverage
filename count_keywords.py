@@ -48,6 +48,8 @@ def load_articles(folder_path):
                     results[newspaper_name] = {}
 
                 results[newspaper_name][timestamp] = content
+
+                # print(f"Processed content for {file}: {content}")
     # print(results["Phys.Org"])
     return results
 
