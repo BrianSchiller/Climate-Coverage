@@ -212,9 +212,10 @@ def scrape_articles(directory, output_directory):
 
         print()
 
-#Input and output directories
-json_directory = './to_scrape' 
-output_directory = './scraped_articles'
+if __name__ == "__main__":
+    #Input and output directories
+    json_directory = './to_scrape' 
+    output_directory = './scraped_articles'
 
-# Run the scraper
-scrape_articles(json_directory, output_directory)
+    # Run the scraper
+    scrape_articles(json_directory, output_directory)

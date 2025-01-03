@@ -1,0 +1,22 @@
+Researchers in the UK have developed a new spray coating for greenhouses that optimises the wavelength of light shining onto the plants, improving their growth and yield. The technology could in the future help extend the growing seasons in less sunny countries like the UK in a more sustainable way.
+Since the growing season in the UK is relatively short due to its climate and latitude, we rely on European imports for most of our fruit and vegetables, grown in vast artificially lit greenhouses, which use huge amounts of electricity.
+Now scientists at the Universities of Bath and Cambridge, working with commercial partner Lambda Agri, have developed a spray coating for greenhouses that could help UK farmers to produce more crops in the future using the same or less energy.
+The development is being heavily backed with two UK Government grants, including a DEFRA project worth £500k and a second project worth £750k within DESNZ's Net Zero Innovation Portfolio.
+Photosynthesis -- the process used by plants to capture sunlight and use the energy to convert carbon dioxide and water into sugars -- is most efficient at the wavelength of red light. Green light is the least efficient which is why plants don't absorb it and so appear green.
+Sunlight is a mixture of all the colour spectrum so much of the light that shines on plants is not used.
+The new spray coats existing greenhouse glass like a varnish; this layer absorbs blue light from sunlight and converts it to red light, increasing the fraction of red light that can be used by the plants which increases the crop yield.
+More sustainable technologies
+Whilst other researchers in the USA have previously achieved an increase in growth using similar technologies, they use rare earth materials such as indium. This metal is used in phone screens but is very expensive and difficult to recycle.
+The Bath/Cambridge collaboration with Lambda Agri have replaced indium with a patent-pending lower cost, more abundant material.
+In addition, they can make the materials using a chemical flow reactor, speeding up the manufacture process and making it more easily scalable.
+Sweeter fruit
+Professor Petra Cameron, from the University of Bath's Institute of Sustainability and Climate Change (ISCC), said: "The way our coating works is similar to when you go to a night club and your gin and tonic drink glows under the UV light -- the quinine chemical in the tonic water is absorbing the UV and re-emitting it as visible light.
+"Our coating contains molecules that absorb UV light from the sun and converts around 80-90% of it into red light, making photosynthesis more efficient, meaning we can grow more with less light.
+"In field trials we've seen a nine per cent increase in crop yield when growing basil in treated greenhouses.
+"This means our technology could in the future be used to extend the growing seasons for produce and use less artificial light to get the same results, saving money and reducing the associated carbon emissions.
+"As well as changing the wavelength of the light coming into the greenhouse, the coating also scatters the light, which also increases the yield.
+"There is even some evidence that suggests it improves the taste by raising the sugar content in the fruit."
+Professor Dominic Wright from the University of Cambridge, Inorganic and Materials Section in Chemistry, said: "This is a nice application of fundamental molecular science to an important, real-world problem, one that is particularly important in regards to the backdrop of food security and global warming.
+"There is a very real prospect of this having a significant impact on the availability and cost of soft fruit and salad vegetables for consumers in the future, especially in northern European countries like the UK where the weather conditions are far from ideal."
+Dr Monica Saavedra, from Lambda Agri, said: "Lambda stands for fighting food poverty, sustainably. The UK is already suffering from climate change, which is why the UK Government is heavily funding and supporting our mission. Both Cambridge University, where we are currently based, and the University of Bath are strong collaborators and share our vision."
+The team has submitted a patent for the technology and published their research in the journal Advanced Materials Technologies . They hope to make the technology commercially available for growers in a few years.

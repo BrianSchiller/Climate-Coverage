@@ -48,10 +48,6 @@ def plot_article_keyword_count(data, cols = 3):
     # Adjust spacing between subplots
     plt.subplots_adjust(hspace=0.5, wspace=0.3, top=0.85, bottom=0.1)
 
-    # Add shared labels
-    fig.text(0.5, 0.04, "Labels", ha='center', fontsize=14)
-    fig.text(0.04, 0.5, "Mentions", va='center', rotation='vertical', fontsize=14)
-
     # Show the plot
     plt.savefig("data/article_keyword_count.png", dpi=300)
 
@@ -101,10 +97,6 @@ def plot_article_topic_count(data, cols = 3):
 
     # Adjust spacing between subplots
     plt.subplots_adjust(hspace=0.5, wspace=0.3, top=0.85, bottom=0.1)
-
-    # Add shared labels
-    fig.text(0.5, 0.04, "Labels", ha='center', fontsize=14)
-    fig.text(0.04, 0.5, "Mentions", va='center', rotation='vertical', fontsize=14)
 
     # Show the plot
     plt.savefig("data/article_topic_count.png", dpi=300)
