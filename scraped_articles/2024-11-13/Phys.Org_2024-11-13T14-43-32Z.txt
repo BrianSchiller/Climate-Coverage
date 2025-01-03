@@ -1,0 +1,9 @@
+A new study by Dr. Arun K. Shanker and colleagues from ICAR-CRIDA has revealed novel insights into how zinc foliar sprays can mitigate the adverse effects of water deficit stress in pearl millet, focusing specifically on the dynamics of Photosystem II (PSII) and pigment composition.
+Using advanced physiological measurements, the team demonstrated that zinc in nano form (Zn Nano) and chelated form (Zn EDTA) effectively alleviates stress , improving photosynthetic efficiency and protecting the photosynthetic apparatus.
+The research, published in the journal Plant Stress , shows that water deficit stress disrupts electron transport in PSII, creating a "traffic jam" effect that impairs photosynthesis.
+The application of Zn Nano and Zn EDTA as foliar spray significantly improved electron transport efficiency and reduced non-photochemical quenching (NPQ), indicating a better energy balance.
+The study highlights the crucial role of the xanthophyll cycle pigments—violaxanthin, antheraxanthin, and zeaxanthin—in dissipating excess light energy, with zinc treatments enhancing their protective effects under stress.
+The study also discusses the possible roles of Zn binding chloroplastic proteins in water stress alleviation. The findings underscore the potential of zinc foliar sprays, particularly in nano form, as an effective strategy to boost drought resilience in crops , paving the way for sustainable agricultural practices in water-limited environments.
+This study not only provides mechanistic insights into zinc 's role in stress tolerance but also suggests practical applications for enhancing crop resilience in the face of climate change-induced water scarcity. The research has significant implications for developing low-cost, efficient foliar nutrition strategies to support global food security.
+Provided by
+																											ICAR-Central Research Institute for Dryland Agriculture
