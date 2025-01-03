@@ -96,11 +96,11 @@ label_keywords = {
             "Risk Management", "Building Resilience", "Resilient Infrastructure", "Climate Proofing", "Heat-resistant infrastructure"
         ],
         "Lifestyle Solutions": [
-            "vegan", "vegetarian", "Plant-based", "Veganism", "Eco-conscious", "Plant-based diet", "Recycle", "Recycling", "Recycled", 
+            "vegan", "vegetarian", "Vega", "Plant-based", "Veganism", "Eco-conscious", "Plant-based diet", "Recycle", "Recycling", "Recycled", 
             "Energy Star Product", "Sustainable Living", "Eco-friendly", "Eco", "Upcycling", "Minimalism", "Ethical Consumption", "flexitarian", 
             "Local food", "Organic food", "Zero waste", "Zero food waste", "Bike sharing", "Public transport", "Electric Vehicles", "Energy Effiency",
-            "Solar panels", "Green energy", "Plastic free", "Plastic-free", "Reusable", "Circular", "Second-hand", "Reuse", "Reusing", "Tiny homes", "Tint house",
-            "Off-grid", "Smart Home"
+            "Solar panel", "Green energy", "Plastic free", "Plastic-free", "Reusable", "Circular", "Second-hand", "Reuse", "Reusing", "Tiny home", 
+            "Tiny house", "Off-grid", "Smart Home"
         ],
         "Nature-Based Solutions": [
             "Reforestation", "Conservation", "Wetland", "Forest", "Coastal Protection", "Sustainability", "Ecosystem", 
