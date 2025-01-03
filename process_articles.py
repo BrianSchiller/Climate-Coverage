@@ -48,6 +48,7 @@ def load_articles(folder_path):
                     results[newspaper_name] = {}
 
                 results[newspaper_name][timestamp] = content
+    print("Finished loading all articles")
     return results
 
 def count_keywords(articles):
@@ -66,8 +67,11 @@ def count_keywords(articles):
                         count = len(re.findall(r'\b' + re.escape(keyword.lower()) + r'\b', content))
                         counter[newspaper]["labels"][label] += count
 
-    with open("data/article_keyword_count.json", "w") as outfile: 
+    path = "data/article_keyword_count.json"
+    with open(path, "w") as outfile: 
         json.dump(counter, outfile)
+
+    print(f"Counted keywords and written to: {path}")
 
     return counter
 
@@ -107,8 +111,10 @@ def identify_topics_per_article(counter):
             for label in most_referenced:
                 scores[newspaper]["scores"][label] += 1
 
-    with open('data/article_topic_count.json', 'w', encoding='utf-8') as count_file:
+    path = 'data/article_topic_count.json'
+    with open(path, 'w', encoding='utf-8') as count_file:
         json.dump(scores, count_file, indent=4)
+    print(f"Written article topic scores to: {path}")
 
     return scores
 

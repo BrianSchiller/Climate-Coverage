@@ -100,7 +100,38 @@ def count_keywords(file):
 
     return submissions
 
-output = process_reddit_submissions('reddit/climate.json')
-# count_keywords(output)
-submissions = count_keywords('reddit\climate_processed.json')
-plot_reddit_keyword_count(submissions, "climate")
+
+def count_topics_per_subreddit(subreddits):
+    scores = {}
+
+    for subreddit in subreddits:
+        scores[subreddit] = {"scores": {}, "comment_scores": {}}
+        for category, labels in label_keywords.items():
+            for label, keywords in labels.items():
+                scores[subreddit]["scores"][label] = 0
+                scores[subreddit]["comment_scores"][label] = 0
+
+        file_path = f"reddit/{subreddit}_processed.json"
+        with open(file_path) as r:
+            submissions = json.load(r)
+
+        scores[subreddit]["num_of_sub"] = len(submissions)
+        for submission in submissions:
+            for label, value in submission["labels"].items():
+                scores[subreddit]["scores"][label] += value
+            for label, value in submission["comment_labels"].items():
+                scores[subreddit]["comment_scores"][label] += value
+    
+    file = "reddit/subreddit_topics.json"
+    with open(file, "w") as outfile: 
+        json.dump(scores, outfile, indent=4)
+
+    print(f"Counted keywords in {file}")
+
+# subreddit = "climateskeptics"
+# output = process_reddit_submissions(f'reddit/{subreddit}.json')
+# submissions = count_keywords(output)
+# plot_reddit_keyword_count(submissions, subreddit)
+
+subreddits = ["climate", "climatechange", "climateskeptics"]
+count_topics_per_subreddit(subreddits)

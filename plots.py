@@ -50,7 +50,9 @@ def plot_article_keyword_count(data, cols = 3):
     plt.subplots_adjust(hspace=0.5, wspace=0.3, top=0.85, bottom=0.1)
 
     # Show the plot
-    plt.savefig("data/article_keyword_count.png", dpi=300)
+    path = "data/article_keyword_count.png"
+    plt.savefig(path, dpi=300)
+    print(f"Saved article keyword count plot to: {path}")
 
 
 def plot_article_topic_count(data, cols = 3):
