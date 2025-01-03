@@ -1,0 +1,34 @@
+As the climate crisis deepens , the need for global action becomes greater than ever. Central to this effort is the goal of achieving net zero emissions by 2050, to meet the Paris Agreement to limit global warming.
+So far 145 countries , collectively responsible for 90% of emissions, have committed to net zero targets or are actively considering them. But what if countries withdraw from their commitments, as US President-elect Donald Trump appears intent to do ?
+Our new research examined how net-zero announcements from the United States, United Kingdom and China affected global financial markets. We studied how traders in global markets reacted to these announcements. We found markets responded positively in each case through both a change in the volume of trade and variations in prices.
+Overall, our study showed decisive climate action from the US, UK and China increased global momentum toward net zero – so much so that backsliding by the US will not derail the effort.
+In 2019, the UK became the first country to legislate its net zero target .
+China, the world’s largest carbon emitter and second-largest economy, made its net zero commitment to the United Nations in 2021 . The policy is not yet enshrined into law, but the announcement showed net zero is a priority for China.
+The US – the world’s largest economy and the top per capita emitter – also announced its net zero commitment in 2021 .
+These announcements were significant because each of these nations play dominant roles in the global economy, total carbon emissions and international climate negotiations.
+Our study focused on what’s known in financial economics as “ volatility linkages ”. They are a way to measure whether price movements in one market are connected to price movements in other markets.
+Just think of how news from one country’s stock market might cause ripple effects, like dropping a pebble into a pond. Those ripples could reach another country’s market, affecting prices there too.
+If we see this kind of ripple effect, we know information is flowing between markets. In the context of net zero, this means one country’s announcement about reducing emissions can influence investor decisions in other countries.
+We studied ten funds traded on the US stock market over nearly a decade, from January 2014 to February 2023. This included nine funds, each representing a country, and one global fund.
+Funds are like baskets of stocks that reflect the performance of their respective economies or regions. By looking at how these funds moved together or separately, we explored whether one country’s net zero commitment influenced trading in other countries.
+We then focused on how the net zero announcements made by the UK, US and China affected these linkages.
+We found the US announcement in 2021 had a strong, positive effect on market linkages. This suggests investors around the world responded positively to the US commitment, viewing it as a significant and reassuring step toward addressing climate change.
+When a major economy such as the US makes a strong climate commitment, it can reassure investors worldwide and strengthen ties between markets.
+This highlights the crucial role of large economies in driving not only climate action but also market confidence globally. Conversely, without active participation from these key players, global efforts toward net zero may face significant challenges.
+The trajectory of climate action in the US has been turbulent.
+The US signed the Paris Agreement in 2015 under former president Barack Obama, signalling strong leadership in global climate efforts. This progress was reversed during Trump’s first term (2017–21).
+Trump withdrew from the Paris Agreement, arguing climate action harmed the US economy. The country officially left the agreement in 2020.
+Just months later, in January 2021, President Joe Biden rejoined the Paris Agreement and announced a commitment to net zero by 2050 in April 2021.
+Our study found fossil fuel companies in the US initially welcomed the government’s 2021 net zero commitment, not because of the emissions reductions required but because of the certainty such announcements bring.
+For businesses, policy clarity enables long-term planning and smoother transitions, which reduces the risks associated with sudden regulatory changes.
+Even for industries historically opposed to climate action, there is value in stability. The US net zero commitment brought the stability they required to start their transition to a low-carbon economy.
+
+Trump’s return to the presidency means concerns about the future of US climate policy are mounting. His opposition to climate action and support for fossil fuels could slow down the nation’s net-zero transition.
+Investment in new renewable energy projects in the US is unlikely to increase under his leadership, potentially opening opportunities for other countries to attract such investments. However, projects already underway are expected to continue , limiting the long-term damage.
+The US election result also introduces uncertainty, particularly regarding the future of the Inflation Reduction Act , a cornerstone of US clean energy policy.
+The act, signed into law in 2022, is unlikely to be repealed , and another Trump presidency is unlikely to entirely derail the global transition.
+As shown in our research , the 2021 US net zero announcement has already cascaded through financial markets, influencing investor decisions. Many countries are now important players in the international path to net zero and that good work is not easily undone.
+The world has already experienced Trump’s opposition to climate action. The US withdrawal from Paris took place during our study period and has been examined in a separate piece of research, yet to be published. Preliminary analysis shows his actions did not change the world’s effort to reach net zero then, which suggests they are unlikely to this time, either.
+Achieving net zero will require sustained, coordinated efforts from all nations.
+Already, China is rapidly advancing in renewable energy and the European Union has adopted strong emissions reduction targets. What’s more, the economic viability of renewable energy continues to improve.
+If other countries maintain their momentum, the world can ensure the commitment to net zero remains a global priority, even without the US on board.

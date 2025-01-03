@@ -1,0 +1,27 @@
+This has been a big year for the technologies that could save our planet .
+America's first large offshore wind farm began powering homes. The Bill Gates-backed startup Graphyte opened its first carbon-removal plant in Arkansas. Another startup, Sublime Systems, secured a site and funding for its first low-carbon cement manufacturing facility.
+There's also been a "corporate climate pivot," according to a report by Breakthrough Energy, a climate investment firm and startup catalyzer founded by Gates.
+"We noticed a subtle, but important, perspective shift from both the investors and corporations we engage with," Gates wrote in an intro to the report, which the firm published in October with the tagline " climate tech has arrived."
+More than just reducing their carbon footprint , corporate leaders "want to get in at the ground floor of new industries that, one day, will be crucial to the survival of their businesses," Gates wrote.
+Other industry experts also told Business Insider that climate tech is picking up steam, and now emerging companies need more funding to scale up.
+Breakthrough Energy focuses on its own partners in the report, such as American Airlines investing in a startup making hydrogen-based plane fuel. It's not the only VC firm seeing large corporations lean into climate tech more, though.
+A number of long-standing corporate partners, like the chemicals giant BASF or the building-materials manufacturer Saint-Gobain, work with the nonprofit climate-tech incubator Greentown Labs to support early-stage companies.
+Aisling Carlson, the senior vice president of partnerships at Greentown, told BI that the firm's oldest corporate partners have been hiring, "beefing up" their teams that invest in emerging climate tech.
+"Their approach to climate innovation and their internal expertise has matured," Carlson said.
+Meanwhile, other corporations are beginning to engage with climate tech for the first time. Carlson said Greentown has seen new interest from corporations that haven't invested much in climate tech, though no partnerships have been publicly announced yet.
+"They are all thinking about their carbon footprint and how they can decarbonize," she added.
+Though new technologies, like direct air capture plants that suck carbon out of the sky, can be part of the solution, Jonathan Foley wants investors and politicians to remember that fighting climate change is a race against time .
+"Let's deploy things that actually are cheap enough and scalable enough and ready enough," like solar power , battery storage, EV charging stations, and other tech that's already proliferating, said Foley, who is the executive director of the climate-solutions nonprofit Project Drawdown.
+We also have to shut down coal-fired power plants and plug abandoned gas wells that leak methane , Foley said. Efforts to stop deforestation can prevent huge amounts of carbon emissions and they're "desperately starved for money," he added.
+These are the low-hanging fruits of fighting climate change .
+Foley said that Gates has a history of investing in "science fiction experiments" that don't move fast enough, such as small modular nuclear reactors . After nearly 20 years of development and Gates's investment, there still isn't a single one in operation.
+Sustainable aviation fuel is a similar "boondoggle," Foley said.
+"That's a science experiment still, and it doesn't need or deserve billions of tax dollars," he said, adding that public funding should go to reliable solutions.
+Breakthrough Energy did not respond to a request for comment.
+Lots of futuristic climate tech just needs the funding to deploy and scale up, Gates wrote. The Breakthrough Energy report argues that venture capitalists , investors, or corporations should get in on it now, at the ground floor.
+"By waiting, venture firms are only hurting their own bottom lines," the report says. By getting in early, though, investors can "prime the pump" and help early-stage companies design a product that's scalable and capable of attracting even bigger investment.
+However, funding for climate tech slowed down this year, Carlson said, possibly due to investors taking a "wait and see" stance in the lead-up to the US election.
+Indeed, Biden administration initiatives have boosted climate tech in recent years including the Inflation Reduction Act, the Bipartisan Infrastructure Law, and the CHIPS and Science Act.
+New policies have driven more government investment in green concrete and steel, according to the Breakthrough Energy report, and the IRA created more than two dozen tax credits for investing in clean-energy projects. Breakthrough concluded those credits could unlock "more than $1 trillion in private sector investment."
+However, incentives like that could change with the new Trump administration.
+"What I am hopeful for is that corporate commitments to net zero targets will continue to drive innovation," Carlson said. "And if there are unfavorable federal policies, that the private sector can continue to play a driving role in ensuring at least that the early-stage climate technologies are getting to market."

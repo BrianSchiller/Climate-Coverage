@@ -1,0 +1,17 @@
+A new artificial intelligence-based weather model can deliver 15-day forecasts with unrivaled accuracy and speed, a Google lab said, with potentially life-saving applications as climate change ramps up.
+GenCast, invented by London-based AI research laboratory Google DeepMind, "showed better forecasting skill" than the current world-leading model, the company said Wednesday.
+The European Centre for Medium-Range Weather Forecasts (ECMWF) produces predictions for 35 countries and is considered the global benchmark for meteorological accuracy.
+But DeepMind said GenCast surpassed the precision of the center's forecasts in more than 97 percent of the 1,320 real-world scenarios from 2019 which they were both tested on.
+Details of its findings were published in Nature, a leading science journal.
+ECMWF chief Florence Rabier told AFP the project was a "first step" towards integrating AI in weather forecasting but that "it is indeed a leap forward."
+At this stage it can be used to supplement their current models, she said.
+"We are progressing year by year," she added. "Any new method that can enhance and accelerate this progress is extremely welcome in the context of the extreme societal pressures of climate change."
+The model was trained on four decades of temperature, wind speed and air pressure data from 1979 to 2018 and can produce a 15-day forecast in just eight minutes -- compared to the hours it currently takes.
+"GenCast provides better forecasts of both day-to-day weather and extreme events than the top operational system... up to 15 days in advance," a DeepMind statement said.
+DeepMind said GenCast "consistently outperformed" the current leading forecast model when predicting extreme heat, extreme cold and high wind speeds.
+"More accurate forecasts of risks of extreme weather can help officials safeguard more lives, avert damage, and save money," DeepMind said.
+Extreme weather is becoming more common and more severe as a result of human caused climate change.
+In August 2023, a series of wildfires in Hawaii killed around 100 people. Authorities were criticized by locals who said they were given no warning of the impending blaze.
+This summer, a sudden heatwave in Morocco killed at least 21 people over a 24-hour period. And in September, Hurricane Helene killed 237 people in Florida and other southeastern US states.
+"I am confident that AI-based weather forecasting systems will continue to incrementally improve in the future, including better prediction of extreme events and their intensity, for which there is a lot of need to improve upon," said David Schultz, a professor of synoptic meteorology at Manchester University, who was not involved in the research.
+But he said these forecasting systems are reliant on the weather prediction models that are already running, such as that operated by ECMWF.
