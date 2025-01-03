@@ -21,10 +21,11 @@ RELEVANT_KEYWORDS = [
 label_keywords = {
     "causes": {
         "Energy and Industry": [
-            "Fossil Fuel", "Energy", "Transportation", "Emission", "Oil", "Gas", "Coal", "Pollution", "Electricity", 
-            "Power Plant", "Renewable Energy", "Carbon Emission", "Natural Gas", "Hydraulic Fracturing", "Greenhouse Gas",
-            "Carbon Intensity", "Wind Power", "Solar Energy", "Nuclear Power", "Energy Efficiency", "Fossil Fuel Subsidie", 
-            "Oil Sand", "Carbon Capture", "Oil Refining", "Gasoline", "Methane Emission", "Coal Mining"
+            "Fossil Fuel", "Transportation", "Fossil Fuel Emission", "Oil", "Gas", "Coal", "Electricity", 
+            "Power Plant", "Carbon Emission", "Natural Gas", "Hydraulic Fracturing", "Greenhouse Gas",
+            "Carbon Intensity", "Nuclear Power", "Fossil Fuel Subsidie", "Oil Sand", "Carbon Capture", "Oil Refining", 
+            "Gasoline", "Methane Emission", "Coal Mining", "Diesel", "Energy infrastructure", "Energy consumption",
+            "Industry", "Shipping", "supply chain"
         ],
         "Land Use and Agriculture": [
             "Deforestation", "Agriculture", "Farming", "Farm", "Soil Degradation", "Crop", "Land Clearing", "Monoculture", 
@@ -50,7 +51,7 @@ label_keywords = {
         "Ecosystem Disruption": [
             "Biodiversity", "Ecosystem", "Habitat Loss", "Habitat", "Coral Bleaching", "Species Extinction", "Marine Life", 
             "Forest Loss", "Soil Erosion", "Invasive Specie", "Ocean Acidification", "Species Decline", "Coastal Erosion", 
-            "Marine Ecosystem", "Biodiversity", "Ecological Imbalance", "disruption"
+            "Marine Ecosystem", "Biodiversity", "Ecological Imbalance", "disruption", "pollution", "water pollution"
         ],
         "Extreme Weather Events": [
             "Heatwave", "Flooding", "Drought", "Wildfire", "Hurricane", "Storm", "Cyclone", "Typhoon", "Flood", 
@@ -59,10 +60,10 @@ label_keywords = {
             "climate change", "ocean rise", "ocean", "warmer", "warming"
         ],
         "Health Risks": [
-            "Health", "Disease", "Pollution", "Heat Stroke", "Malnutrition", "Vector-Borne Disease", "Respiratory Illness", 
+            "Health", "Disease", "Air Pollution", "Heat Stroke", "Malnutrition", "Vector-Borne Disease", "Respiratory Illness", 
             "Cancer", "Water Scarcity", "Mental Health", "Infectious Disease", "Nutrition", "Illness", "Air Pollution", 
             "Food Insecurity", "Waterborne Disease", "Cholera", "Diarrhea", "Diarrheal", "Vector-Borne Infection",
-            "Temperature-related Illness", "virus"
+            "Temperature-related Illness", "virus", "water pollution"
         ],
         "Economic Impact": [
             "Economic Loss", "Cost", "Food Security", "Job Loss", "Poverty", "Infrastructure Damage", "Insurance", "GDP", 
@@ -80,7 +81,8 @@ label_keywords = {
         "Technological Solutions": [
             "Solar", "Wind", "Electric Vehicle", "Energy Efficiency", "Storage", "Hydrogen", "Green Tech", "Carbon Capture", 
             "Energy Storage", "Smart Grid", "Battery Technology", "Electric Mobility", "Geothermal", "Nuclear Fusion", 
-            "Energy Innovation", "Clean Tech", "clean technology" "Carbon Neutral Technology", "Sustainability", "Investment", "clean energy"
+            "Energy Innovation", "Clean Tech", "clean technology" "Carbon Neutral Technology", "Sustainability", "Investment", "clean energy",
+            "Energy Efficiency"
         ],
         "Governance and Policy (Solutions)": [
             "Climate Action", "Net Zero", "Carbon Pricing", "Regulation", "International Agreement", "Carbon Tax", 
