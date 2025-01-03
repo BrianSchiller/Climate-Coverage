@@ -5,3 +5,4 @@ scraped_articles_old/
 submissions/
 to_scrape/
 data/
+reddit/*/*.png

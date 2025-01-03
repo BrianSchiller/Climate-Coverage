@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import Patch
+import os
 
 def plot_article_keyword_count(data, cols = 3):
     # Number of newspapers and labels
@@ -102,7 +103,7 @@ def plot_article_topic_count(data, cols = 3):
     plt.savefig("data/article_topic_count.png", dpi=300)
 
 
-def plot_reddit_keyword_count(data, cols=3, submissions_per_page=27):
+def plot_reddit_keyword_count(data, subreddit_name, cols=3, submissions_per_page=27):
     # Extract unique labels from the first submission
     labels = list(data[0]["labels"].keys())
     num_labels = len(labels)
@@ -177,5 +178,8 @@ def plot_reddit_keyword_count(data, cols=3, submissions_per_page=27):
         plt.subplots_adjust(hspace=0.3, wspace=0.3, top=0.88, bottom=0.12, left=0.05, right=0.95)
 
         # Save each page
-        plt.savefig(f"data/reddit_keyword_count_page_{page + 1}.png", dpi=300)
+        os.makedirs(f"reddit/{subreddit_name}", exist_ok=True)
+        plt.savefig(f"reddit/{subreddit_name}/keyword_count_page_{page + 1}.png", dpi=300)
         plt.close(fig)
+        
+        print(f"Saved page {page + 1} of {subreddit_name}")

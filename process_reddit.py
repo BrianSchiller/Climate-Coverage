@@ -42,7 +42,7 @@ def process_reddit_submissions(file):
         content = submission["Content"]
         if not submission["Selfpost"]:
             article = scrape_article_content_with_timeout({"source": None, "url": submission["URL"]})
-            if article is None:
+            if article is None or article == "":
                 print("Failed")
                 continue
             else:
@@ -100,7 +100,7 @@ def count_keywords(file):
 
     return submissions
 
-# output = process_reddit_submissions('reddit/climate.json')
+output = process_reddit_submissions('reddit/climate.json')
 # count_keywords(output)
 submissions = count_keywords('reddit\climate_processed.json')
-plot_reddit_keyword_count(submissions)
+plot_reddit_keyword_count(submissions, "climate")
