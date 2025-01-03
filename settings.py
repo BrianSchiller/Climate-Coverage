@@ -1,89 +1,92 @@
 RELEVANT_KEYWORDS = [
-    "climate change", "global warming", "carbon emissions", "greenhouse gases",
+    "climate change", "global warming", "carbon emission", "greenhouse gas",
     "carbon footprint", "Paris Agreement", "climate action", "renewable energy",
     "carbon neutrality", "sustainability", "climate crisis", "greenhouse effect",
     "climate policy", "clean energy", "environmental impact", "extreme weather",
     "carbon taxes", "climate adaptation", "climate mitigation", "fossil fuel",
-    "clean technology", "green tech", "electric vehicles", "solar power", "wind power",
+    "clean technology", "green tech", "electric vehicle", "solar power", "wind power",
     "energy transition", "carbon pricing", "climate finance",
-    "carbon credits", "carbon trading", "sustainable development", "climate justice",
-    "climate activism", "climate legislation", "climate models",
+    "carbon credit", "carbon trading", "sustainable development", "climate justice",
+    "climate activism", "climate legislation", "climate model",
     "climate science" "oceans and climate change",
     "melting ice", "sea level rise", "biodiversity loss",
-    "geoengineering", "natural disasters", "heatwave", "wildfires", "drought", "flooding",
+    "geoengineering", "natural disasters", "heatwave", "wildfire", "drought", "flooding",
     "hurricane", "sustainable agriculture", "water scarcity",
     "deforestation", "forest conservation",
-    "UN climate summit", "COP27", "climate pact", "Net Zero", "Fridays for Future",
-    "warming climate", "global temperatures", "changing temperatures", "Warmer temperatures",
+    "un climate summit", "cop27", "climate pact", "net zero", "friday for future",
+    "warming climate", "global temperature", "changing temperature", "warmer temperature",
     "climate denial"
 ]
 
 label_keywords = {
     "causes": {
         "Energy and Industry": [
-            "Fossil Fuels", "Energy", "Transportation", "Emissions", "Oil", "Gas", "Coal", "Pollution", "Electricity", 
-            "Power Plants", "Renewable Energy", "Carbon Emissions", "Natural Gas", "Hydraulic Fracturing", "Greenhouse Gases",
-            "Carbon Intensity", "Wind Power", "Solar Energy", "Nuclear Power", "Energy Efficiency", "Fossil Fuel Subsidies", 
-            "Oil Sands", "Carbon Capture", "Oil Refining", "Gasoline", "Methane Emissions", "Coal Mining"
+            "Fossil Fuel", "Energy", "Transportation", "Emission", "Oil", "Gas", "Coal", "Pollution", "Electricity", 
+            "Power Plant", "Renewable Energy", "Carbon Emission", "Natural Gas", "Hydraulic Fracturing", "Greenhouse Gas",
+            "Carbon Intensity", "Wind Power", "Solar Energy", "Nuclear Power", "Energy Efficiency", "Fossil Fuel Subsidie", 
+            "Oil Sand", "Carbon Capture", "Oil Refining", "Gasoline", "Methane Emission", "Coal Mining"
         ],
         "Land Use and Agriculture": [
-            "Deforestation", "Agriculture", "Farming", "Soil Degradation", "Crops", "Land Clearing", "Monoculture", 
-            "Pesticides", "Livestock", "Agroforestry", "Irrigation", "Desertification", "Overgrazing", "Crop Monoculture", 
-            "Soil Erosion", "Forest Fires", "Drought", "Wetlands", "Organic Farming", "Soil Fertility", "Food Security", 
-            "Crop Diversity", "Greenhouse Gas Emissions", "Water Usage", "Fertilizers"
+            "Deforestation", "Agriculture", "Farming", "Farm", "Soil Degradation", "Crop", "Land Clearing", "Monoculture", 
+            "Pesticide", "Livestock", "Agroforestry", "Irrigation", "Desertification", "Overgrazing", "Crop Monoculture", 
+            "Soil Erosion", "Forest" , "Fire", "Drought", "Wetland", "Organic Farming", "Soil Fertility", "Food Security", 
+            "Crop Diversity", "Greenhouse Gas Emission", "Water Usage", "Fertilizer", "environmental degradation", "greenhouse effect"
         ],
         "Governance and Policy (Causes)": [
-            "Policy", "Government", "Inaction", "Policy Gaps", "Legislation", "Subsidies", "Lobbying", "Bureaucracy", 
-            "Fossil Fuel Subsidies", "Carbon Pricing", "Environmental Regulations", "Political Will", "Policy Makers", 
-            "Government Inaction", "Lobbying Influence", "Energy Policy", "Climate Denial", "Corporate Interests", 
-            "Weak Regulations", "Policy Failures", "Climate Change Skepticism"
+            "Policy", "Government", "Inaction", "Policy Gap", "Legislation", "Subsidy", "Lobbying", "Bureaucracy", 
+            "Fossil Fuel Subsidy", "Carbon Pricing", "Environmental Regulation", "Political Will", "Policy Maker", 
+            "Government Inaction", "Lobbying Influence", "Energy Policy", "Climate Denial", "Corporate Interest", 
+            "Weak Regulation", "Policy Failure", "Climate Change Skepticism", "greenwashing", "Politic"
         ],
         "Personal Consumption": [
             "Consumption", "Waste", "Footprint", "Lifestyle", "Carbon Footprint", "Materialism", "Affluence", "Diet", 
-            "Overconsumption", "Sustainable Living", "Eco-friendly Products", "Upcycling", "Carbon Offset", "Minimalism", 
-            "Ethical Consumption", "Recycle", "Greenwashing", "Eco-conscious", "Green Energy", 
-            "Energy Star Products", "Veganism", "Packaging Waste", "Circular Economy", "Green Technology"
+            "Overconsumption", "Sustainable Living", "Eco-friendly Product", "Upcycling", "Carbon Offset", "Minimalism", 
+            "Ethical Consumption", "Recycle", "Greenwashing", "Eco-conscious", "Plant-based Diet", "Green Energy", 
+            "Energy Star Product", "Veganism", "Packaging Waste", "Circular Economy", "Green Technology", "green tech", 
+            "sustainable", "sustainability"
         ]
     },
     "consequences": {
         "Ecosystem Disruption": [
-            "Biodiversity", "Ecosystem", "Habitat Loss", "Coral Bleaching", "Species Extinction", "Marine Life", 
-            "Forest Loss", "Soil Erosion", "Invasive Species", "Ocean Acidification", "Species Decline", "Coastal Erosion", 
-            "Marine Ecosystem", "Loss of Biodiversity", "Ecological Imbalance"
+            "Biodiversity", "Ecosystem", "Habitat Loss", "Habitat", "Coral Bleaching", "Species Extinction", "Marine Life", 
+            "Forest Loss", "Soil Erosion", "Invasive Specie", "Ocean Acidification", "Species Decline", "Coastal Erosion", 
+            "Marine Ecosystem", "Biodiversity", "Ecological Imbalance", "disruption"
         ],
         "Extreme Weather Events": [
             "Heatwave", "Flooding", "Drought", "Wildfire", "Hurricane", "Storm", "Cyclone", "Typhoon", "Flood", 
-            "Weather Event", "Severe Weather", "Tornado", "Intense Storm", "Extreme Temperature", "Torrential Rain", 
-            "Tidal Wave", "Blizzard", "Ice Storm", "Weather Disaster", "ocean circulation", "melting"
+            "Weather Event", "Severe Weather", "Tornadoes", "Intense Storm", "Extreme Temperature", "Torrential Rain", 
+            "Tidal Wave", "Blizzard", "Ice Storm", "Weather Disaster", "ocean circulation", "melting", "melt", "global heating", 
+            "climate change", "ocean rise", "ocean", "warmer", "warming"
         ],
         "Health Risks": [
-            "Health", "Diseases", "Pollution", "Heat Stroke", "Malnutrition", "Vector-Borne Diseases", "Respiratory Illness", 
+            "Health", "Disease", "Pollution", "Heat Stroke", "Malnutrition", "Vector-Borne Disease", "Respiratory Illness", 
             "Cancer", "Water Scarcity", "Mental Health", "Infectious Disease", "Nutrition", "Illness", "Air Pollution", 
-            "Food Insecurity", "Waterborne Diseases", "Cholera", "Diarrheal Diseases", "Vector-Borne Infections", 
-            "Temperature-related Illnesses"
+            "Food Insecurity", "Waterborne Disease", "Cholera", "Diarrhea", "Diarrheal", "Vector-Borne Infection",
+            "Temperature-related Illness", "virus"
         ],
         "Economic Impact": [
-            "Economic Loss", "Food Security", "Job Loss", "Poverty", "Infrastructure Damage", "Insurance", "GDP", 
-            "Investment", "Market Disruption", "Economic Growth", "Financial Crisis", "Agricultural Losses", "Supply Chain Disruptions", 
+            "Economic Loss", "Cost", "Food Security", "Job Loss", "Poverty", "Infrastructure Damage", "Insurance", "GDP", 
+            "Investment", "Market Disruption", "Economic Growth", "Financial Crisis", "Agricultural Loss", "Supply Chain Disruption", 
             "Energy Cost", "Insurance Claim", "Property Damage", "Economic Strain", "Business Loss", "Trade Impact"
         ],
         "Displacement and Migration": [
             "Migration", "Displacement", "Refugee", "Sea Level Rise", "Climate Refugee", "Natural Disaster", "Conflict", 
             "Relocation", "Livelihood Loss", "Environmental Migration", "Climate Migration", "Forced Migration", "Land Loss", 
             "Desertification", "Coastal Flooding", "Displaced Community", "Temporary Shelter", "Climate-induced Displacement", 
-            "Rural Depopulation"
+            "Depopulation"
         ]
     },
     "solutions": {
         "Technological Solutions": [
             "Solar", "Wind", "Electric Vehicle", "Energy Efficiency", "Storage", "Hydrogen", "Green Tech", "Carbon Capture", 
             "Energy Storage", "Smart Grid", "Battery Technology", "Electric Mobility", "Geothermal", "Nuclear Fusion", 
-            "Energy Innovation", "Clean Tech", "Carbon Neutral Technology"
+            "Energy Innovation", "Clean Tech", "clean technology" "Carbon Neutral Technology", "Sustainability", "Investment", "clean energy"
         ],
         "Governance and Policy (Solutions)": [
-            "Climate Action", "Net Zero", "Carbon Pricing", "Regulation", "International Agreements", "Carbon Tax", 
-            "Climate Legislation", "Paris Agreement", "Sustainable Development Goals", "Carbon Neutrality", "Environmental Standards", 
-            "Climate Policy", "Emissions Trading", "Policy Reform", "Green New Deal", "Green Taxation"
+            "Climate Action", "Net Zero", "Carbon Pricing", "Regulation", "International Agreement", "Carbon Tax", 
+            "Climate Legislation", "Paris Agreement", "Sustainable Development Goal", "Carbon Neutrality", "Environmental Standard", 
+            "Climate Policy", "Emissions Trading", "Policy Reform", "Green New Deal", "Green Taxation", "Climate March", "Climate Strike",
+            "cop27"
         ],
         "Adaptation and Resilience": [
             "Adaptation", "Resilience", "Infrastructure", "Urban Planning", "Water Management", "Disaster Management", 
@@ -91,9 +94,9 @@ label_keywords = {
             "Risk Management", "Building Resilience", "Resilient Infrastructure", "Climate Proofing", "vegan", "vegetarian", "Plant-based"
         ],
         "Nature-Based Solutions": [
-            "Reforestation", "Conservation", "Wetlands", "Forests", "Coastal Protection", "Sustainability", "Ecosystems", 
+            "Reforestation", "Conservation", "Wetland", "Forest", "Coastal Protection", "Sustainability", "Ecosystem", 
             "Agroforestry", "Biodiversity", "Soil Conservation", "Wetland Restoration", "Green Infrastructure", 
-            "Urban Green Spaces", "Habitat Restoration", "Mangroves", "Nature Conservation"
+            "Urban Green Space", "Habitat Restoration", "Mangrove", "Nature Conservation"
         ]
     }
 }
