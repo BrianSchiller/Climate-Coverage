@@ -4,6 +4,9 @@ from matplotlib.patches import Patch
 import os
 import json
 from pathlib import Path
+import seaborn as sns
+import pandas as pd
+
 
 def plot_newspaper_keyword_count(data, cols = 3):
     # Number of newspapers and labels
@@ -260,5 +263,80 @@ def plot_subreddit_keyword_count(path, normalized = False, output_dir="reddit", 
     output_path = os.path.join(output_dir, f"{Path(path).stem}.png")
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     plt.close(fig)
+    
+    print(f"Plot saved to {output_path}")
+
+
+
+def plot_keyword_count_per_week():
+    with open(r'data\article_keyword_per_week.json') as file:
+        weekly_averages = json.load(file)
+
+    data = []
+    for newspaper, weeks in weekly_averages.items():
+        for year_week, details in weeks.items():
+            for topic, avg_count in details["averages"].items():
+                data.append({
+                    "Newspaper": newspaper,
+                    "Week": year_week,
+                    "Topic": topic,
+                    "Average Count": avg_count,
+                    "Article Count": details.get("article_count", 0)  # Assuming article_count is available
+                })
+
+    df = pd.DataFrame(data)
+
+    # Convert 'Week' to a proper datetime-like format and extract week number
+    df['Year'], df['WeekNum'] = zip(*df['Week'].str.split('-').apply(lambda x: (int(x[0]), int(x[1]))))
+    df['WeekLabel'] = df['Year'].astype(str) + '-W' + df['WeekNum'].astype(str)
+
+    # Create a faceted line plot using seaborn
+    g = sns.FacetGrid(df, col="Newspaper", col_wrap=2, sharey=False, height=5)
+    g.map_dataframe(sns.lineplot, x="WeekNum", y="Average Count", hue="Topic")
+
+    # Adjust legend and axis labels
+    g.add_legend(title="Topics")
+    g.set_axis_labels("Week Number", "Average Count")
+    g.set_titles("{col_name}")
+
+    # Customize each facet's x-axis ticks
+    for ax in g.axes.flatten():
+        ax.set_xticks(df['WeekNum'].unique())
+        ax.set_xticklabels(df['WeekLabel'].unique(), rotation=45)
+
+        # Get the newspaper name directly from the facet grid column names
+        facet_title = ax.get_title().split('=')[1].strip() if '=' in ax.get_title() else ax.get_title()
+
+        # Track the maximum Average Count for each week
+        max_avg_count_per_week = df[df['Newspaper'] == facet_title].groupby('WeekNum')['Average Count'].max()
+
+        # Add article count text for each week at the highest Average Count
+        for week_num in max_avg_count_per_week.index:
+            max_avg_count = max_avg_count_per_week[week_num]
+            week_data = df[(df['Newspaper'] == facet_title) & (df['WeekNum'] == week_num) & (df['Average Count'] == max_avg_count)]
+
+            # Display article count only once for the week with the highest count
+            for _, row in week_data.iterrows():
+                ax.text(
+                    week_num, max_avg_count + 0.3,  # Position the text just above the highest Average Count
+                    f"Articles: {row['Article Count']}",
+                    ha='center', va='bottom', fontsize=8
+                )
+
+    # Adjust the spacing between plots and move the legend properly
+    g.fig.subplots_adjust(top=0.85, bottom=0.2, hspace=0.3)  # Increase vertical space between plots
+    g.fig.legend(
+        handles=g.legend.legendHandles, 
+        labels=[t.get_text() for t in g.legend.texts], 
+        loc='upper center', 
+        ncol=3,
+        bbox_to_anchor=(0.5, 1.03)  # Move the legend slightly above the plots
+    )
+    g.legend.remove()  # Remove duplicated legend from individual plots
+
+    plt.tight_layout()
+
+    output_path = "data/weekly_keyword_count.png"
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
     
     print(f"Plot saved to {output_path}")
