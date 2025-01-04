@@ -5,7 +5,7 @@ import os
 import json
 from pathlib import Path
 
-def plot_article_keyword_count(data, cols = 3):
+def plot_newspaper_keyword_count(data, cols = 3):
     # Number of newspapers and labels
     newspapers = list(data.keys())
     labels = list(next(iter(data.values()))["labels"].keys())
@@ -52,12 +52,12 @@ def plot_article_keyword_count(data, cols = 3):
     plt.subplots_adjust(hspace=0.5, wspace=0.3, top=0.85, bottom=0.1)
 
     # Show the plot
-    path = "data/article_keyword_count.png"
+    path = "data/newspaper_keyword_count.png"
     plt.savefig(path, dpi=300)
     print(f"Saved article keyword count plot to: {path}")
 
 
-def plot_article_topic_count(data, cols = 3):
+def plot_newspaper_topic_count(data, cols = 3):
     # Number of newspapers and labels
     newspapers = list(data.keys())
     labels = list(next(iter(data.values()))["scores"].keys())
@@ -104,7 +104,7 @@ def plot_article_topic_count(data, cols = 3):
     plt.subplots_adjust(hspace=0.5, wspace=0.3, top=0.85, bottom=0.1)
 
     # Show the plot
-    plt.savefig("data/article_topic_count.png", dpi=300)
+    plt.savefig("data/newspaper_topic_count.png", dpi=300)
 
 
 def plot_submission_keyword_count(data, subreddit_name, cols=3, submissions_per_page=27):

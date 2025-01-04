@@ -51,7 +51,7 @@ def load_articles(folder_path):
     print("Finished loading all articles")
     return results
 
-def count_keywords(articles):
+def count_keywords_per_newspaper(articles):
     counter = {}
 
     for newspaper, dates in articles.items():
@@ -67,7 +67,7 @@ def count_keywords(articles):
                         count = len(re.findall(r'\b' + re.escape(keyword.lower()) + r'\b', content))
                         counter[newspaper]["labels"][label] += count
 
-    path = "data/article_keyword_count.json"
+    path = "data/newspaper_keyword_count.json"
     with open(path, "w") as outfile: 
         json.dump(counter, outfile)
 
@@ -90,10 +90,15 @@ def count_keywords_per_article(articles):
                     for keyword in keywords:
                         count = len(re.findall(r'\b' + re.escape(keyword.lower()) + r'\b', content))
                         counter[newspaper][date][label] += count
-
+    
+    path = "data/article_keyword_count.json"
+    with open(path, 'w', encoding='utf-8') as count_file:
+        json.dump(counter, count_file, indent=4)
+    print(f"Written article keyword counts to: {path}")
+    
     return counter
 
-def identify_topics_per_article(counter):
+def identify_topics_per_newspaper(counter):
     scores = {}
 
     for newspaper, timestamps in counter.items():
@@ -111,7 +116,7 @@ def identify_topics_per_article(counter):
             for label in most_referenced:
                 scores[newspaper]["scores"][label] += 1
 
-    path = 'data/article_topic_count.json'
+    path = 'data/newspaper_topic_count.json'
     with open(path, 'w', encoding='utf-8') as count_file:
         json.dump(scores, count_file, indent=4)
     print(f"Written article topic scores to: {path}")
@@ -122,9 +127,9 @@ def identify_topics_per_article(counter):
 folder_path = "scraped_articles" 
 articles = load_articles(folder_path)
 
-counter = count_keywords(articles)
-plots.plot_article_keyword_count(counter)
+counter = count_keywords_per_newspaper(articles)
+plots.plot_newspaper_keyword_count(counter)
 
 counter = count_keywords_per_article(articles)
-scores = identify_topics_per_article(counter)
-plots.plot_article_topic_count(scores)
+scores = identify_topics_per_newspaper(counter)
+plots.plot_newspaper_topic_count(scores)
