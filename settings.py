@@ -81,8 +81,8 @@ label_keywords = {
         "Technological Solutions": [
             "Solar", "Wind", "Electric Vehicle", "Electric", "Electrical", "Energy Efficiency", "Storage", "Hydrogen", "Green Tech", "Carbon Capture", 
             "Energy Storage", "Smart Grid", "Battery Technology", "Electric Mobility", "Geothermal", "Nuclear", "Innovation", 
-            "Clean Tech", "clean technology", "Carbon Neutral", "Sustainability", "Sustainable", "Investment", "Investing", "clean energy",
-            "Energy Efficiency", "Circular Economy", "Green Technology", "Green", "Eco-friendly", "Eco", "Efficiency", "Smart Home"
+            "Clean Tech", "clean technology", "Carbon Neutral", "Sustainability", "Sustainable", "clean energy",
+            "Energy Efficiency", "Circular Economy", "Green Technology", "Green Energy", "Green Job", "Eco-friendly", "Eco", "Efficiency", "Smart Home"
         ],
         "Governance and Policy (Solutions)": [
             "Climate Action", "Net Zero", "Carbon Pricing", "Regulation", "International Agreement", "Carbon Tax", 
