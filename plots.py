@@ -2,6 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import Patch
 import os
+import json
+from pathlib import Path
 
 def plot_article_keyword_count(data, cols = 3):
     # Number of newspapers and labels
@@ -105,7 +107,7 @@ def plot_article_topic_count(data, cols = 3):
     plt.savefig("data/article_topic_count.png", dpi=300)
 
 
-def plot_reddit_keyword_count(data, subreddit_name, cols=3, submissions_per_page=27):
+def plot_submission_keyword_count(data, subreddit_name, cols=3, submissions_per_page=27):
     # Extract unique labels from the first submission
     labels = list(data[0]["labels"].keys())
     num_labels = len(labels)
@@ -174,7 +176,7 @@ def plot_reddit_keyword_count(data, subreddit_name, cols=3, submissions_per_page
         # Combine the legend handles
         fig.legend(handles + comment_patch, labels + ["Comment Labels"], loc='upper center', ncol=4, fontsize=12, title="Labels", bbox_to_anchor=(0.5, 0.95))
 
-        fig.suptitle("Reddit Keyword Count Analysis", fontsize=16, fontweight='bold', y=0.98)
+        fig.suptitle("Submission Keyword Count Analysis", fontsize=16, fontweight='bold', y=0.98)
 
         # Adjust layout to decrease whitespace around the plots
         plt.subplots_adjust(hspace=0.3, wspace=0.3, top=0.88, bottom=0.12, left=0.05, right=0.95)
@@ -185,3 +187,78 @@ def plot_reddit_keyword_count(data, subreddit_name, cols=3, submissions_per_page
         plt.close(fig)
         
         print(f"Saved page {page + 1} of {subreddit_name}")
+
+
+def plot_subreddit_keyword_count(path, normalized = False, output_dir="reddit", cols=3):
+    with open(path) as r:
+        data = json.load(r)
+
+    # Extract unique labels from the first subreddit
+    labels = list(next(iter(data.values()))["scores"].keys())
+    num_labels = len(labels)
+
+    # Assign colors to labels
+    colors = plt.cm.tab20(np.linspace(0, 1, num_labels))
+    label_colors = {label: color for label, color in zip(labels, colors)}
+
+    # Determine grid layout
+    num_subreddits = len(data)
+    rows = (num_subreddits + cols - 1) // cols
+    fig, axs = plt.subplots(rows, cols, figsize=(18, rows * 6), sharex=False)
+
+    # Flatten axs for easy iteration
+    axs = axs.flatten()
+
+    for i, (subreddit, values) in enumerate(data.items()):
+        scores = {label: round(value, 2) for label, value in values["scores"].items()}
+        comment_scores = {label: round(value, 2) for label, value in values["comment_scores"].items()}
+        x = np.arange(num_labels)
+
+        # Plot bars for post counts (solid)
+        axs[i].bar(x - 0.2, scores.values(), width=0.4, label="Post Labels", 
+                    color=[label_colors[label] for label in labels], edgecolor='black')
+
+        # Plot bars for comment counts (hatch)
+        axs[i].bar(x + 0.2, comment_scores.values(), width=0.4, label="Comment Labels", 
+                    color=[label_colors[label] for label in labels], edgecolor='black', hatch='//')
+
+        # Add value labels on top of bars
+        for j, label in enumerate(labels):
+            axs[i].text(x[j] - 0.2, scores[label] + 0.05 * max(scores[label], 1), 
+                        str(scores[label]), ha='center', fontsize=8)
+            axs[i].text(x[j] + 0.2, comment_scores[label] + 0.05 * max(comment_scores[label], 1), 
+                        str(comment_scores[label]), ha='center', fontsize=8)
+
+        # Customize subplot
+        axs[i].set_title(f"{subreddit} (Submissions: {values.get('num_of_sub', 'N/A')})", fontsize=10, pad=20)
+        axs[i].set_xticks(x)
+        axs[i].set_xticklabels([])  # Remove x-axis labels
+        axs[i].set_ylabel("Mentions", fontsize=9)
+        axs[i].grid(axis="y", linestyle="--", alpha=0.7)
+
+    # Hide unused subplots
+    for ax in axs[num_subreddits:]:
+        ax.axis("off")
+
+    # Create a custom legend with Patch for the comment labels
+    handles = [Patch(facecolor=color, edgecolor='black', label=label) for label, color in label_colors.items()]
+    comment_patch = Patch(facecolor="white", edgecolor='black', hatch='//', label="Comment Labels")
+
+    # Combine the legend handles
+    fig.legend(handles + [comment_patch], labels + ["Comment Labels"], loc='upper center', ncol=4, fontsize=10, 
+                title="Labels", bbox_to_anchor=(0.5, 1.1), frameon=False)
+
+    # Adjust the layout to increase space between the legend and the plots
+    title = "Subreddit Keyword Count Analysis"
+    if normalized:
+        title += " (normalized)"
+    fig.suptitle(title, fontsize=16, fontweight='bold', y=1.2)
+    plt.subplots_adjust(hspace=0.5, wspace=0.3, top=0.8, bottom=0.2, left=0.05, right=0.95)
+
+    # Save the figure
+    os.makedirs(output_dir, exist_ok=True)
+    output_path = os.path.join(output_dir, f"{Path(path).stem}.png")
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    plt.close(fig)
+    
+    print(f"Plot saved to {output_path}")

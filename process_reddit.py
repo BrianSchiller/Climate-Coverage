@@ -9,7 +9,7 @@ from nltk.stem import WordNetLemmatizer
 
 from scrape_web import scrape_article_content_with_timeout
 from settings import label_keywords
-from plots import plot_reddit_keyword_count
+import plots
 
 def process_reddit_submissions(file):
     # Initialize nltk resources
@@ -101,7 +101,7 @@ def count_keywords(file):
     return submissions
 
 
-def count_topics_per_subreddit(subreddits):
+def count_topics_per_subreddit(subreddits, normalize = False):
     scores = {}
 
     for subreddit in subreddits:
@@ -117,21 +117,47 @@ def count_topics_per_subreddit(subreddits):
 
         scores[subreddit]["num_of_sub"] = len(submissions)
         for submission in submissions:
-            for label, value in submission["labels"].items():
-                scores[subreddit]["scores"][label] += value
-            for label, value in submission["comment_labels"].items():
-                scores[subreddit]["comment_scores"][label] += value
+            if not normalize:
+                for label, value in submission["labels"].items():
+                    scores[subreddit]["scores"][label] += value
+                for label, value in submission["comment_labels"].items():
+                    scores[subreddit]["comment_scores"][label] += value
+            else:
+                # Normalize `labels`
+                label_sum = sum(submission["labels"].values())
+                if label_sum > 0:  # Avoid division by zero
+                    for label, value in submission["labels"].items():
+                        normalized_value = value / label_sum
+                        scores[subreddit]["scores"][label] += normalized_value
+
+                # Normalize `comment_labels`
+                comment_label_sum = sum(submission["comment_labels"].values())
+                if comment_label_sum > 0:  # Avoid division by zero
+                    for label, value in submission["comment_labels"].items():
+                        normalized_value = value / comment_label_sum
+                        scores[subreddit]["comment_scores"][label] += normalized_value
     
-    file = "reddit/subreddit_topics.json"
+    file = "reddit/subreddit_keywords.json"
+    if normalize:
+        file = "reddit/subreddit_keywords_normalized.json"
     with open(file, "w") as outfile: 
         json.dump(scores, outfile, indent=4)
 
     print(f"Counted keywords in {file}")
 
-# subreddit = "climateskeptics"
-# output = process_reddit_submissions(f'reddit/{subreddit}.json')
-# submissions = count_keywords(output)
-# plot_reddit_keyword_count(submissions, subreddit)
+# subreddits = ["climateactionplan", "climateoffensive"]
+# for subreddit in subreddits:
+#     output = process_reddit_submissions(f'reddit/{subreddit}.json')
 
-subreddits = ["climate", "climatechange", "climateskeptics"]
+subreddits = ["climateactionplan", "climateoffensive"]
+for subreddit in subreddits:
+    file = f"reddit/{subreddit}_processed.json"
+    submissions = count_keywords(file)
+    plots.plot_submission_keyword_count(submissions, subreddit)
+
+subreddits = ["climate", "climatechange", "climateskeptics", "climateactionplan", "climateoffensive"]
 count_topics_per_subreddit(subreddits)
+plots.plot_subreddit_keyword_count("reddit/subreddit_keywords.json")
+
+count_topics_per_subreddit(subreddits, normalize=True)
+plots.plot_subreddit_keyword_count("reddit/subreddit_keywords_normalized.json")

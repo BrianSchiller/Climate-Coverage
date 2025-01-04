@@ -97,7 +97,7 @@ def save_data(posts, file_name):
         json.dump(posts, json_file, indent=4)
 
 if __name__ == "__main__":
-    subreddit_name = "climateskeptics"
+    subreddit_name = "ClimateActionPlan"
     posts = fetch_posts_last_n_months(subreddit_name)
     file_name = f'reddit/{subreddit_name}.json'
     save_data(posts, file_name)
