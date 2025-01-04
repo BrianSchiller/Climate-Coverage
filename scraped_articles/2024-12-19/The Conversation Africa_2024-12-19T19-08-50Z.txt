@@ -1,0 +1,28 @@
+The Australian summer has started to unleash its power. On Monday, the Victorian town of Walpeup reached 47.1°C , and towns in Queensland, western New South Wales, South Australia and the Northern Territory all hit temperatures above 45°C.
+More sweltering days and nights are expected. The Bureau of Meteorology forecasts above-average temperatures for most of Australia this summer.
+What’s more, bushfire experts predict an increased fire risk across vast regions of the continent. Already this season, an out-of-control bushfire struck Creswick in central Victoria after Monday’s extreme heat.
+All this is a dangerous cocktail for the electricity grid. Increasing temperatures puts a strain on supplies, while bushfire smoke can limit the electricity produced by solar panels. And troublingly, heatwaves and bushfires are set to worsen as climate change continues .
+Here, we explain the challenges ahead this summer, and outline simple household measures to help keep your electricity supplies flowing.
+Sometimes demand for electricity is greater than supply. This is most common in hot weather during the evening peak when, for example, many people return home and turn on their energy-hungry air-conditioning units at the same time.
+Energy networks say the strain is greatest on the third and fourth consecutive hot days , when air-conditioners are turned up to combat heat that has accumulated in buildings.  Electricity demand is also typically higher on weekends, and from mid-January as schools and businesses resume.
+In some extreme cases, the immense demand means the entire electricity grid is at risk of becoming dangerously unstable. That’s when “load shedding” occurs. It involves the Australian Energy Market Operator intentionally cutting power to parts of the grid to reduce electricity demand and prevent the entire system from becoming dangerously unstable.
+In January 2019, for example, supplies were temporarily cut to 200,000 electricity customers in Victoria. It followed a day of high temperatures and humidity, as well as outages at coal-fired power plants, and reduced output at others due to the heat.
+As recently as last month, the market operator warned of potential blackouts in NSW amid a severe heatwave.
+Heatwaves can also impede infrastructure such as generators and transmission lines. Power lines can droop and short-circuit. Transformers may overheat and fuses can fail .
+Add bushfires to the mix, and the electricity grid can face even more challenges.
+Solar electricity – both from solar farms and rooftop panels – is an important part of the electricity mix . It comprised 16% of total electricity generation last year, and this share is growing.
+But bushfires can significantly reduce solar output. They release atmospheric aerosols in the form of smoke particles, which scatter and absorb the Sun’s rays . This reduces the radiation that reaches solar panels, reducing the amount of electricity they produce .
+This is true for large-scale solar plants , as well as household rooftop solar systems .
+For example, during the 2019–20 Black Summer bushfires, rooftop electricity generation from solar panels fell by up to 65% in affected areas.
+Across the bushfire season, energy loss from residential and large-scale solar plants in NSW fell by 175 gigawatt hours , representing a 4.2% loss in total energy generation.
+Particles released by fires can also settle on solar panels, again reducing their electricity output.
+More broadly, fires can damage infrastructure such as transmission lines and towers, causing power disruptions and making it harder to keep the grid running smoothly.
+The National Council for Fire & Emergency Services predicts an increased fire risk across large parts of Australia this summer. They include southeastern South Australia, western Victoria, around Alice Springs in central Australia, and the southern parts of Western Australia.
+So what can households do to keep electricity supplies stable this summer, amid the twin threat of bushfires and heatwaves?
+If you live in one of the four million Australian households with rooftop solar panels installed, there are several steps you can take.
+Consider installing a battery to soak up any solar electricity you don’t use. It will provide you with a backup source of power in case of grid outages. Also make sure you keep your solar panels clean – especially if there is bushfire smoke around – to make sure they are operating as efficiently as possible.
+If you live in a bushfire-prone area, with a high risk of damage to transmission lines , consider talking to your neighbours about installing a community-scale battery. These are neighbourhood-scale facilities that enable people to store solar power and share it when needed.
+Regardless of whether your home has solar panels, you can cool your house earlier in the day to reduce stress on the grid in the peak hours. The cool energy is stored in the building’s walls and floors, helping keep it comfortable later.
+And ahead of next summer, consider other ways you can heat-proof your home. This might include window treatments such as double-glazed glass, awnings and external blinds, or installing better insulation.
+If you are building a new home in coming years, its energy performance should be a key consideration. Think about factors such as window placement, building materials and orientation.
+Australia has a hot climate with high risk of bushfire, and this problem will only get worse under global warming. While energy companies and authorities have much work ahead to insure the electricity grid against these challenges, every electricity user has a role to play.

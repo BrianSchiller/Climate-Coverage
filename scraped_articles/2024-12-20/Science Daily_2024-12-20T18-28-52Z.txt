@@ -1,0 +1,35 @@
+Academics from Northumbria University are part of an international research team which has used data from satellites to track changes in the thickness of the Greenland Ice Sheet.
+Global warming is causing the Ice Sheet to melt and flow more rapidly, raising sea levels and disturbing weather patterns across our planet.
+Because of this, precise measurements of its changing shape are of critical importance for tracking and adapting to the effects of climate warming.
+Scientists have now delivered the first measurements of Greenland Ice Sheet thickness change using CryoSat-2 and ICESat-2 -- the ESA and NASA ice satellite missions.
+Both satellites carry altimeters as their primary sensor, but they make use of different technologies to collect their measurements.
+CryoSat-2 carries a radar system to determine the Earth's surface height, while ICESat-2 has a laser system for the same task.
+Although radar signals can pass through clouds, they also penetrate into the ice sheet surface and have to be adjusted for this effect.
+Laser signals, on the other hand, reflect from the actual surface, but they cannot operate when clouds are present.
+The missions are therefore highly complementary, and combining their measurements has been a holy grail for polar science.
+A new study from scientists at the UK Centre for Polar Observation and Modelling (CPOM), based at Northumbria University, and published in Geophysical Research Letters shows that CryoSat-2 and ICESat-2 measurements of Greenland Ice Sheet elevation change agree to within 3%.
+This confirms that the satellites can be combined to produce a more reliable estimate of ice loss than either could achieve alone. It also means that if one mission were to fail, the other could be relied upon to maintain our record of polar ice change.
+Between 2010 and 2023, the Greenland Ice Sheet thinned by 1.2 metres on average. However, thinning across the ice sheet's margin (the ablation zone) was over five times larger, amounting to 6.4 metres on average.
+The most extreme thinning occurred at the ice sheets outlet glaciers, many of which are speeding up.
+At Sermeq Kujalleq in west central Greenland (also known as Jakobshavn Isbræ), peak thinning was 67 metres, and at Zachariae Isstrøm in the northeast peak thinning was 75 metres.
+Altogether, the ice sheet shrank by 2,347 cubic kilometres across the 13-year survey period -- enough to fill Africa's Lake Victoria.
+The biggest changes occurred in 2012 and 2019 when summer temperatures were extremely hot and the ice sheet lost more than 400 cubic kilometres of its volume each year.
+Greenland's ice melting also affects global ocean circulation and disturbs weather patterns. These changes have far-reaching impacts on ecosystems and communities worldwide.
+The availability of accurate, up-to-date data on ice sheet changes will be critical in helping us to prepare for and adapt to the impacts of climate change.
+Lead author and CPOM researcher Nitin Ravinder said: "We are very excited to have discovered that CryoSat-2 and ICESat-2 are in such close agreement.
+"Their complementary nature provides a strong motivation to combine the data sets to produce improved estimates of ice sheet volume and mass changes.
+"As ice sheet mass loss is a key contributor to global sea level rise, this is incredibly useful for the scientific community and policymakers."
+The study made use of four years of measurements from both missions, including those collected during the Cryo2ice campaign, a pioneering ESA-NASA partnership initiated in 2020.
+By adjusting CryoSat-2's orbit to synchronise with ICESat-2, ESA enabled the near-simultaneous collection of radar and laser data over the same regions.
+This alignment allows scientists to measure snow depth from space, offering unprecedented accuracy in tracking sea and land ice thickness.
+Tommaso Parrinello, CryoSat Mission Manager at ESA, expressed optimism about the campaign's impact:
+"CryoSat has provided an invaluable platform for understanding our planet's ice coverage over the past 14 years, but by aligning our data with ICESat-2, we've opened new avenues for precision and insight.
+"This collaboration represents an exciting step forward, not just in terms of technology but in how we can better serve scientists and policymakers who rely on our data to understand and mitigate climate impacts."
+Thorsten Markus, project scientist for the ICESat-2 mission at NASA, said: "It is great to see that the data from 'sister missions' are providing a consistent picture of the changes going on in Greenland.
+"Understanding the similarities and differences between radar and lidar ice sheet height measurements allows us to fully exploit the complementary nature of those satellite missions.
+"Studies like this are critical to put a comprehensive time series of the ICESat, CryoSat-2, ICESat-2, and, in the future, CRISTAL missions together."
+ESA's CryoSat-2 continues to be instrumental in our understanding of climate related changes in polar ice, working alongside NASA's ICESat-2 to provide robust, accurate data on ice sheet changes.
+Together, these missions represent a significant step forward in monitoring polar ice loss and preparing for its global consequences.
+CPOM is a partnership of six universities and the British Antarctic Survey (BAS), based at Northumbria University, primarily funded by the National Environment Research Council (NERC) to provide national capability in observation and modelling of the processes that occur in the Polar regions of the Earth.
+CPOM uses satellite observations to monitor change in the Polar regions and numerical models to better predict how their ice and oceans might evolve in the future.
+By providing long-term capabilities to the scientific community and leading international assessments, CPOM helps global policymakers plan for the effects of climate change and sea level rise.
