@@ -291,7 +291,7 @@ def plot_keyword_count_per_week():
     df['WeekLabel'] = df['Year'].astype(str) + '-W' + df['WeekNum'].astype(str)
 
     # Create a faceted line plot using seaborn
-    g = sns.FacetGrid(df, col="Newspaper", col_wrap=2, sharey=False, height=5)
+    g = sns.FacetGrid(df, col="Newspaper", col_wrap=2, sharey=False, height=6)
     g.map_dataframe(sns.lineplot, x="WeekNum", y="Average Count", hue="Topic")
 
     # Adjust legend and axis labels
@@ -337,6 +337,101 @@ def plot_keyword_count_per_week():
     plt.tight_layout()
 
     output_path = "data/weekly_keyword_count.png"
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    
+    print(f"Plot saved to {output_path}")
+
+
+def plot_subreddit_keyword_count_per_week():
+    # Load the data from the new JSON format
+    with open(r'reddit/reddit_keyword_per_week.json') as file:
+        weekly_data = json.load(file)
+
+    # List to store the data to be plotted
+    data = []
+
+    # Loop through subreddits and weeks to extract necessary information
+    for subreddit, weeks in weekly_data.items():
+        for week, details in weeks.items():
+            post_count = details.get("post_count", 0)  # Number of posts for the week
+            for label_type, labels in details.items():
+                if label_type != "post_count":  # Skip post_count here, we use it separately
+                    for label, avg_count in labels.items():
+                        data.append({
+                            "Subreddit": subreddit,
+                            "Week": week,
+                            "Label Type": label_type,
+                            "Label": label,
+                            "Average Count": avg_count,
+                            "Post Count": post_count
+                        })
+
+    # Convert the list into a DataFrame
+    df = pd.DataFrame(data)
+
+    # Convert 'Week' to a proper tuple format (Year, WeekNum)
+    df['Year'], df['WeekNum'] = zip(*df['Week'].str.split('-').apply(lambda x: (int(x[0]), int(x[1][1:]))))  # Remove 'W' from WeekNum
+    df['WeekLabel'] = df['Year'].astype(str) + '-W' + df['WeekNum'].astype(str)
+
+    # Convert 'WeekLabel' to a datetime object to ensure chronological sorting
+    df['WeekLabelDate'] = pd.to_datetime(df['WeekLabel'] + '-1', format='%Y-W%U-%w')
+
+    # Sort the DataFrame by the actual datetime WeekLabelDate
+    df = df.sort_values(by=['WeekLabelDate'])
+
+    # Create a faceted line plot using seaborn
+    g = sns.FacetGrid(df, col="Subreddit", col_wrap=2, sharey=False, height=6)
+    
+    # We use ci=None to remove uncertainty shading around the lines
+    g.map_dataframe(sns.lineplot, x="WeekLabelDate", y="Average Count", hue="Label", ci=None)
+
+    # Adjust legend and axis labels
+    g.add_legend(title="Labels")
+    g.set_axis_labels("Week Number", "Average Count")
+    g.set_titles("{col_name}")
+
+    # Customize each facet's x-axis ticks
+    for ax in g.axes.flatten():
+        ax.set_xticks(df['WeekLabelDate'].dt.date.unique())  # Ensure the x-axis ticks are set by week date
+        ax.set_xticklabels(df['WeekLabelDate'].dt.strftime('%Y-W%U').unique(), rotation=45)  # Label the x-axis correctly
+
+        # Get the subreddit name directly from the facet grid column names
+        facet_title = ax.get_title().split('=')[1].strip() if '=' in ax.get_title() else ax.get_title()
+
+        # Track the maximum Average Count for each week
+        max_avg_count_per_week = df[df['Subreddit'] == facet_title].groupby('WeekLabelDate')['Average Count'].max()
+
+        # Add post count text for each week at the highest Average Count
+        for week_date in max_avg_count_per_week.index:
+            max_avg_count = max_avg_count_per_week[week_date]
+            week_data = df[(df['Subreddit'] == facet_title) & (df['WeekLabelDate'] == week_date) & (df['Average Count'] == max_avg_count)]
+
+            # Dynamically determine an appropriate vertical offset
+            # Setting a small dynamic buffer (buffer can be adjusted)
+            max_offset = 0.2 + 0.05 * max_avg_count  # The offset increases with the value to avoid collision with the plot line
+
+            # Display post count only once for the week with the highest average count
+            for _, row in week_data.iterrows():
+                ax.text(
+                    week_date, max_avg_count + max_offset,  # Place the label just above the highest Average Count
+                    f"Posts: {row['Post Count']}",
+                    ha='center', va='bottom', fontsize=8
+                )
+
+    # Adjust the spacing between plots and move the legend properly
+    g.fig.subplots_adjust(top=0.85, bottom=0.2, hspace=0.3)  # Increase vertical space between plots
+    g.fig.legend(
+        handles=g.legend.legendHandles, 
+        labels=[t.get_text() for t in g.legend.texts], 
+        loc='upper center', 
+        ncol=3,
+        bbox_to_anchor=(0.5, 1.03)  # Move the legend slightly above the plots
+    )
+    g.legend.remove()  # Remove duplicated legend from individual plots
+
+    plt.tight_layout()
+
+    output_path = "data/weekly_subreddit_keyword_count.png"
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     
     print(f"Plot saved to {output_path}")

@@ -8,7 +8,7 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 
 from scrape_web import scrape_article_content_with_timeout
-from settings import label_keywords
+from settings import label_keywords, SUBREDDITS
 import plots
 
 def process_reddit_submissions(file):
@@ -155,7 +155,7 @@ for subreddit in subreddits:
     submissions = count_keywords(file)
     plots.plot_submission_keyword_count(submissions, subreddit)
 
-subreddits = ["climate", "climatechange", "climateskeptics", "climateactionplan", "climateoffensive"]
+subreddits = SUBREDDITS
 count_topics_per_subreddit(subreddits)
 plots.plot_subreddit_keyword_count("reddit/subreddit_keywords.json")
 

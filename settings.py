@@ -109,3 +109,5 @@ label_keywords = {
         ]
     }
 }
+
+SUBREDDITS = ["climate", "climatechange", "climateskeptics", "climateactionplan", "climateoffensive"]
