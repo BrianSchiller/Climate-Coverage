@@ -1,38 +1,38 @@
 {
     "climate": {
         "scores": {
-            "Energy and Industry": 1733,
+            "Energy and Industry": 1722,
             "Land Use and Agriculture": 243,
-            "Governance and Policy (Causes)": 702,
-            "Personal Consumption": 261,
-            "Ecosystem Disruption": 880,
-            "Extreme Weather Events": 1459,
-            "Health Risks": 424,
-            "Economic Impact": 734,
-            "Displacement and Migration": 125,
-            "Technological Solutions": 815,
-            "Governance and Policy (Solutions)": 703,
-            "Adaptation and Resilience": 130,
+            "Governance and Policy (Causes)": 684,
+            "Personal Consumption": 258,
+            "Ecosystem Disruption": 872,
+            "Extreme Weather Events": 1409,
+            "Health Risks": 422,
+            "Economic Impact": 694,
+            "Displacement and Migration": 119,
+            "Technological Solutions": 804,
+            "Governance and Policy (Solutions)": 686,
+            "Adaptation and Resilience": 120,
             "Lifestyle Solutions": 66,
-            "Nature-Based Solutions": 229
+            "Nature-Based Solutions": 228
         },
         "comment_scores": {
-            "Energy and Industry": 1323,
+            "Energy and Industry": 1319,
             "Land Use and Agriculture": 248,
-            "Governance and Policy (Causes)": 452,
+            "Governance and Policy (Causes)": 446,
             "Personal Consumption": 515,
-            "Ecosystem Disruption": 470,
-            "Extreme Weather Events": 635,
+            "Ecosystem Disruption": 469,
+            "Extreme Weather Events": 615,
             "Health Risks": 227,
-            "Economic Impact": 453,
+            "Economic Impact": 442,
             "Displacement and Migration": 118,
-            "Technological Solutions": 657,
-            "Governance and Policy (Solutions)": 448,
-            "Adaptation and Resilience": 59,
+            "Technological Solutions": 656,
+            "Governance and Policy (Solutions)": 442,
+            "Adaptation and Resilience": 58,
             "Lifestyle Solutions": 147,
             "Nature-Based Solutions": 85
         },
-        "num_of_sub": 228
+        "num_of_sub": 225
     },
     "climatechange": {
         "scores": {
@@ -52,47 +52,47 @@
             "Nature-Based Solutions": 455
         },
         "comment_scores": {
-            "Energy and Industry": 1322,
+            "Energy and Industry": 1275,
             "Land Use and Agriculture": 270,
             "Governance and Policy (Causes)": 397,
-            "Personal Consumption": 469,
-            "Ecosystem Disruption": 769,
-            "Extreme Weather Events": 1605,
-            "Health Risks": 201,
-            "Economic Impact": 524,
+            "Personal Consumption": 463,
+            "Ecosystem Disruption": 765,
+            "Extreme Weather Events": 1601,
+            "Health Risks": 197,
+            "Economic Impact": 521,
             "Displacement and Migration": 200,
-            "Technological Solutions": 1049,
+            "Technological Solutions": 1046,
             "Governance and Policy (Solutions)": 383,
-            "Adaptation and Resilience": 115,
+            "Adaptation and Resilience": 112,
             "Lifestyle Solutions": 138,
             "Nature-Based Solutions": 226
         },
-        "num_of_sub": 281
+        "num_of_sub": 280
     },
     "climateskeptics": {
         "scores": {
-            "Energy and Industry": 159,
+            "Energy and Industry": 158,
             "Land Use and Agriculture": 69,
-            "Governance and Policy (Causes)": 67,
+            "Governance and Policy (Causes)": 66,
             "Personal Consumption": 40,
-            "Ecosystem Disruption": 48,
-            "Extreme Weather Events": 325,
+            "Ecosystem Disruption": 46,
+            "Extreme Weather Events": 309,
             "Health Risks": 22,
             "Economic Impact": 58,
             "Displacement and Migration": 5,
-            "Technological Solutions": 151,
-            "Governance and Policy (Solutions)": 67,
+            "Technological Solutions": 146,
+            "Governance and Policy (Solutions)": 66,
             "Adaptation and Resilience": 5,
             "Lifestyle Solutions": 6,
             "Nature-Based Solutions": 4
         },
         "comment_scores": {
             "Energy and Industry": 161,
-            "Land Use and Agriculture": 15,
+            "Land Use and Agriculture": 14,
             "Governance and Policy (Causes)": 62,
             "Personal Consumption": 50,
-            "Ecosystem Disruption": 50,
-            "Extreme Weather Events": 226,
+            "Ecosystem Disruption": 49,
+            "Extreme Weather Events": 222,
             "Health Risks": 24,
             "Economic Impact": 52,
             "Displacement and Migration": 37,
@@ -102,7 +102,7 @@
             "Lifestyle Solutions": 17,
             "Nature-Based Solutions": 13
         },
-        "num_of_sub": 62
+        "num_of_sub": 61
     },
     "climateactionplan": {
         "scores": {
@@ -115,7 +115,7 @@
             "Health Risks": 19,
             "Economic Impact": 83,
             "Displacement and Migration": 2,
-            "Technological Solutions": 211,
+            "Technological Solutions": 174,
             "Governance and Policy (Solutions)": 56,
             "Adaptation and Resilience": 23,
             "Lifestyle Solutions": 35,
@@ -131,13 +131,13 @@
             "Health Risks": 11,
             "Economic Impact": 39,
             "Displacement and Migration": 1,
-            "Technological Solutions": 74,
+            "Technological Solutions": 65,
             "Governance and Policy (Solutions)": 11,
             "Adaptation and Resilience": 3,
             "Lifestyle Solutions": 29,
             "Nature-Based Solutions": 6
         },
-        "num_of_sub": 49
+        "num_of_sub": 48
     },
     "climateoffensive": {
         "scores": {
@@ -150,7 +150,7 @@
             "Health Risks": 93,
             "Economic Impact": 94,
             "Displacement and Migration": 31,
-            "Technological Solutions": 344,
+            "Technological Solutions": 309,
             "Governance and Policy (Solutions)": 114,
             "Adaptation and Resilience": 40,
             "Lifestyle Solutions": 45,
@@ -166,7 +166,7 @@
             "Health Risks": 80,
             "Economic Impact": 99,
             "Displacement and Migration": 17,
-            "Technological Solutions": 183,
+            "Technological Solutions": 146,
             "Governance and Policy (Solutions)": 82,
             "Adaptation and Resilience": 37,
             "Lifestyle Solutions": 140,

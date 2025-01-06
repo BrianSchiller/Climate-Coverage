@@ -111,3 +111,20 @@ label_keywords = {
 }
 
 SUBREDDITS = ["climate", "climatechange", "climateskeptics", "climateactionplan", "climateoffensive"]
+
+label_colors = {
+    "Energy and Industry": "#1f77b4",  # Blue
+    "Land Use and Agriculture": "#ff7f0e",  # Orange
+    "Governance and Policy (Causes)": "#2ca02c",  # Green
+    "Personal Consumption": "#d62728",  # Red
+    "Ecosystem Disruption": "#9467bd",  # Purple
+    "Extreme Weather Events": "#8c564b",  # Brown
+    "Health Risks": "#e377c2",  # Pink
+    "Economic Impact": "#7f7f7f",  # Gray
+    "Displacement and Migration": "#bcbd22",  # Lime
+    "Technological Solutions": "#17becf",  # Cyan
+    "Governance and Policy (Solutions)": "#aec7e8",  # Light Blue
+    "Adaptation and Resilience": "#ffbb78",  # Light Orange
+    "Lifestyle Solutions": "#98df8a",  # Light Green
+    "Nature-Based Solutions": "#ff9896",  # Light Red
+}

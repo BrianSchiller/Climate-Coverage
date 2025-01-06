@@ -7,6 +7,8 @@ from pathlib import Path
 import seaborn as sns
 import pandas as pd
 
+import settings
+
 
 def plot_newspaper_keyword_count(data, cols = 3):
     # Number of newspapers and labels
@@ -15,8 +17,8 @@ def plot_newspaper_keyword_count(data, cols = 3):
     num_newspapers = len(newspapers)
 
     # Use a colormap with more distinct colors
-    colors = plt.cm.tab20(np.linspace(0, 1, len(labels)))
-    label_colors = {label: color for label, color in zip(labels, colors)}
+    # colors = plt.cm.tab20(np.linspace(0, 1, len(labels)))
+    # label_colors = {label: color for label, color in zip(labels, colors)}
 
     # Determine grid layout
     rows = (num_newspapers + cols - 1) // cols  # Calculate rows needed
@@ -28,7 +30,7 @@ def plot_newspaper_keyword_count(data, cols = 3):
     for i, newspaper in enumerate(newspapers):
         counts = [data[newspaper]["labels"][label] for label in labels]
         x = np.arange(len(labels))
-        bar_colors = [label_colors[label] for label in labels]
+        bar_colors = [settings.label_colors[label] for label in labels]
         axs[i].bar(x, counts, color=bar_colors, edgecolor='black')
 
         # Customize each subplot
@@ -46,6 +48,7 @@ def plot_newspaper_keyword_count(data, cols = 3):
         ax.axis('off')
 
     # Add a legend
+    colors = [settings.label_colors[label] for label in labels]
     handles = [plt.Line2D([0], [0], color=color, lw=4) for color in colors]
     fig.legend(handles, labels, loc='upper center', ncol=4, fontsize=12, title="Labels", bbox_to_anchor=(0.5, 0.95))
 
@@ -67,8 +70,8 @@ def plot_newspaper_topic_count(data, cols = 3):
     num_newspapers = len(newspapers)
 
     # Use a colormap with more distinct colors
-    colors = plt.cm.tab20(np.linspace(0, 1, len(labels)))
-    label_colors = {label: color for label, color in zip(labels, colors)}
+    # colors = plt.cm.tab20(np.linspace(0, 1, len(labels)))
+    # label_colors = {label: color for label, color in zip(labels, colors)}
 
     # Determine grid layout
     rows = (num_newspapers + cols - 1) // cols  # Calculate rows needed
@@ -80,7 +83,7 @@ def plot_newspaper_topic_count(data, cols = 3):
     for i, newspaper in enumerate(newspapers):
         counts = [data[newspaper]["scores"][label] for label in labels]
         x = np.arange(len(labels))
-        bar_colors = [label_colors[label] for label in labels]
+        bar_colors = [settings.label_colors[label] for label in labels]
         axs[i].bar(x, counts, color=bar_colors, edgecolor='black')
 
         # Customize each subplot
@@ -98,6 +101,7 @@ def plot_newspaper_topic_count(data, cols = 3):
         ax.axis('off')
 
     # Add a legend
+    colors = [settings.label_colors[label] for label in labels]
     handles = [plt.Line2D([0], [0], color=color, lw=4) for color in colors]
     fig.legend(handles, labels, loc='upper center', ncol=4, fontsize=12, title="Labels", bbox_to_anchor=(0.5, 0.95))
 
@@ -116,8 +120,8 @@ def plot_submission_keyword_count(data, subreddit_name, cols=3, submissions_per_
     num_labels = len(labels)
 
     # Assign colors to labels
-    colors = plt.cm.tab20(np.linspace(0, 1, num_labels))
-    label_colors = {label: color for label, color in zip(labels, colors)}
+    # colors = plt.cm.tab20(np.linspace(0, 1, num_labels))
+    # label_colors = {label: color for label, color in zip(labels, colors)}
 
     # Paginate submissions
     total_pages = (len(data) + submissions_per_page - 1) // submissions_per_page
@@ -142,11 +146,11 @@ def plot_submission_keyword_count(data, subreddit_name, cols=3, submissions_per_
             x = np.arange(num_labels)
 
             # Plot bars for post counts (solid)
-            axs[i].bar(x - 0.2, post_counts, width=0.4, label="Post Labels", color=[label_colors[label] for label in labels], edgecolor='black')
+            axs[i].bar(x - 0.2, post_counts, width=0.4, label="Post Labels", color=[settings.label_colors[label] for label in labels], edgecolor='black')
 
             # Plot bars for comment counts (hatch)
             axs[i].bar(x + 0.2, comment_counts, width=0.4, label="Comment Labels", 
-                        color=[label_colors[label] for label in labels], edgecolor='black', hatch='//')
+                        color=[settings.label_colors[label] for label in labels], edgecolor='black', hatch='//')
 
             # Add value labels on top of bars
             for j in range(num_labels):
@@ -173,8 +177,8 @@ def plot_submission_keyword_count(data, subreddit_name, cols=3, submissions_per_
             ax.axis("off")
 
         # Create a custom legend with Patch for the comment labels
-        handles = [plt.Line2D([0], [0], color=color, lw=4) for color in label_colors.values()]
-        comment_patch = [Patch(facecolor=color, edgecolor='black', hatch='//', label="Comment Labels") for color in label_colors.values()]
+        handles = [plt.Line2D([0], [0], color=color, lw=4) for color in settings.label_colors.values()]
+        comment_patch = [Patch(facecolor=color, edgecolor='black', hatch='//', label="Comment Labels") for color in settings.label_colors.values()]
 
         # Combine the legend handles
         fig.legend(handles + comment_patch, labels + ["Comment Labels"], loc='upper center', ncol=4, fontsize=12, title="Labels", bbox_to_anchor=(0.5, 0.95))
@@ -201,8 +205,8 @@ def plot_subreddit_keyword_count(path, normalized = False, output_dir="reddit", 
     num_labels = len(labels)
 
     # Assign colors to labels
-    colors = plt.cm.tab20(np.linspace(0, 1, num_labels))
-    label_colors = {label: color for label, color in zip(labels, colors)}
+    # colors = plt.cm.tab20(np.linspace(0, 1, num_labels))
+    # label_colors = {label: color for label, color in zip(labels, colors)}
 
     # Determine grid layout
     num_subreddits = len(data)
@@ -219,11 +223,11 @@ def plot_subreddit_keyword_count(path, normalized = False, output_dir="reddit", 
 
         # Plot bars for post counts (solid)
         axs[i].bar(x - 0.2, scores.values(), width=0.4, label="Post Labels", 
-                    color=[label_colors[label] for label in labels], edgecolor='black')
+                    color=[settings.label_colors[label] for label in labels], edgecolor='black')
 
         # Plot bars for comment counts (hatch)
         axs[i].bar(x + 0.2, comment_scores.values(), width=0.4, label="Comment Labels", 
-                    color=[label_colors[label] for label in labels], edgecolor='black', hatch='//')
+                    color=[settings.label_colors[label] for label in labels], edgecolor='black', hatch='//')
 
         # Add value labels on top of bars
         for j, label in enumerate(labels):
@@ -244,7 +248,7 @@ def plot_subreddit_keyword_count(path, normalized = False, output_dir="reddit", 
         ax.axis("off")
 
     # Create a custom legend with Patch for the comment labels
-    handles = [Patch(facecolor=color, edgecolor='black', label=label) for label, color in label_colors.items()]
+    handles = [Patch(facecolor=color, edgecolor='black', label=label) for label, color in settings.label_colors.items()]
     comment_patch = Patch(facecolor="white", edgecolor='black', hatch='//', label="Comment Labels")
 
     # Combine the legend handles
@@ -292,7 +296,7 @@ def plot_keyword_count_per_week():
 
     # Create a faceted line plot using seaborn
     g = sns.FacetGrid(df, col="Newspaper", col_wrap=2, sharey=False, height=6)
-    g.map_dataframe(sns.lineplot, x="WeekNum", y="Average Count", hue="Topic")
+    g.map_dataframe(sns.lineplot, x="WeekNum", y="Average Count", hue="Topic", palette=settings.label_colors)
 
     # Adjust legend and axis labels
     g.add_legend(title="Topics")
@@ -336,7 +340,7 @@ def plot_keyword_count_per_week():
 
     plt.tight_layout()
 
-    output_path = "data/weekly_keyword_count.png"
+    output_path = "data/weekly_article_keyword_count.png"
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     
     print(f"Plot saved to {output_path}")
@@ -379,11 +383,22 @@ def plot_subreddit_keyword_count_per_week():
     # Sort the DataFrame by the actual datetime WeekLabelDate
     df = df.sort_values(by=['WeekLabelDate'])
 
+    # Extract unique labels and assign consistent colors
+    labels = df['Label'].unique()
+    num_labels = len(labels)
+
     # Create a faceted line plot using seaborn
     g = sns.FacetGrid(df, col="Subreddit", col_wrap=2, sharey=False, height=6)
-    
+
     # We use ci=None to remove uncertainty shading around the lines
-    g.map_dataframe(sns.lineplot, x="WeekLabelDate", y="Average Count", hue="Label", ci=None)
+    g.map_dataframe(
+        sns.lineplot,
+        x="WeekLabelDate",
+        y="Average Count",
+        hue="Label",
+        errorbar=None,
+        palette=settings.label_colors  # Use the same color mapping as the bar plot
+    )
 
     # Adjust legend and axis labels
     g.add_legend(title="Labels")
@@ -407,7 +422,6 @@ def plot_subreddit_keyword_count_per_week():
             week_data = df[(df['Subreddit'] == facet_title) & (df['WeekLabelDate'] == week_date) & (df['Average Count'] == max_avg_count)]
 
             # Dynamically determine an appropriate vertical offset
-            # Setting a small dynamic buffer (buffer can be adjusted)
             max_offset = 0.2 + 0.05 * max_avg_count  # The offset increases with the value to avoid collision with the plot line
 
             # Display post count only once for the week with the highest average count
