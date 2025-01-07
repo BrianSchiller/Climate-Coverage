@@ -183,7 +183,9 @@ import pprint
 # pprint.pprint(news_outlier_counts)
 # pprint.pprint(reddit_outlier_counts)
 
-plots.plot_keyword_count_per_week()
-plots.plot_keyword_count_per_week(normalized=True)
+plots.plot_combined_keyword_count()
+plots.plot_combined_keyword_count(normalized=True)
+plots.plot_newspaper_keyword_count_per_week()
+plots.plot_newspaper_keyword_count_per_week(normalized=True)
 plots.plot_subreddit_keyword_count_per_week()
 plots.plot_subreddit_keyword_count_per_week(normalized=True)

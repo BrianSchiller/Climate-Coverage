@@ -270,7 +270,7 @@ def plot_subreddit_keyword_count(path, normalized = False, output_dir="reddit", 
 
 
 
-def plot_keyword_count_per_week(normalized = False):
+def plot_newspaper_keyword_count_per_week(normalized = False):
     path = r'data\article_keyword_per_week.json'
     if normalized:
         path = r'data\article_keyword_per_week_normalized.json'
@@ -458,6 +458,100 @@ def plot_subreddit_keyword_count_per_week(normalized = False):
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     
     print(f"Plot saved to {output_path}")
+
+
+
+def plot_combined_keyword_count(normalized=False):
+    # Load data for newspapers
+    article_path = r'data/article_keyword_per_week.json'
+    if normalized:
+        article_path = r'data/article_keyword_per_week_normalized.json'
+    with open(article_path) as file:
+        article_data = json.load(file)
+
+    # Load data for subreddits
+    subreddit_path = r'reddit/reddit_keyword_per_week.json'
+    if normalized:
+        subreddit_path = r'reddit/reddit_keyword_per_week_normalized.json'
+    with open(subreddit_path) as file:
+        subreddit_data = json.load(file)
+
+    # Transform newspaper data
+    article_rows = []
+    for newspaper, weeks in article_data.items():
+        for year_week, details in weeks.items():
+            # Standardize format: Add 'W' to match the subreddit format
+            standardized_week = f"{year_week[:4]}-W{year_week[5:]}"
+            for topic, avg_count in details["averages"].items():
+                article_rows.append({
+                    "Source": "Article",
+                    "Week": standardized_week,
+                    "Label": topic,
+                    "Average Count": avg_count
+                })
+
+    # Transform subreddit data
+    subreddit_rows = []
+    for subreddit, weeks in subreddit_data.items():
+        for week, details in weeks.items():
+            for label_type, labels in details.items():
+                if label_type not in ["post_count", "comment"]:
+                    for label, avg_count in labels.items():
+                        subreddit_rows.append({
+                            "Source": "Subreddit",
+                            "Week": week,
+                            "Label": label,
+                            "Average Count": avg_count
+                        })
+
+    # Create DataFrames
+    article_df = pd.DataFrame(article_rows)
+    subreddit_df = pd.DataFrame(subreddit_rows)
+
+    # Combine the DataFrames
+    combined_df = pd.concat([article_df, subreddit_df])
+
+    # Convert 'Week' to datetime-like object
+    combined_df['Year'], combined_df['WeekNum'] = zip(
+        *combined_df['Week'].str.split('-W').apply(lambda x: (int(x[0]), int(x[1]))))
+    combined_df['WeekLabel'] = combined_df['Year'].astype(str) + '-W' + combined_df['WeekNum'].astype(str)
+    combined_df['WeekLabelDate'] = pd.to_datetime(combined_df['WeekLabel'] + '-1', format='%Y-W%U-%w')
+
+    # Sort by week date
+    combined_df = combined_df.sort_values(by=['WeekLabelDate'])
+
+    # Aggregate by week and label
+    aggregated_df = combined_df.groupby(['WeekLabelDate', 'Label'], as_index=False)['Average Count'].sum()
+
+    # Plot using seaborn
+    plt.figure(figsize=(14, 8))
+    sns.lineplot(
+        data=aggregated_df,
+        x="WeekLabelDate",
+        y="Average Count",
+        hue="Label",
+        palette=settings.label_colors
+    )
+
+    # Customize the plot
+    plt.xticks(
+        aggregated_df['WeekLabelDate'].dt.date.unique(),
+        aggregated_df['WeekLabelDate'].dt.strftime('%Y-W%U').unique(),
+        rotation=45
+    )
+    plt.xlabel("Week Number")
+    plt.ylabel("Total Average Count")
+    plt.title("Combined Keyword Trends (Aggregating all newspaper and subreddits)")
+    plt.legend(title="Labels", bbox_to_anchor=(1.05, 1), loc='upper left')
+    plt.tight_layout()
+
+    # Save the plot
+    output_path = "data/combined_keyword_count.png"
+    if normalized:
+        output_path = "data/combined_keyword_count_normalized.png"
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+
+    print(f"Combined plot saved to {output_path}")
 
 
 
