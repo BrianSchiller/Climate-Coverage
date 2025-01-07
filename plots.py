@@ -764,7 +764,89 @@ def plot_subreddit_ccs_articles_per_week():
     print(f"Plot saved to {output_path}")
 
 
+def plot_aggregated_ccs_articles_per_week():
+    # Assuming big topic mapping is provided as a dictionary
+    ccs_topic_mapping = settings.label_keywords
+
+    # Inverting the mapping for easier lookup
+    label_to_big_topic = {}
+    for big_topic, labels in ccs_topic_mapping.items():
+        for label in labels.keys():
+            label_to_big_topic[label] = big_topic
+
+    with open(r'data\article_keyword_per_week.json') as file:
+        weekly_averages = json.load(file)
+
+    data = []
+    for newspaper, weeks in weekly_averages.items():
+        for year_week, details in weeks.items():
+            big_topic_counts = {big_topic: 0 for big_topic in ccs_topic_mapping.keys()}
+            for label, avg_count in details["averages"].items():
+                big_topic = label_to_big_topic.get(label)
+                if big_topic:
+                    big_topic_counts[big_topic] += avg_count  # Aggregate counts for big topics
+            
+            # Safely get article count, default to 0 if it's missing
+            article_count = details.get("article_count", 0)
+            
+            for big_topic, total_count in big_topic_counts.items():
+                data.append({
+                    "Newspaper": newspaper,
+                    "Week": year_week,
+                    "BigTopic": big_topic,
+                    "Total Count": total_count,
+                    "Article Count": article_count
+                })
+
+    # Convert to DataFrame
+    df = pd.DataFrame(data)
+
+    # Aggregate the counts across all newspapers by week
+    df_aggregated = df.groupby(['Week', 'BigTopic'], as_index=False).agg({'Total Count': 'sum', 'Article Count': 'sum'})
+
+    # Convert 'Week' to a proper datetime-like format and extract week number
+    df_aggregated['Year'], df_aggregated['WeekNum'] = zip(*df_aggregated['Week'].str.split('-').apply(lambda x: (int(x[0]), int(x[1]))))
+    df_aggregated['WeekLabel'] = df_aggregated['Year'].astype(str) + '-W' + df_aggregated['WeekNum'].astype(str)
+
+    # Create a single line plot using seaborn
+    plt.figure(figsize=(10, 6))
+    sns.lineplot(data=df_aggregated, x="WeekNum", y="Total Count", hue="BigTopic", palette="tab10")
+
+    # Adjust labels and title
+    plt.title("Aggregated Total Count of Big Topics per Week")
+    plt.xlabel("Week Number")
+    plt.ylabel("Total Count")
+    
+    # Customize x-axis with week labels
+    plt.xticks(df_aggregated['WeekNum'].unique(), df_aggregated['WeekLabel'].unique(), rotation=45)
+
+    # Add article count text for each week at the highest Total Count
+    max_total_count_per_week = df_aggregated.groupby('WeekNum')['Total Count'].max()
+    for week_num in max_total_count_per_week.index:
+        max_total_count = max_total_count_per_week[week_num]
+        week_data = df_aggregated[(df_aggregated['WeekNum'] == week_num) & (df_aggregated['Total Count'] == max_total_count)]
+
+        for _, row in week_data.iterrows():
+            plt.text(
+                week_num, max_total_count + 0.3,  # Position the text just above the highest Total Count
+                f"Articles: {row['Article Count']}",
+                ha='center', va='bottom', fontsize=8
+            )
+
+    # Adjust legend and layout
+    plt.legend(title="Big Topics", loc='upper left', bbox_to_anchor=(1, 1))
+    plt.tight_layout()
+
+    # Save the aggregated plot
+    output_path = "data/aggregated_weekly_ccs_keyword_count.png"
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    
+    print(f"Aggregated plot saved to {output_path}")
+
+
+
 if __name__ == "__main__":
+    plot_aggregated_ccs_articles_per_week()
     plot_ccs_articles_per_week()
     plot_subreddit_ccs_articles_per_week()
     
