@@ -148,8 +148,8 @@ def aggregate_subreddit_weekly_average():
     return final_data, outlier_counts
 
 # Call the function
-# newspaper_weekly_averages, news_outlier_counts = aggregate_newspaper_weekly_average()
-# reddit_weekly_averages, reddit_outlier_counts = aggregate_subreddit_weekly_average()
+newspaper_weekly_averages, news_outlier_counts = aggregate_newspaper_weekly_average()
+reddit_weekly_averages, reddit_outlier_counts = aggregate_subreddit_weekly_average()
 
 # Pretty print results
 import pprint

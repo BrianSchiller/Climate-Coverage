@@ -149,13 +149,12 @@ def count_topics_per_subreddit(subreddits, normalize = False):
 # for subreddit in subreddits:
 #     output = process_reddit_submissions(f'reddit/{subreddit}.json')
 
-subreddits = ["climateactionplan", "climateoffensive"]
+subreddits = SUBREDDITS
 for subreddit in subreddits:
     file = f"reddit/{subreddit}_processed.json"
     submissions = count_keywords(file)
     plots.plot_submission_keyword_count(submissions, subreddit)
 
-subreddits = SUBREDDITS
 count_topics_per_subreddit(subreddits)
 plots.plot_subreddit_keyword_count("reddit/subreddit_keywords.json")
 
