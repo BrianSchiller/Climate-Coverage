@@ -270,8 +270,11 @@ def plot_subreddit_keyword_count(path, normalized = False, output_dir="reddit", 
 
 
 
-def plot_keyword_count_per_week():
-    with open(r'data\article_keyword_per_week.json') as file:
+def plot_keyword_count_per_week(normalized = False):
+    path = r'data\article_keyword_per_week.json'
+    if normalized:
+        path = r'data\article_keyword_per_week_normalized.json'
+    with open(path) as file:
         weekly_averages = json.load(file)
 
     data = []
@@ -339,6 +342,8 @@ def plot_keyword_count_per_week():
     plt.tight_layout()
 
     output_path = "data/weekly_article_keyword_count.png"
+    if normalized:
+        output_path = "data/weekly_article_keyword_count_normalized.png"
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     
     print(f"Plot saved to {output_path}")

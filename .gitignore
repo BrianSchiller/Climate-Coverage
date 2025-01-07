@@ -6,3 +6,4 @@ submissions/
 to_scrape/
 data/
 reddit/*/*.png
+reddit/*.png

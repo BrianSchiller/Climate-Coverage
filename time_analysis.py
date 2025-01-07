@@ -19,8 +19,11 @@ def detect_outliers_and_cap(data):
     return capped_data, outliers
 
 
-def aggregate_newspaper_weekly_average():
+def aggregate_newspaper_weekly_average(normalized = False):
     file_path = r"data\article_keyword_count.json"
+    if normalized:
+        file_path = r"data\article_keyword_count_normalized.json"
+
     with open(file_path) as r:
             data = json.load(r)
 
@@ -73,8 +76,15 @@ def aggregate_newspaper_weekly_average():
         results[newspaper] = weekly_averages
 
     path = "data/article_keyword_per_week.json"
+    if normalized:
+        path = "data/article_keyword_per_week_normalized.json"
     with open(path, 'w', encoding='utf-8') as count_file:
         json.dump(results, count_file, indent=4)
+
+    if not normalized:
+        print("Aggregated weekly newspaper keyword mentions")
+    else:
+        print("Aggregated normalized weekly newspaper keyword mentions")
 
     return results, outlier_counts
 
@@ -149,6 +159,7 @@ def aggregate_subreddit_weekly_average():
 
 # Call the function
 newspaper_weekly_averages, news_outlier_counts = aggregate_newspaper_weekly_average()
+newspaper_weekly_averages, news_outlier_counts = aggregate_newspaper_weekly_average(normalized=True)
 reddit_weekly_averages, reddit_outlier_counts = aggregate_subreddit_weekly_average()
 
 # Pretty print results
@@ -159,4 +170,5 @@ import pprint
 # pprint.pprint(reddit_outlier_counts)
 
 plots.plot_keyword_count_per_week()
+plots.plot_keyword_count_per_week(normalized=True)
 plots.plot_subreddit_keyword_count_per_week()
