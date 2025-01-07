@@ -89,7 +89,7 @@ def aggregate_newspaper_weekly_average(normalized = False):
     return results, outlier_counts
 
 
-def aggregate_subreddit_weekly_average():
+def aggregate_subreddit_weekly_average(normalized = False):
     # Dictionary to store the aggregated data for each subreddit
     aggregated_data = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(int))))  # Includes label type (post or comment)
     post_counts_per_week = defaultdict(lambda: defaultdict(int))  # Store the number of posts per week
@@ -113,12 +113,18 @@ def aggregate_subreddit_weekly_average():
                 post_counts_per_week[subreddit][(year, week_num)] += 1
                 
                 # Aggregating labels for the post itself
+                post_label_counts = sum(post['labels'].values())
                 for label, count in post['labels'].items():
+                    if normalized:
+                        count = count / post_label_counts if post_label_counts > 0 else 0
                     aggregated_data[subreddit][(year, week_num)]['post'][label] += count
                     all_label_counts[label].append(count)  # Collecting data for outlier detection
                 
                 # Aggregating labels for the comments
+                comment_label_counts = sum(post['comment_labels'].values())
                 for label, count in post['comment_labels'].items():
+                    if normalized:
+                        count = count / comment_label_counts if comment_label_counts > 0 else 0
                     aggregated_data[subreddit][(year, week_num)]['comment'][label] += count
                     all_label_counts[label].append(count)  # Collecting data for outlier detection
     
@@ -152,8 +158,15 @@ def aggregate_subreddit_weekly_average():
     
     # Write the dictionary to a JSON file
     path = "reddit/reddit_keyword_per_week.json"
+    if normalized:
+        path = "reddit/reddit_keyword_per_week_normalized.json"
     with open(path, 'w', encoding='utf-8') as count_file:
         json.dump(final_data, count_file, indent=4)
+
+    if not normalized:
+        print("Aggregated weekly reddit keyword mentions")
+    else:
+        print("Aggregated normalized weekly reddit keyword mentions")
 
     return final_data, outlier_counts
 
@@ -161,6 +174,7 @@ def aggregate_subreddit_weekly_average():
 newspaper_weekly_averages, news_outlier_counts = aggregate_newspaper_weekly_average()
 newspaper_weekly_averages, news_outlier_counts = aggregate_newspaper_weekly_average(normalized=True)
 reddit_weekly_averages, reddit_outlier_counts = aggregate_subreddit_weekly_average()
+reddit_weekly_averages, reddit_outlier_counts = aggregate_subreddit_weekly_average(normalized=True)
 
 # Pretty print results
 import pprint
@@ -172,3 +186,4 @@ import pprint
 plots.plot_keyword_count_per_week()
 plots.plot_keyword_count_per_week(normalized=True)
 plots.plot_subreddit_keyword_count_per_week()
+plots.plot_subreddit_keyword_count_per_week(normalized=True)

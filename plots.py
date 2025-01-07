@@ -349,9 +349,12 @@ def plot_keyword_count_per_week(normalized = False):
     print(f"Plot saved to {output_path}")
 
 
-def plot_subreddit_keyword_count_per_week():
+def plot_subreddit_keyword_count_per_week(normalized = False):
     # Load the data from the new JSON format
-    with open(r'reddit/reddit_keyword_per_week.json') as file:
+    path = r'reddit/reddit_keyword_per_week.json'
+    if normalized:
+        path = r'reddit/reddit_keyword_per_week_normalized.json'
+    with open(path) as file:
         weekly_data = json.load(file)
 
     # List to store the data to be plotted
@@ -362,7 +365,7 @@ def plot_subreddit_keyword_count_per_week():
         for week, details in weeks.items():
             post_count = details.get("post_count", 0)  # Number of posts for the week
             for label_type, labels in details.items():
-                if label_type != "post_count":  # Skip post_count here, we use it separately
+                if label_type != "post_count" and label_type != "comment":  # Skip post_count here, we use it separately
                     for label, avg_count in labels.items():
                         data.append({
                             "Subreddit": subreddit,
@@ -388,7 +391,6 @@ def plot_subreddit_keyword_count_per_week():
 
     # Extract unique labels and assign consistent colors
     labels = df['Label'].unique()
-    num_labels = len(labels)
 
     # Create a faceted line plot using seaborn
     g = sns.FacetGrid(df, col="Subreddit", col_wrap=2, sharey=False, height=6)
@@ -425,7 +427,9 @@ def plot_subreddit_keyword_count_per_week():
             week_data = df[(df['Subreddit'] == facet_title) & (df['WeekLabelDate'] == week_date) & (df['Average Count'] == max_avg_count)]
 
             # Dynamically determine an appropriate vertical offset
-            max_offset = 0.2 + 0.05 * max_avg_count  # The offset increases with the value to avoid collision with the plot line
+            max_offset = 0.1
+            if normalized:
+                max_offset = 0.01 
 
             # Display post count only once for the week with the highest average count
             for _, row in week_data.iterrows():
@@ -436,19 +440,21 @@ def plot_subreddit_keyword_count_per_week():
                 )
 
     # Adjust the spacing between plots and move the legend properly
-    g.fig.subplots_adjust(top=0.85, bottom=0.2, hspace=0.3)  # Increase vertical space between plots
+    g.fig.subplots_adjust(top=0.8, bottom=0.2, hspace=0.3)  # Increase vertical space between plots
     g.fig.legend(
         handles=g.legend.legendHandles, 
         labels=[t.get_text() for t in g.legend.texts], 
         loc='upper center', 
         ncol=3,
-        bbox_to_anchor=(0.5, 1.03)  # Move the legend slightly above the plots
+        bbox_to_anchor=(0.5, 1.07)  # Move the legend slightly above the plots
     )
     g.legend.remove()  # Remove duplicated legend from individual plots
 
     plt.tight_layout()
 
     output_path = "reddit/weekly_subreddit_keyword_count.png"
+    if normalized:
+        output_path = "reddit/weekly_subreddit_keyword_count_normalized.png"
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     
     print(f"Plot saved to {output_path}")
@@ -571,7 +577,7 @@ def plot_subreddit_ccs_articles_per_week():
 
             # Aggregate counts for big topics
             for label_type, labels in details.items():
-                if label_type != "post_count":  # Skip post_count here, we use it separately
+                if label_type != "post_count" and label_type != "comment":  # Skip post_count here, we use it separately
                     for label, avg_count in labels.items():
                         big_topic = label_to_big_topic.get(label)
                         if big_topic:
