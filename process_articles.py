@@ -75,6 +75,48 @@ def count_keywords_per_newspaper(articles):
 
     return counter
 
+def count_keywords_per_newspaper(articles, normalized=False):
+    counter = {}
+
+    for newspaper, dates in articles.items():
+        counter[newspaper] = {"labels": {}, "num_articles": len(dates)}
+
+        for date, content in dates.items():
+            article_label_counts = {}  # Store counts for labels in this article
+            total_label_count = 0  # Total keyword count for normalization in this article
+
+            # First pass: calculate counts per label for this article
+            for category, labels in label_keywords.items():
+                for label, keywords in labels.items():
+                    if label not in article_label_counts:
+                        article_label_counts[label] = 0
+
+                    for keyword in keywords:
+                        count = len(re.findall(r'\b' + re.escape(keyword.lower()) + r'\b', content))
+                        article_label_counts[label] += count
+                        total_label_count += count
+
+            # Second pass: update overall counter, applying normalization if required
+            for label, count in article_label_counts.items():
+                if label not in counter[newspaper]["labels"]:
+                    counter[newspaper]["labels"][label] = 0
+
+                if normalized and total_label_count > 0:
+                    counter[newspaper]["labels"][label] += count / total_label_count
+                else:
+                    counter[newspaper]["labels"][label] += count
+
+    path = "data/newspaper_keyword_count.json"
+    if normalized: 
+        path = "data/newspaper_keyword_count_normalized.json"
+    with open(path, "w", encoding="utf-8") as outfile:
+        json.dump(counter, outfile, indent=4)
+    
+    print(f"Counted keywords and written to: {path}")
+
+    return counter
+
+
 def count_keywords_per_article(articles):
     counter = {}
 
@@ -129,6 +171,9 @@ articles = load_articles(folder_path)
 
 counter = count_keywords_per_newspaper(articles)
 plots.plot_newspaper_keyword_count(counter)
+
+counter = count_keywords_per_newspaper(articles, normalized=True)
+plots.plot_newspaper_keyword_count(counter, normalized=True)
 
 counter = count_keywords_per_article(articles)
 scores = identify_topics_per_newspaper(counter)

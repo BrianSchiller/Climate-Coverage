@@ -10,15 +10,11 @@ import pandas as pd
 import settings
 
 
-def plot_newspaper_keyword_count(data, cols = 3):
+def plot_newspaper_keyword_count(data, normalized = False, cols = 3):
     # Number of newspapers and labels
     newspapers = list(data.keys())
     labels = list(next(iter(data.values()))["labels"].keys())
     num_newspapers = len(newspapers)
-
-    # Use a colormap with more distinct colors
-    # colors = plt.cm.tab20(np.linspace(0, 1, len(labels)))
-    # label_colors = {label: color for label, color in zip(labels, colors)}
 
     # Determine grid layout
     rows = (num_newspapers + cols - 1) // cols  # Calculate rows needed
@@ -59,6 +55,8 @@ def plot_newspaper_keyword_count(data, cols = 3):
 
     # Show the plot
     path = "data/newspaper_keyword_count.png"
+    if normalized:
+        path = "data/newspaper_keyword_count_normalized.png"
     plt.savefig(path, dpi=300)
     print(f"Saved article keyword count plot to: {path}")
 
