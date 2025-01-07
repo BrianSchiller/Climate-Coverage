@@ -445,7 +445,223 @@ def plot_subreddit_keyword_count_per_week():
 
     plt.tight_layout()
 
-    output_path = "data/weekly_subreddit_keyword_count.png"
+    output_path = "reddit/weekly_subreddit_keyword_count.png"
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     
     print(f"Plot saved to {output_path}")
+
+
+
+def plot_ccs_articles_per_week():
+    # Assuming big topic mapping is provided as a dictionary
+    ccs_topic_mapping = settings.label_keywords
+
+    # Inverting the mapping for easier lookup
+    label_to_big_topic = {}
+    for big_topic, labels in ccs_topic_mapping.items():
+        for label in labels.keys():
+            label_to_big_topic[label] = big_topic
+
+    with open(r'data\article_keyword_per_week.json') as file:
+        weekly_averages = json.load(file)
+
+    data = []
+    for newspaper, weeks in weekly_averages.items():
+        for year_week, details in weeks.items():
+            big_topic_counts = {big_topic: 0 for big_topic in ccs_topic_mapping.keys()}
+            for label, avg_count in details["averages"].items():
+                big_topic = label_to_big_topic.get(label)
+                if big_topic:
+                    big_topic_counts[big_topic] += avg_count  # Aggregate counts for big topics
+            
+            for big_topic, total_count in big_topic_counts.items():
+                data.append({
+                    "Newspaper": newspaper,
+                    "Week": year_week,
+                    "BigTopic": big_topic,
+                    "Total Count": total_count,
+                    "Article Count": details.get("article_count", 0)  # Assuming article_count is available
+                })
+
+    df = pd.DataFrame(data)
+
+    # Convert 'Week' to a proper datetime-like format and extract week number
+    df['Year'], df['WeekNum'] = zip(*df['Week'].str.split('-').apply(lambda x: (int(x[0]), int(x[1]))))
+    df['WeekLabel'] = df['Year'].astype(str) + '-W' + df['WeekNum'].astype(str)
+
+    # Create a faceted line plot using seaborn
+    g = sns.FacetGrid(df, col="Newspaper", col_wrap=2, sharey=False, height=6)
+    g.map_dataframe(sns.lineplot, x="WeekNum", y="Total Count", hue="BigTopic", palette="tab10")
+
+    # Adjust legend and axis labels
+    g.add_legend(title="Big Topics")
+    g.set_axis_labels("Week Number", "Total Count")
+    g.set_titles("{col_name}")
+
+    # Customize each facet's x-axis ticks
+    for ax in g.axes.flatten():
+        ax.set_xticks(df['WeekNum'].unique())
+        ax.set_xticklabels(df['WeekLabel'].unique(), rotation=45)
+
+        # Get the newspaper name directly from the facet grid column names
+        facet_title = ax.get_title().split('=')[1].strip() if '=' in ax.get_title() else ax.get_title()
+
+        # Track the maximum Total Count for each week
+        max_total_count_per_week = df[df['Newspaper'] == facet_title].groupby('WeekNum')['Total Count'].max()
+
+        # Add article count text for each week at the highest Total Count
+        for week_num in max_total_count_per_week.index:
+            max_total_count = max_total_count_per_week[week_num]
+            week_data = df[(df['Newspaper'] == facet_title) & (df['WeekNum'] == week_num) & (df['Total Count'] == max_total_count)]
+
+            # Display article count only once for the week with the highest count
+            for _, row in week_data.iterrows():
+                ax.text(
+                    week_num, max_total_count + 0.3,  # Position the text just above the highest Total Count
+                    f"Articles: {row['Article Count']}",
+                    ha='center', va='bottom', fontsize=8
+                )
+
+    # Adjust the spacing between plots and move the legend properly
+    g.fig.subplots_adjust(top=0.85, bottom=0.2, hspace=0.3)  # Increase vertical space between plots
+    g.fig.legend(
+        handles=g.legend.legendHandles, 
+        labels=[t.get_text() for t in g.legend.texts], 
+        loc='upper center', 
+        ncol=3,
+        bbox_to_anchor=(0.5, 1.03)  # Move the legend slightly above the plots
+    )
+    g.legend.remove()  # Remove duplicated legend from individual plots
+
+    plt.tight_layout()
+
+    output_path = "data/weekly_ccs_keyword_count.png"
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    
+    print(f"Plot saved to {output_path}")
+
+
+def plot_subreddit_ccs_articles_per_week():
+    # Assuming big topic mapping is provided as a dictionary
+    ccs_topic_mapping = settings.label_keywords
+
+    # Inverting the mapping for easier lookup
+    label_to_big_topic = {}
+    for big_topic, labels in ccs_topic_mapping.items():
+        for label in labels.keys():
+            label_to_big_topic[label] = big_topic
+
+    # Load the data from the new JSON format
+    with open(r'reddit/reddit_keyword_per_week.json') as file:
+        weekly_data = json.load(file)
+
+    # List to store the data to be plotted
+    data = []
+
+    # Loop through subreddits and weeks to extract necessary information
+    for subreddit, weeks in weekly_data.items():
+        for week, details in weeks.items():
+            post_count = details.get("post_count", 0)  # Number of posts for the week
+
+            # Initialize counts for each big topic
+            big_topic_counts = {big_topic: 0 for big_topic in ccs_topic_mapping.keys()}
+
+            # Aggregate counts for big topics
+            for label_type, labels in details.items():
+                if label_type != "post_count":  # Skip post_count here, we use it separately
+                    for label, avg_count in labels.items():
+                        big_topic = label_to_big_topic.get(label)
+                        if big_topic:
+                            big_topic_counts[big_topic] += avg_count  # Aggregate counts for big topics
+
+            # Append aggregated data to the plot data
+            for big_topic, total_count in big_topic_counts.items():
+                data.append({
+                    "Subreddit": subreddit,
+                    "Week": week,
+                    "BigTopic": big_topic,
+                    "Total Count": total_count,
+                    "Post Count": post_count
+                })
+
+    # Convert the list into a DataFrame
+    df = pd.DataFrame(data)
+
+    # Convert 'Week' to a proper tuple format (Year, WeekNum)
+    df['Year'], df['WeekNum'] = zip(*df['Week'].str.split('-').apply(lambda x: (int(x[0]), int(x[1][1:]))))  # Remove 'W' from WeekNum
+    df['WeekLabel'] = df['Year'].astype(str) + '-W' + df['WeekNum'].astype(str)
+
+    # Convert 'WeekLabel' to a datetime object to ensure chronological sorting
+    df['WeekLabelDate'] = pd.to_datetime(df['WeekLabel'] + '-1', format='%Y-W%U-%w')
+
+    # Sort the DataFrame by the actual datetime WeekLabelDate
+    df = df.sort_values(by=['WeekLabelDate'])
+
+    # Create a faceted line plot using seaborn
+    g = sns.FacetGrid(df, col="Subreddit", col_wrap=2, sharey=False, height=6)
+
+    # We use ci=None to remove uncertainty shading around the lines
+    g.map_dataframe(
+        sns.lineplot,
+        x="WeekLabelDate",
+        y="Total Count",
+        hue="BigTopic",
+        errorbar=None,
+        palette="tab10"  # Default palette, replace with your color mapping if needed
+    )
+
+    # Adjust legend and axis labels
+    g.add_legend(title="Big Topics")
+    g.set_axis_labels("Week Number", "Total Count")
+    g.set_titles("{col_name}")
+
+    # Customize each facet's x-axis ticks
+    for ax in g.axes.flatten():
+        ax.set_xticks(df['WeekLabelDate'].dt.date.unique())  # Ensure the x-axis ticks are set by week date
+        ax.set_xticklabels(df['WeekLabelDate'].dt.strftime('%Y-W%U').unique(), rotation=45)  # Label the x-axis correctly
+
+        # Get the subreddit name directly from the facet grid column names
+        facet_title = ax.get_title().split('=')[1].strip() if '=' in ax.get_title() else ax.get_title()
+
+        # Track the maximum Total Count for each week
+        max_total_count_per_week = df[df['Subreddit'] == facet_title].groupby('WeekLabelDate')['Total Count'].max()
+
+        # Add post count text for each week at the highest Total Count
+        for week_date in max_total_count_per_week.index:
+            max_total_count = max_total_count_per_week[week_date]
+            week_data = df[(df['Subreddit'] == facet_title) & (df['WeekLabelDate'] == week_date) & (df['Total Count'] == max_total_count)]
+
+            # Dynamically determine an appropriate vertical offset
+            max_offset = 0.2 + 0.05 * max_total_count  # The offset increases with the value to avoid collision with the plot line
+
+            # Display post count only once for the week with the highest average count
+            for _, row in week_data.iterrows():
+                ax.text(
+                    week_date, max_total_count + max_offset,  # Place the label just above the highest Total Count
+                    f"Posts: {row['Post Count']}",
+                    ha='center', va='bottom', fontsize=8
+                )
+
+    # Adjust the spacing between plots and move the legend properly
+    g.fig.subplots_adjust(top=0.85, bottom=0.2, hspace=0.3)  # Increase vertical space between plots
+    g.fig.legend(
+        handles=g.legend.legendHandles, 
+        labels=[t.get_text() for t in g.legend.texts], 
+        loc='upper center', 
+        ncol=3,
+        bbox_to_anchor=(0.5, 1.03)  # Move the legend slightly above the plots
+    )
+    g.legend.remove()  # Remove duplicated legend from individual plots
+
+    plt.tight_layout()
+
+    output_path = "reddit/weekly_subreddit_ccs_keyword_count.png"
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    
+    print(f"Plot saved to {output_path}")
+
+
+if __name__ == "__main__":
+    plot_ccs_articles_per_week()
+    plot_subreddit_ccs_articles_per_week()
+    
