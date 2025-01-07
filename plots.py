@@ -594,7 +594,7 @@ def plot_ccs_articles_per_week():
 
     # Create a faceted line plot using seaborn
     g = sns.FacetGrid(df, col="Newspaper", col_wrap=2, sharey=False, height=6)
-    g.map_dataframe(sns.lineplot, x="WeekNum", y="Total Count", hue="BigTopic", palette="tab10")
+    g.map_dataframe(sns.lineplot, x="WeekNum", y="Total Count", hue="BigTopic", palette=settings.ccs_colors)
 
     # Adjust legend and axis labels
     g.add_legend(title="Big Topics")
@@ -710,7 +710,7 @@ def plot_subreddit_ccs_articles_per_week():
         y="Total Count",
         hue="BigTopic",
         errorbar=None,
-        palette="tab10"  # Default palette, replace with your color mapping if needed
+        palette=settings.ccs_colors  # Default palette, replace with your color mapping if needed
     )
 
     # Adjust legend and axis labels
@@ -810,7 +810,7 @@ def plot_aggregated_ccs_articles_per_week():
 
     # Create a single line plot using seaborn
     plt.figure(figsize=(10, 6))
-    sns.lineplot(data=df_aggregated, x="WeekNum", y="Total Count", hue="BigTopic", palette="tab10")
+    sns.lineplot(data=df_aggregated, x="WeekNum", y="Total Count", hue="BigTopic", palette=settings.ccs_colors)
 
     # Adjust labels and title
     plt.title("Aggregated Total Count of Big Topics per Week")
@@ -828,13 +828,13 @@ def plot_aggregated_ccs_articles_per_week():
 
         for _, row in week_data.iterrows():
             plt.text(
-                week_num, max_total_count + 0.3,  # Position the text just above the highest Total Count
+                week_num, max_total_count + 5,  # Position the text just above the highest Total Count
                 f"Articles: {row['Article Count']}",
                 ha='center', va='bottom', fontsize=8
             )
 
     # Adjust legend and layout
-    plt.legend(title="Big Topics", loc='upper left', bbox_to_anchor=(1, 1))
+    plt.legend(loc='upper left', bbox_to_anchor=(1, 1))
     plt.tight_layout()
 
     # Save the aggregated plot

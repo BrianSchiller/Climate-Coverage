@@ -128,3 +128,9 @@ label_colors = {
     "Lifestyle Solutions": "#98df8a",  # Light Green
     "Nature-Based Solutions": "#ff9896",  # Light Red
 }
+
+ccs_colors = {
+    "causes": "#1f77b4",  # Blue
+    "consequences": "#ff7f0e",  # Orange
+    "solutions": "#2ca02c",  # Green
+}
